@@ -1,8 +1,8 @@
 """This is a module of linked list"""
 
 """ 
-    Linked list contains data and the reference to next node,
-    and null value at the end (singly linked list).
+    (singly linked list)Linked list contains data and the reference to next node,
+    and null value at the end .
     All you need to know is the location of the head.
     If you have previous node reference, then you can also
     traverse back (doubly linked list).
