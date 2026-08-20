@@ -1,5 +1,5 @@
 """Linked list contains data and the reference to next node
-
+    all
 """
 
 class EmptyListException(Exception):
