@@ -3,7 +3,7 @@
 """ 
     Singly linked list contains data and the reference to next node,
     and null value at the end and all you need to know is the location of the head.
-    Doubly linked list is the same you have previous node reference, then you can also
+    Doubly linked list is the same but you also have previous node reference, then you can also
     traverse back .
     Circular linked list does not end with nul
 """
