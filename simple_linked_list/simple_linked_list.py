@@ -3,7 +3,7 @@
 """ 
     Linked list contains data and the reference to next node
     all you need to know is the location of the head.
-    If you have 2 reference
+    If you have 2 references
 """
 
 class EmptyListException(Exception):
