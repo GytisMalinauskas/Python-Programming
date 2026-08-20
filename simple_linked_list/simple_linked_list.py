@@ -1,4 +1,5 @@
 """This is a module of linked list"""
+
 """ 
     Linked list contains data and the reference to next node
     all you need to know is the location of the head
