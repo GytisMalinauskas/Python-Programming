@@ -1,3 +1,5 @@
+
+
 class EmptyListException(Exception):
     pass
 
