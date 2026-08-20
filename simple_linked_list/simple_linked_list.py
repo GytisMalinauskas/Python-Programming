@@ -1,5 +1,5 @@
 """ Linked list contains data and the reference to next node
-    all
+    all you need to know is the location of 
 """
 
 class EmptyListException(Exception):
