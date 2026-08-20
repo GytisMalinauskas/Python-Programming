@@ -6,7 +6,7 @@
     Doubly linked list is the same but you also have previous node
     reference and then you can traverse back.
     Circular linked list does not end with null, its last value is
-    considered a tails and node after is 
+    considered a tails and node after is the beggining of the list.
 """
 
 class EmptyListException(Exception):
