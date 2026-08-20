@@ -1,0 +1,1 @@
+from simple_linked_list import LinkedList
