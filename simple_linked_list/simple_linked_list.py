@@ -5,7 +5,7 @@
     and null value at the end and all you need to know is the location of the head.
     Doubly linked list is the same but you also have previous node
     reference and then you can traverse back.
-    Circular linked list does not end with nul
+    Circular linked list does not end with null
 """
 
 class EmptyListException(Exception):
