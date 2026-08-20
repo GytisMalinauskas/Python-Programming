@@ -15,7 +15,7 @@ class EmptyListException(Exception):
 
 class Node:
     def __init__(self, value):
-        pass
+        self.value = value
 
     def value(self):
         pass
