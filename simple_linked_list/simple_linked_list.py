@@ -1,4 +1,4 @@
-"""Linked list ussually contains and """
+"""Linked list usually contains and """
 
 class EmptyListException(Exception):
     pass
