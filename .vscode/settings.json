@@ -2,6 +2,6 @@
     "gitdoc.enabled": true,
     "gitdoc.autoPush": "onCommit",
     "gitdoc.autoCommitDelay": 30000,
-    "files.autoSave": "afterDelay",
+    "files.autoSave": "",
     "gitdoc.autoPull": "onPush"
 }

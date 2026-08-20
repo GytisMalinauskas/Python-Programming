@@ -15,18 +15,19 @@ class EmptyListException(Exception):
 
 class Node:
     def __init__(self, value):
-        self.value = value
+        self.node_value = value
+        self.next_node = None
 
     def value(self):
-        pass
+        return self.node_value
 
     def next(self):
-        pass
+        return self.next_node
 
 
 class LinkedList:
     def __init__(self, values=None):
-        pass
+        self.list_head = None
 
     def __iter__(self):
         pass
@@ -35,10 +36,11 @@ class LinkedList:
         pass
 
     def head(self):
-        pass
+        return self.list_head
 
     def push(self, value):
-        pass
+        previous_node = self.list_head
+        self.list_head = Node(value)
 
     def pop(self):
         pass
