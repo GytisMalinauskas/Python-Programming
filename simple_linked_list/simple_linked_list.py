@@ -1,4 +1,6 @@
-"""Linked list contains data and the reference to next node"""
+"""Linked list contains data and the reference to next node
+
+"""
 
 class EmptyListException(Exception):
     pass
