@@ -3,6 +3,7 @@
     all you need to know is the location of the head
 """
 
+
 class EmptyListException(Exception):
     pass
 
