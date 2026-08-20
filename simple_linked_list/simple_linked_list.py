@@ -4,7 +4,7 @@
     Linked list contains data and the reference to next node
     all you need to know is the location of the head.
     If you have previous node reference, then you can also
-    traverse back (doubly link).
+    traverse back (doubly linked list).
 """
 
 class EmptyListException(Exception):
