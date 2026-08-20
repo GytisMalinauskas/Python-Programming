@@ -1,4 +1,4 @@
-
+""""""
 
 class EmptyListException(Exception):
     pass
