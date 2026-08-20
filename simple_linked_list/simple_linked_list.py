@@ -3,7 +3,7 @@
     all you need to know is the location of the head
 """
 
-"""This is a module """
+"""This is a module of"""
 class EmptyListException(Exception):
     pass
 
