@@ -5,7 +5,7 @@
     all you need to know is the location of the head(singly linked list).
     If you have previous node reference, then you can also
     traverse back (doubly linked list).
-    Circular linked list 
+    Circular linked list does not end with nul
 """
 
 class EmptyListException(Exception):
