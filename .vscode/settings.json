@@ -1,7 +1,8 @@
 {
     "gitdoc.enabled": true,
+    "gitdoc.commitOnClose": true,
     "gitdoc.autoPush": "onCommit",
     "gitdoc.autoCommitDelay": 30000,
-    "files.autoSave": "",
+    "files.autoSave": "off",
     "gitdoc.autoPull": "onPush"
 }
