@@ -28,9 +28,12 @@ class Node:
 class LinkedList:
     def __init__(self, values=None):
         self.list_head = None
+        self.values = values
 
     def __iter__(self):
-        pass
+        for value in self.values:
+            Node(value)
+            yield value
 
     def __len__(self):
         current = self.list_head
