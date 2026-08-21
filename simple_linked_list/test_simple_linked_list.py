@@ -12,7 +12,7 @@ def main():
         print(current.value())
         current = current.next_node
     
-    linked_list.pop()
+    print("pop: ", linked_list.pop())
     current = linked_list.list_head
     while current:
         print(current.value())
