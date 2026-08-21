@@ -3,6 +3,6 @@
     "gitdoc.commitOnClose": true,
     "gitdoc.autoPush": "onCommit",
     "gitdoc.autoCommitDelay": 30000,
-    "files.autoSave": "off",
+    "files.autoSave": "afterDelay",
     "gitdoc.autoPull": "onPush"
 }
