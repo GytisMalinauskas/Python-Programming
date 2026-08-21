@@ -10,23 +10,27 @@
 """
 
 class EmptyListException(Exception):
-    def __init__(self, message):
-        self.message = message
+    """Throws empty list exceptions"""
+    pass
 
 
 class Node:
+    """Initializes new node"""
     def __init__(self, value):
         self.node_value = value
         self.next_node = None
 
     def value(self):
+        """Gets node value"""
         return self.node_value
 
     def next(self):
+        """Gets next node"""
         return self.next_node
 
 
 class LinkedList:
+    """Initializes new linked list"""
     def __init__(self, values=None):
         self.list_head = None
         if values:
@@ -38,7 +42,7 @@ class LinkedList:
         while current:
             yield current.value()
             current = current.next_node
-            
+
     def __len__(self):
         current = self.list_head
         value_count = 0
@@ -48,23 +52,27 @@ class LinkedList:
         return value_count
     
     def head(self):
-        """list empty error"""
+        """Gets list head"""
+        if self.list_head is None:
+            raise EmptyListException("the list is empty")
         return self.list_head
-        
 
     def push(self, value):
+        """Pushes new value into a new node"""
         node = Node(value)
         node.next_node = self.list_head
         self.list_head = node
 
     def pop(self):
+        """Pops a value from list's head and returns it"""
+        if self.list_head is None:
+            raise EmptyListException("the list is empty")
         pop_value = self.list_head.value()
-        self.list_head = self.list_head.next_node
-        """list empty error"""
+        self.list_head = self.list_head.next_node 
         return pop_value
-        
 
     def reversed(self):
+        """Returns reversed list"""
         current = self.list_head
         new_list = LinkedList()
         while current:
