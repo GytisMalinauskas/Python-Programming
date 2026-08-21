@@ -32,7 +32,9 @@ class LinkedList:
 
     def __iter__(self):
         for value in self.values:
-            Node(value)
+            node = Node(value)
+            node.next_node = self.list_head
+            self.list_head = node
             yield value
 
     def __len__(self):
