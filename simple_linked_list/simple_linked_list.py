@@ -64,4 +64,9 @@ class LinkedList:
         
 
     def reversed(self):
-        pass
+        current = self.list_head
+        new_list = LinkedList()
+        while current:
+            new_list.push(current.value())
+            current = current.next_node
+        return new_list

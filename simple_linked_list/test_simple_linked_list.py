@@ -18,8 +18,8 @@ def main():
     #     print(current.value())
     #     current = current.next_node
     # print("lenght: ", len(linked_list))
-    ll = LinkedList()
-    print(list(ll))
+    ll = LinkedList([1,2,3])
+    print(list(ll.reversed()))
     
 if __name__ == "__main__":
     main()
