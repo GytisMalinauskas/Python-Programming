@@ -5,8 +5,10 @@ def main():
     linked_list.push(1)
     linked_list.push(2)
     current = linked_list.list_head
-    print(current.value())
     
+    while current:
+        print(current.value())
+        current = current.next_node
     
 if __name__ == "__main__":
     main()
