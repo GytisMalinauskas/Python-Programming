@@ -18,7 +18,7 @@ def main():
     #     print(current.value())
     #     current = current.next_node
     # print("lenght: ", len(linked_list))
-    ll = LinkedList([1,2,3])
+    ll = LinkedList()
     print(list(ll))
     
 if __name__ == "__main__":
