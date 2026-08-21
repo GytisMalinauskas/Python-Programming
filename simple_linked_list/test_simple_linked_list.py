@@ -4,6 +4,7 @@ def main():
     linked_list = LinkedList()
     linked_list.push(1)
     linked_list.push(2)
+    linked_list.push(0)
     linked_list.push(3)
     current = linked_list.list_head
     

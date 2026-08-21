@@ -36,13 +36,14 @@ class LinkedList:
         current = self.list_head
         value_count = 0
         while current:
-            if current.value():
-                value_count += 1
-                current = current.next_node 
+            value_count += 1
+            current = current.next_node 
         return value_count
     
     def head(self):
+        """list empty error"""
         return self.list_head
+        
 
     def push(self, value):
         node = Node(value)
@@ -51,6 +52,7 @@ class LinkedList:
 
     def pop(self):
         self.list_head = self.list_head.next_node
+        """list empty error"""
 
     def reversed(self):
         pass
