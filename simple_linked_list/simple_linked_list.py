@@ -35,8 +35,11 @@ class LinkedList:
             node = Node(value)
             node.next_node = self.list_head
             self.list_head = node
-            yield value
-
+        current = self.list_head
+        while current:
+            yield current.value()
+            current = current.next_node
+            
     def __len__(self):
         current = self.list_head
         value_count = 0
