@@ -51,8 +51,11 @@ class LinkedList:
         self.list_head = node
 
     def pop(self):
+        pop_value = self.list_head.value()
         self.list_head = self.list_head.next_node
         """list empty error"""
+        return pop_value
+        
 
     def reversed(self):
         pass
