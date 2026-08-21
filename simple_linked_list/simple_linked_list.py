@@ -28,13 +28,10 @@ class Node:
 class LinkedList:
     def __init__(self, values=None):
         self.list_head = None
-        self.values = values
+        for value in values:
+            self.push(value)
 
     def __iter__(self):
-        for value in self.values:
-            node = Node(value)
-            node.next_node = self.list_head
-            self.list_head = node
         current = self.list_head
         while current:
             yield current.value()
