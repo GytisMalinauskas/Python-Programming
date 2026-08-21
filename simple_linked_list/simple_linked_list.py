@@ -54,7 +54,7 @@ class LinkedList:
     def head(self):
         """Gets list head"""
         if self.list_head is None:
-            raise EmptyListException("the list is empty")
+            raise EmptyListException("The list is empty.")
         return self.list_head
 
     def push(self, value):
@@ -66,7 +66,7 @@ class LinkedList:
     def pop(self):
         """Pops a value from list's head and returns it"""
         if self.list_head is None:
-            raise EmptyListException("the list is empty")
+            raise EmptyListException("The list is empty.")
         pop_value = self.list_head.value()
         self.list_head = self.list_head.next_node 
         return pop_value
