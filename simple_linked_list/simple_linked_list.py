@@ -33,8 +33,14 @@ class LinkedList:
         pass
 
     def __len__(self):
-        pass
-
+        current = self.list_head
+        value_count = 0
+        while current:
+            if current.value():
+                value_count += 1
+                current = current.next_node 
+        return value_count
+    
     def head(self):
         return self.list_head
 
