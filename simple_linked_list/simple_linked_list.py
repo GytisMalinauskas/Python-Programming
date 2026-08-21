@@ -44,7 +44,7 @@ class LinkedList:
         self.list_head = node
 
     def pop(self):
-        pass
+        self.list_head = self.list_head.next_node
 
     def reversed(self):
         pass

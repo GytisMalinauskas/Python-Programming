@@ -10,5 +10,10 @@ def main():
         print(current.value())
         current = current.next_node
     
+    linked_list.pop()
+    current = linked_list.list_head
+    while current:
+        print(current.value())
+        current = current.next_node
 if __name__ == "__main__":
     main()
