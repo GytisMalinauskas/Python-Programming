@@ -1,13 +1,13 @@
 """This is a module of linked list"""
 
-""" 
-    Singly linked list contains data and the reference to next node,
-    and null value at the end and all you need to know is the location of the head.
-    Doubly linked list is the same but you also have previous node
-    reference and then you can traverse back.
-    Circular linked list does not end with null, its last value is
-    considered a tails and node after is the beggining of the list.
-"""
+
+#     Singly linked list contains data and the reference to next node,
+#     and null value at the end and all you need to know is the location of the head.
+#     Doubly linked list is the same but you also have previous node
+#     reference and then you can traverse back.
+#     Circular linked list does not end with null, its last value is
+#     considered a tails and node after is the beggining of the list.
+
 
 class EmptyListException(Exception):
     """Throws empty list exceptions"""
