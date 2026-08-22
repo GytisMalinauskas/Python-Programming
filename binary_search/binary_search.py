@@ -5,7 +5,7 @@ def find(search_list, value):
     """Finds the value from the list by splitting the list in half"""
     lower_bound = 0
     upper_bound = len(search_list) - 1
-    while True:
+    while lower_bound <= upper_bound:
         if value < search_list[lower_bound] or value > search_list[upper_bound]:
             raise ValueError(ERROR_MESSAGE)
         index = (upper_bound + lower_bound) // 2
