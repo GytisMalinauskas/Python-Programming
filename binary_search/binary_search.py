@@ -1,7 +1,8 @@
+"""A module for binary search algorithm"""
 ERROR_MESSAGE = "value not in array"
 
 def find(search_list, value):
-    """Finds the value from the list"""
+    """Finds the value from the list by splitting the list in half"""
     if value < search_list[0] or value > search_list[len(search_list) - 1]:
         raise ValueError(ERROR_MESSAGE)
     index = len(search_list) - 1
