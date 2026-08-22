@@ -13,11 +13,12 @@ def find(search_list, value):
             index = int(index / 2 + 1)
         else:
             index = int(index / 2)
-        if search_list[index] == value:
+        middle_value = search_list[index]
+        if middle_value == value:
             return index
-        elif search_list[index] > value:
+        elif middle_value > value:
             ...
-        elif search_list[index] < value:
+        elif middle_value < value:
             ...
         rotation_count += 1
     return rotation_count
