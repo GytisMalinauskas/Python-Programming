@@ -17,6 +17,6 @@ def find(search_list, value):
         if middle_value == value:
             return index
         elif middle_value > value:
-            lower_bound = index
-        elif middle_value < value:
             upper_bound = index
+        elif middle_value < value:
+            lower_bound = index
