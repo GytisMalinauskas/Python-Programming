@@ -10,7 +10,7 @@ def find(search_list, value):
             raise ValueError(ERROR_MESSAGE)
         index = (upper_bound + lower_bound) / 2
         if index % 2 != 0:
-            index = int(index + 1) 
+            index = int(index) + 1 
         else:
             index = int(index)
         middle_value = search_list[index]
