@@ -24,3 +24,4 @@ def find(search_list, value):
                 search_list.pop(new_index)
                 new_index+=1
         rotation_count+=1
+    return rotation_count
