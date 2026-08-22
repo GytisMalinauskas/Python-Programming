@@ -3,6 +3,7 @@ ERROR_MESSAGE = "value not in array"
 
 def find(search_list, value):
     """Finds the value from the list by splitting the list in half"""
+    bound
     index = len(search_list) - 1
     rotation_count = 0
     while index > 0:
