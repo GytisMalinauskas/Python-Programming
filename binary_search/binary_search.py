@@ -8,7 +8,7 @@ def find(search_list, value):
     while True:
         if value < search_list[lower_bound] or value > search_list[upper_bound]:
             raise ValueError(ERROR_MESSAGE)
-        index = (upper_bound + lower_bound) / 2
+        index = (upper_bound + lower_bound) // 2
         middle_value = search_list[index]
         if middle_value == value:
             return index
