@@ -20,3 +20,5 @@ def find(search_list, value):
             upper_bound = index - 1
         elif middle_value < value:
             lower_bound = index + 1
+        if lower_bound > upper_bound:
+            raise ValueError(ERROR_MESSAGE)
