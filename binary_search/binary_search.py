@@ -25,5 +25,6 @@ def find(search_list, value):
             while new_index <= index:
                 search_list.pop(0)
                 new_index += 1
+            index = len(search_list) - 1
         rotation_count += 1
     return rotation_count
