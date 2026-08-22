@@ -19,6 +19,7 @@ def find(search_list, value):
             while new_index >= index:
                 search_list.pop(new_index)
                 new_index -= 1
+            index = new_index
         elif search_list[index] < value:
             new_index = 0
             while new_index <= index:
