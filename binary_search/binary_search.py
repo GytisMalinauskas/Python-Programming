@@ -7,13 +7,13 @@ def find(search_list, value):
     rotation_count = 0
     while index > 0:
         if index % 2 != 0:
-            index = index / 2 + 1
+            index = int(index / 2 + 1)
         else:
-            index = index / 2
+            index = int(index / 2)
         if search_list[index] == value:
             return rotation_count
         elif search_list[index] > value:
-            new_index = search_list.count() - 1
+            new_index = len(search_list) - 1
             while new_index < index:
                 search_list.pop(new_index)
                 new_index-=1
