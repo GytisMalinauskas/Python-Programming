@@ -23,7 +23,7 @@ def find(search_list, value):
         elif search_list[index] < value:
             new_index = 0
             while new_index <= index:
-                search_list.pop(new_index)
+                search_list.pop(0)
                 new_index += 1
         rotation_count += 1
     return rotation_count
