@@ -14,7 +14,7 @@ def find(search_list, value):
         else:
             index = int(index / 2)
         if search_list[index] == value:
-            return rotation_count
+            return index
         elif search_list[index] > value:
             ...
         elif search_list[index] < value:
