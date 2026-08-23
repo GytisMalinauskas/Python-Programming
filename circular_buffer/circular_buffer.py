@@ -55,6 +55,8 @@ class CircularBuffer:
             self.list[self.tail] = data
             self.tail = (self.tail + 1) % self.capacity
             self.empty = False
+        if len(self.list) < self.capacity:
+            self.write(data)
         
     def clear(self):
         """Clears the circular buffer by poping each value"""
