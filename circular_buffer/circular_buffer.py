@@ -43,8 +43,7 @@ class CircularBuffer:
         self.empty = False
 
     def overwrite(self, data):
-        self.list.pop(self.head)
-        self.list.append(data)
+        self.list[self.head] = data
         self.head = (self.head + 1) % self.capacity
         self.empty = False
         
