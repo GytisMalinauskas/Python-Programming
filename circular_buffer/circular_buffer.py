@@ -24,11 +24,14 @@ class CircularBuffer:
         self.head = None
         self.tail = 0
         self.list = []
+        self.empty = True
 
     def read(self):
-        if self.head is None or len(self.list):
+        if self.empty:
             raise BufferEmptyException("Circular buffer is empty")
         index = self.tail
+        if self.tail == len(self.list) - 1:
+            self.empty = True
         self.tail = (self.tail + 1) % self.capacity
         return self.list[index]
 
@@ -37,6 +40,7 @@ class CircularBuffer:
             raise BufferFullException("Circular buffer is full")
         self.list.append(data)
         self.head = len(self.list) - 1
+        self.empty = False
 
     def overwrite(self, data):
         pass
