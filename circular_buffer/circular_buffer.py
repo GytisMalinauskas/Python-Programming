@@ -56,3 +56,6 @@ class CircularBuffer:
         """Clears the circular buffer by poping each value"""
         while len(self.list) != 0:
             self.list.pop()
+        self.head = 0
+        self.tail = 0
+        self.empty = True
