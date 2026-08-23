@@ -32,11 +32,12 @@ class CircularBuffer:
         """Reads value that is in the tail if circular buffer is not empty"""
         if self.empty:
             raise BufferEmptyException("Circular buffer is empty")
-        index = self.tail
+        return_value = self.list[self.tail]
+        self.list.pop(self.tail)
         if self.tail == len(self.list) - 1:
             self.empty = True
         self.tail = (self.tail + 1) % self.capacity
-        return self.list[index]
+        return return_value
 
     def write(self, data):
         """Writes value to the end of the list if circular buffer is not full"""
