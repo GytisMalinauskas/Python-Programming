@@ -39,13 +39,14 @@ class CircularBuffer:
         if len(self.list) == self.capacity:
             raise BufferFullException("Circular buffer is full")
         self.list.append(data)
-        self.head = (len(self.list) - 1) % self.capacity
+        self.head = (self.head + 1) % self.capacity
         self.empty = False
 
     def overwrite(self, data):
         self.list.pop(self.head)
         self.list[self.head].append(data)
-        self.head = len(self.list) - 1
+        self.head = (self.head + 1) % self.capacity
         
     def clear(self):
-        pass
+        while len(self.list) != 0:
+            self.list.pop()
