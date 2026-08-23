@@ -20,7 +20,9 @@ class BufferEmptyException(BufferError):
 
 class CircularBuffer:
     def __init__(self, capacity):
-        pass
+        self.capacity = capacity
+        self.head = None
+        self.tail = None
 
     def read(self):
         pass
