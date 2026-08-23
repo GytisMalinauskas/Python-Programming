@@ -22,7 +22,7 @@ class CircularBuffer:
     def __init__(self, capacity):
         self.capacity = capacity
         self.head = None
-        self.tail = None
+        self.tail = 0
         self.list = []
 
     def read(self):
