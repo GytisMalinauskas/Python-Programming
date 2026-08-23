@@ -4,9 +4,9 @@ def main():
     circular_buffer = CircularBuffer(2)
     circular_buffer.write(1)
     circular_buffer.write(2)
-    print(circular_buffer.read())
-    print(circular_buffer.read())
     circular_buffer.clear()
+    print(circular_buffer.read())
+    print(circular_buffer.read())
     print(circular_buffer.read())
 if __name__ == "__main__":
     main()
