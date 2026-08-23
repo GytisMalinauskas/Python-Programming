@@ -51,9 +51,10 @@ class CircularBuffer:
 
     def overwrite(self, data):
         """Overwrites value at tail index"""
-        self.list[self.tail] = data
-        self.tail = (self.tail + 1) % self.capacity
-        self.empty = False
+        if len(self.list) == self.capacity:
+            self.list[self.tail] = data
+            self.tail = (self.tail + 1) % self.capacity
+            self.empty = False
         
     def clear(self):
         """Clears the circular buffer by poping each value"""
