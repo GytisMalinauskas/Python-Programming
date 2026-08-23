@@ -57,8 +57,6 @@ class CircularBuffer:
         
     def clear(self):
         """Clears the circular buffer by poping each value"""
-        if len(self.list) == 0:
-            raise BufferEmptyException("Circular buffer is empty")
         while len(self.list) != 0:
             self.list.pop()
         self.head = 0
