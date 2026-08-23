@@ -34,7 +34,7 @@ class CircularBuffer:
             raise BufferEmptyException("Circular buffer is empty")
         return_value = self.list[self.tail]
         self.list.pop(self.tail)
-        if self.tail == len(self.list) - 1:
+        if len(self.list) == 0:
             self.empty = True
         self.tail = (self.tail + 1) % self.capacity
         return return_value
