@@ -26,7 +26,9 @@ class CircularBuffer:
         self.list = []
 
     def read(self):
-        pass
+        read_value = self.tail
+        self.tail = self.list.index(read_value) 
+        return self.list[read_value]
 
     def write(self, data):
         pass
