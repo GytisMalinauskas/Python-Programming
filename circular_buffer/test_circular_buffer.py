@@ -1,7 +1,7 @@
 from circular_buffer import CircularBuffer
 
 def main():
-    circular_buffer = CircularBuffer(2)
+    circular_buffer = CircularBuffer(3)
     circular_buffer.write(1)
     circular_buffer.write(2)
     circular_buffer.write(3)
