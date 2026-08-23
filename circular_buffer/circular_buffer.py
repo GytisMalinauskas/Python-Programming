@@ -1,4 +1,5 @@
 """ A module for managing circular buffer"""
+
 class BufferFullException(BufferError):
     """Exception raised when CircularBuffer is full.
 
@@ -46,11 +47,12 @@ class CircularBuffer:
         self.empty = False
 
     def overwrite(self, data):
-        """Overwrites value"""
+        """Overwrites value at head index"""
         self.list[self.head] = data
         self.head = (self.head + 1) % self.capacity
         self.empty = False
         
     def clear(self):
+        """Clears the circular buffer by poping each value"""
         while len(self.list) != 0:
             self.list.pop()
