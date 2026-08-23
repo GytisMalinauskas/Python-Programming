@@ -50,9 +50,9 @@ class CircularBuffer:
             self.empty = False
 
     def overwrite(self, data):
-        """Overwrites value at head index"""
-        self.list[self.head] = data
-        self.head = (self.head + 1) % self.capacity
+        """Overwrites value at tail index"""
+        self.list[self.tail] = data
+        self.tail = (self.tail + 1) % self.capacity
         self.empty = False
         
     def clear(self):
