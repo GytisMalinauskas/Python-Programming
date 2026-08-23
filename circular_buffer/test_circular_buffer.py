@@ -6,7 +6,9 @@ def main():
     circular_buffer.write(2)
     print(circular_buffer.read())
     print(circular_buffer.read())
+    circular_buffer.overwrite(3)
+    circular_buffer.overwrite(4)
     print(circular_buffer.read())
-
+    print(circular_buffer.read())
 if __name__ == "__main__":
     main()
