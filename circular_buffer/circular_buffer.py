@@ -46,6 +46,7 @@ class CircularBuffer:
         self.list.pop(self.head)
         self.list.append(data)
         self.head = (self.head + 1) % self.capacity
+        self.empty = False
         
     def clear(self):
         while len(self.list) != 0:
