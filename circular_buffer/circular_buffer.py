@@ -23,6 +23,7 @@ class CircularBuffer:
         self.capacity = capacity
         self.head = None
         self.tail = None
+        self.list = []
 
     def read(self):
         pass
