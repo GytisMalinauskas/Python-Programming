@@ -26,7 +26,7 @@ class CircularBuffer:
         self.list = []
 
     def read(self):
-        if self.head is None or self.tail > self.head:
+        if self.head is None or len(self.list):
             raise BufferEmptyException("Circular buffer is empty")
         index = self.tail
         self.tail = (self.tail + 1) % self.capacity
