@@ -5,3 +5,4 @@ class Luhn:
     def valid(self):
         if len(self.card_num.strip()) < 2:
             return False
+        
