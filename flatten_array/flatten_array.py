@@ -9,6 +9,6 @@ def flatten(iterable):
         elif value is None:
             continue
         elif isinstance(value, list):
-            for v in flatten(value):
-                flattened_list.append(v)
+            for flattened_list_value in flatten(value):
+                flattened_list.append(flattened_list_value)
     return flattened_list
