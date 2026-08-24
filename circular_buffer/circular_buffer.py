@@ -21,6 +21,7 @@ class BufferEmptyException(BufferError):
 
 
 class CircularBuffer:
+    """Initializes circular buffer with the capacity of values it can hold"""
     def __init__(self, capacity):
         self.capacity = capacity
         self.head = 0
