@@ -6,5 +6,5 @@ class Luhn:
         self.card_num
         if len(self.card_num.strip()) < 2:
             return False
-        print(self.card_num.strip(" "))
+        print("".join(self.card_num.split(" ")))
             
