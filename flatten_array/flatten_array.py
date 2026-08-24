@@ -4,11 +4,11 @@ def flatten(iterable):
     """Flattens the given list into one"""
     flattened_list=[]
     for value in iterable:
-        if type(value) is int:
+        if isinstance(value, int):
             flattened_list.append(value)
-        elif type(value) is None:
+        elif isinstance(value, None):
             continue
-        elif type(value) is list:
+        elif isinstance(value, list):
             for v in flatten(value):
                 flattened_list.append(v)
     return flattened_list
