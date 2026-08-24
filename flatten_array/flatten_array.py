@@ -9,5 +9,6 @@ def flatten(iterable):
         elif type(value) is None:
             continue
         elif type(value) is list:
-            flattened_list.append(flatten(value))
+            for v in flatten(value):
+                flattened_list.append(v)
     return flattened_list
