@@ -6,5 +6,8 @@ class Luhn:
         self.card_num
         if len(self.card_num.strip()) < 2:
             return False
-        print("".join(self.card_num.split(" ")))
+        joined_card_num = "".join(self.card_num.split(" "))
+        if not joined_card_num.isdecimal():
+            return False
+        
             
