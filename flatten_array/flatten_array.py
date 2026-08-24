@@ -6,7 +6,7 @@ def flatten(iterable):
     for value in iterable:
         if isinstance(value, int):
             flattened_list.append(value)
-        elif isinstance(value, None):
+        elif value is None:
             continue
         elif isinstance(value, list):
             for v in flatten(value):
