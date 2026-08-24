@@ -8,4 +8,7 @@ class Luhn:
         joined_card_num = "".join(self.card_num.split(" "))
         if not joined_card_num.isdecimal():
             return False
+        check_digit = joined_card_num[-1]
         reversed = joined_card_num[::-1]
+        
+        return (check_digit, reversed)
