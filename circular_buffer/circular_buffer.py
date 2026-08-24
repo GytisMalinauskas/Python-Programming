@@ -37,7 +37,7 @@ class CircularBuffer:
         if len(self.list) == 0:
             self.empty = True
         if len(self.list) != 0:
-            self.tail = (self.tail + 1) % len(self.list)
+            self.tail = self.tail % len(self.list)
         return return_value
 
     def write(self, data):
