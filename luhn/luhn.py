@@ -13,19 +13,19 @@ class Luhn:
         if not joined_card_num.isdecimal():
             return False
         check_digit = int(joined_card_num[-1])
-        reversed = joined_card_num[len(joined_card_num)-2::-1]
+        reversed_card_number = joined_card_num[len(joined_card_num)-2::-1]
         index = 0
-        sum = 0
-        for character in reversed:
+        sum_of_digits = 0
+        for character in reversed_card_number:
             if index % 2 == 0:
                 odd = int(character) * 2
                 if odd > 9:
                     odd -= 9
-                sum += odd
+                sum_of_digits += odd
             else:
-                sum += int(character)
+                sum_of_digits += int(character)
             index += 1
-        modulus = (10 - (sum % 10)) % 10
+        modulus = (10 - (sum_of_digits % 10)) % 10
         if modulus == check_digit:
             return True
         return False
