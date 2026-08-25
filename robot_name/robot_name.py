@@ -18,8 +18,10 @@ class Robot:
 
     def reset(self):
         """Resets name value"""
-        while self._name in self.used_names:
+        remove_name = self._name
+        while self._name in names_in_use:
             self._name = generate_name()
+        names_in_use.pop(remove_name)
         names_in_use.append(self._name)
     
 def generate_name():
