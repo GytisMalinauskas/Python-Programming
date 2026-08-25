@@ -6,7 +6,7 @@ class Luhn:
         self.card_num = card_num
 
     def valid(self):
-        """Validates credit card number for typing errors and """
+        """Validates credit card number from accidental typing errors"""
         if len(self.card_num.strip()) < 2:
             return False
         joined_card_num = "".join(self.card_num.split(" "))
