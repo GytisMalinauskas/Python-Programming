@@ -17,7 +17,6 @@ class Robot:
     def reset(self):
         """Resets name value"""
         self.used_names.append(self._name)
-        self._name = generate_name()
         while self._name not in self.used_names:
             self._name = generate_name()
     
