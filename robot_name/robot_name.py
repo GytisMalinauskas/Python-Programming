@@ -10,4 +10,4 @@ class Robot:
         return self._name
 
     def reset(self):
-        return self._name
+        self._name = random.choice(string.ascii_uppercase) + random.choice(string.ascii_uppercase) + str(random.randrange(100, 999, 1))
