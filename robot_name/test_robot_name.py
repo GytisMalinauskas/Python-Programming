@@ -18,7 +18,11 @@ def main():
     # Call the generator again
     robot.reset()
     name2 = robot.name
-    print(name, name2)
+    
+    robot2 = Robot()
+    name3 = robot2.name
+    
+    print(name, name2, name3)
     
 if __name__ == "__main__":
     main()
