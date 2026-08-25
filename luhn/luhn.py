@@ -1,8 +1,12 @@
+"""A module for Luhn algorithm"""
+
 class Luhn:
+    """Initializes Luhn algoritm"""
     def __init__(self, card_num):
         self.card_num = card_num
 
     def valid(self):
+        """Validates credit card number for typing errors and """
         if len(self.card_num.strip()) < 2:
             return False
         joined_card_num = "".join(self.card_num.split(" "))
