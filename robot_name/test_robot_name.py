@@ -5,6 +5,8 @@ def main():
     print(robot.name)
     robot.reset()
     print(robot.name)
+    robot.reset()
+    print(robot.name)
     
 if __name__ == "__main__":
     main()
