@@ -17,7 +17,7 @@ class Luhn:
                 odd = int(character) * 2
                 if odd > 9:
                     odd -= 9
-                    sum += odd
+                sum += odd
             else:
                 sum += int(character)
             index += 1
