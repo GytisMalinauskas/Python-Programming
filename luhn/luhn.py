@@ -9,6 +9,6 @@ class Luhn:
         if not joined_card_num.isdecimal():
             return False
         check_digit = joined_card_num[-1]
-        reversed = joined_card_num[1:-1-len(joined_card_num):-1]
+        reversed = joined_card_num[len(joined_card_num)-2::-1]
         
         return (check_digit, reversed)
