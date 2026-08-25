@@ -12,4 +12,3 @@ class Robot:
 
     def reset(self):
         self._name = ""
-        self.name
