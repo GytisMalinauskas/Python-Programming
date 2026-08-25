@@ -4,7 +4,6 @@ import string
 class Robot:
     def __init__(self):
         self._name = ""
-        random.seed("Tottaly random.")
 
     @property
     def name(self):
