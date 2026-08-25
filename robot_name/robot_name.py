@@ -4,6 +4,7 @@ import string
 class Robot:
     def __init__(self):
         self._name = ""
+        self._state = random.setstate(random.getstate())
 
     @property
     def name(self):
@@ -12,3 +13,4 @@ class Robot:
 
     def reset(self):
         self._name = ""
+        self._state = random.setstate(random.getstate())
