@@ -1,12 +1,24 @@
 from robot_name import Robot
+import random
 
 def main():
+    # Set a seed
+    seed = "Totally random."
+
+    # Initialize RNG using the seed
+    random.seed(seed)
+
+    # Call the generator
     robot = Robot()
-    print(robot.name)
+    name = robot.name
+
+    # Reinitialize RNG using seed
+    random.seed(seed)
+
+    # Call the generator again
     robot.reset()
-    print(robot.name)
-    robot.reset()
-    print(robot.name)
+    name2 = robot.name
+    print(name, name2)
     
 if __name__ == "__main__":
     main()
