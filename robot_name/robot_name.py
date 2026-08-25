@@ -1,5 +1,5 @@
 import random
-
+import string
 
 class Robot:
     def __init__(self):
@@ -7,4 +7,4 @@ class Robot:
 
     @property
     def name(self):
-        self._name = (random.choice(str.ascii_uppercase) * 2) + str(random.randrange(100, 999, 1))
+        self._name = (random.choice(string.ascii_uppercase) * 2) + str(random.randrange(100, 999, 1))
