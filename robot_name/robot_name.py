@@ -13,4 +13,4 @@ class Robot:
         self.used_names.append(self._name)
         self._name = random.choice(string.ascii_uppercase) + random.choice(string.ascii_uppercase) + str(random.randrange(10)) + str(random.randrange(10)) + str(random.randrange(10))
         if self._name in self.used_names:
-            self._name
+            self._name = self._name = random.choice(string.ascii_uppercase) + random.choice(string.ascii_uppercase) + str(random.randrange(10)) + str(random.randrange(10)) + str(random.randrange(10))
