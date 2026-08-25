@@ -9,7 +9,7 @@ class Robot:
     """Initializes robot with a random generated name"""
     def __init__(self):
         self._name = generate_name()
-        self.used_names = []
+        names_in_use.append(self._name)
         
     @property
     def name(self):
@@ -18,9 +18,9 @@ class Robot:
 
     def reset(self):
         """Resets name value"""
-        self.used_names.append(self._name)
         while self._name in self.used_names:
             self._name = generate_name()
+        names_in_use.append(self._name)
     
 def generate_name():
     """Generates robot name"""
