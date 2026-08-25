@@ -20,6 +20,7 @@ def main():
     name2 = robot.name
     
     robot2 = Robot()
+    robot.reset()
     name3 = robot2.name
     
     print(name, name2, name3)
