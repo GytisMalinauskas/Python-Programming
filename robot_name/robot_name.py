@@ -3,8 +3,11 @@
 import random
 import string
 
+names_in_use = []
+
 class Robot:
     """Initializes robot with a random generated name"""
+    used_names = []
     def __init__(self):
         self._name = generate_name()
         self.used_names = []
