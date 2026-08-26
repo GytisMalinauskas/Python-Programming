@@ -12,7 +12,7 @@ class Clock:
         return f"{format_hour(self.hour, self.minute):02d}:{format_minute(self.minute):02d}"
 
     def __eq__(self, other):
-        pass
+        return self.hour == other.hour and self.minute == other.minute
 
     def __add__(self, minutes):
         total_minutes = self.minute + minutes
@@ -26,6 +26,7 @@ class Clock:
         self.minute = format_minute(total_minutes)
         return Clock(self.hour, self.minute)
 
+""""""
 def format_hour(hour, minute):
     return int((hour + (minute / 60)) % 24)
 
