@@ -26,9 +26,11 @@ class Clock:
         self.minute = format_minute(total_minutes)
         return Clock(self.hour, self.minute)
 
-""""""
+
 def format_hour(hour, minute):
+    """formats hours"""
     return int((hour + (minute / 60)) % 24)
 
 def format_minute(minute):
+    """formats minutes"""
     return int(minute % 60)
