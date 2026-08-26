@@ -7,7 +7,7 @@ class Clock:
         pass
 
     def __str__(self):
-        pass
+        return f"{self.hour}:{self.minute}"
 
     def __eq__(self, other):
         pass
