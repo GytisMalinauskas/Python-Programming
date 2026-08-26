@@ -1,3 +1,5 @@
+"""A module for time representation"""
+
 class Clock:
     def __init__(self, hour, minute):
         self.hour = hour
