@@ -15,10 +15,14 @@ class Clock:
         pass
 
     def __add__(self, minutes):
-        pass
+        total_minutes = self.minute + minutes
+        self.hour = format_hour(self.hour, total_minutes)
+        self.minute = format_minute(total_minutes)
 
     def __sub__(self, minutes):
-        pass
+        total_minutes = self.minute - minutes
+        self.hour = format_hour(self.hour, total_minutes)
+        self.minute = format_minute(total_minutes)
 
 def format_hour(hour, minute):
     return int((hour + (minute / 60)) % 24)
