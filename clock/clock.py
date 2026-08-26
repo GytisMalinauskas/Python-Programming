@@ -18,7 +18,7 @@ class Clock:
         total_minutes = self.minute + minutes
         self.hour = format_hour(self.hour, total_minutes)
         self.minute = format_minute(total_minutes)
-        return
+        return Clock()
 
     def __sub__(self, minutes):
         total_minutes = self.minute - minutes
