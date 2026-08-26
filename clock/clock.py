@@ -6,7 +6,7 @@ class Clock:
         self.minute = minute
 
     def __repr__(self):
-        pass
+        return f"Clock({self.hour}, {self.minute})"
 
     def __str__(self):
         return f"{self.hour}:{self.minute}"
