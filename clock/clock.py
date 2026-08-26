@@ -18,12 +18,13 @@ class Clock:
         total_minutes = self.minute + minutes
         self.hour = format_hour(self.hour, total_minutes)
         self.minute = format_minute(total_minutes)
-        return Clock()
+        return Clock(self.hour, self.minute)
 
     def __sub__(self, minutes):
         total_minutes = self.minute - minutes
         self.hour = format_hour(self.hour, total_minutes)
         self.minute = format_minute(total_minutes)
+        return Clock(self.hour, self.minute)
 
 def format_hour(hour, minute):
     return int((hour + (minute / 60)) % 24)
