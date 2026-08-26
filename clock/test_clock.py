@@ -1,4 +1,4 @@
-from .clock import Clock
+from clock import Clock
 
 def main():
     clock = Clock(11, 30)
