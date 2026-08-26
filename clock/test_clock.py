@@ -1,7 +1,7 @@
 from clock import Clock
 
 def main():
-    clock = Clock(9, 0)
+    clock = Clock(30, -300)
     print(str(clock))
     print(repr(clock))    
 if __name__ == "__main__":

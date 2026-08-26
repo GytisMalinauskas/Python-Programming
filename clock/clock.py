@@ -9,7 +9,7 @@ class Clock:
         return f"Clock({self.hour}, {self.minute})"
 
     def __str__(self):
-        return f"{format_hour(self.hour, self.minute):0>2}:{format_minute(self.minute):0>2}"
+        return f"{format_hour(self.hour, self.minute):02d}:{format_minute(self.minute):02d}"
 
     def __eq__(self, other):
         pass
