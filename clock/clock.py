@@ -2,8 +2,8 @@
 
 class Clock:
     def __init__(self, hour, minute):
-        self.hour = hour
-        self.minute = minute
+        self.hour = int(hour + (minute / 60))
+        self.minute = int(minute % 60)
 
     def __repr__(self):
         return f"Clock({self.hour}, {self.minute})"
