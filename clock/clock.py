@@ -16,25 +16,25 @@ class Clock:
         return self.hour == other.hour and self.minute == other.minute and self.day == other.day
 
     def __add__(self, minutes):
-        total_minutes = self.minute + minutes
-        self.hour = format_hour(self.hour, total_minutes)
+        total_minutes = self.minute + minutes + (self.hour * 60) + self.day * 24 * 60
+        self.hour = format_hour(total_minutes)
         self.minute = format_minute(total_minutes)
         self.day = ...
         return Clock(self.hour, self.minute)
 
     def __sub__(self, minutes):
-        total_minutes = self.minute - minutes
-        self.hour = format_hour(self.hour, total_minutes)
+        total_minutes = self.minute - minutes + (self.hour * 60) + self.day * 24 * 60
+        self.hour = format_hour(total_minutes)
         self.minute = format_minute(total_minutes)
         self.day = ...
         return Clock(self.hour, self.minute)
 
-def format_day(day: int, hour: int, minute: int):
+def format_day(minute: 0):
     return 
 
-def format_hour(hour: int, minute: int):
+def format_hour(minute: int):
     """formats hours"""
-    return int((hour + (minute / 60)) % 24)
+    return int(minute / 60 % 24)
 
 def format_minute(minute: int):
     """formats minutes"""
