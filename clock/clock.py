@@ -29,10 +29,10 @@ class Clock:
         return Clock(self.hour, self.minute)
 
 
-def format_hour(hour, minute):
+def format_hour(hour: int, minute: int):
     """formats hours"""
     return int((hour + (minute / 60)) % 24)
 
-def format_minute(minute):
+def format_minute(minute: int):
     """formats minutes"""
     return int(minute % 60)
