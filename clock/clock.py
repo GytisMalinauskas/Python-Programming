@@ -13,18 +13,19 @@ class Clock:
         return f"{format_hour(self.hour, self.minute):02d}:{format_minute(self.minute):02d}"
 
     def __eq__(self, other):
-        return self.hour == other.hour and self.minute == other.minute
+        return self.hour == other.hour and self.minute == other.minute and self.day == other.day
 
     def __add__(self, minutes):
         total_minutes = self.minute + minutes
         self.hour = format_hour(self.hour, total_minutes)
-        self.minute = format_minute(total_minutes)
+        self.minute = ...
         return Clock(self.hour, self.minute)
 
     def __sub__(self, minutes):
         total_minutes = self.minute - minutes
         self.hour = format_hour(self.hour, total_minutes)
         self.minute = format_minute(total_minutes)
+        self.day = ...
         return Clock(self.hour, self.minute)
 
 
