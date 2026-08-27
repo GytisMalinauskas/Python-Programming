@@ -2,7 +2,7 @@
 
 class Clock:
     def __init__(self, hour, minute):
-        total_minutes = hour * 60 + minute
+        total_minutes = int(hour * 60 + minute)
         self.day = format_day(total_minutes)
         self.hour = format_hour(total_minutes)
         self.minute = format_minute(total_minutes)
@@ -17,14 +17,14 @@ class Clock:
         return self.hour == other.hour and self.minute == other.minute and self.day == other.day
 
     def __add__(self, minutes):
-        total_minutes = self.minute + minutes + (self.hour * 60) + self.day * 1440
+        total_minutes = int(self.minute + minutes + (self.hour * 60) + self.day * 1440)
         self.hour = format_hour(total_minutes)
         self.minute = format_minute(total_minutes)
         self.day = format_day(total_minutes)
         return Clock(self.hour, self.minute)
 
     def __sub__(self, minutes):
-        total_minutes = self.minute - minutes + (self.hour * 60) + self.day * 1440
+        total_minutes = int(self.minute - minutes + (self.hour * 60) + self.day * 1440)
         self.hour = format_hour(total_minutes)
         self.minute = format_minute(total_minutes)
         self.day = format_day(total_minutes)
