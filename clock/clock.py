@@ -13,6 +13,10 @@ class Clock:
         return f"{format_hour(self.hour * 60 + self.minute):02d}:{format_minute(self.hour * 60 + self.minute):02d}"
 
     def __eq__(self, other):
+        total_minutes = self.minute + (self.hour * 60) + self.day * 1440
+        self.hour = format_hour(total_minutes)
+        self.minute = format_minute(total_minutes)
+        self.day = format_day(total_minutes)
         return self.hour == other.hour and self.minute == other.minute and self.day == other.day
 
     def __add__(self, minutes):
