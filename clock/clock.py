@@ -2,21 +2,18 @@
 
 class Clock:
     def __init__(self, hour, minute):
-        self.day = 0
-        self.hour = hour
-        self.minute = minute
+        total_minutes = hour * 60 + minute
+        self.day = format_day(total_minutes)
+        self.hour = format_hour(total_minutes)
+        self.minute = format_minute(total_minutes)
 
     def __repr__(self):
         return f"Clock({self.hour}, {self.minute})"
 
     def __str__(self):
-        return f"{format_hour(self.hour * 60 + self.minute):02d}:{format_minute(self.hour * 60 + self.minute):02d}"
+        return f"{self.hour:02d}:{self.minute:02d}"
 
     def __eq__(self, other):
-        total_minutes = self.minute + (self.hour * 60) + self.day * 1440
-        self.hour = format_hour(total_minutes)
-        self.minute = format_minute(total_minutes)
-        self.day = format_day(total_minutes)
         return self.hour == other.hour and self.minute == other.minute and self.day == other.day
 
     def __add__(self, minutes):
