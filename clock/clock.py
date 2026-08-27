@@ -29,8 +29,8 @@ class Clock:
         self.day = ...
         return Clock(self.hour, self.minute)
 
-def format_day():
-    ...
+def format_day(day: int, hour: int, minute: int):
+    return 
 
 def format_hour(hour: int, minute: int):
     """formats hours"""
