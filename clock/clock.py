@@ -2,6 +2,7 @@
 
 class Clock:
     def __init__(self, hour, minute):
+        self.day = 0
         self.hour = hour
         self.minute = minute
 
