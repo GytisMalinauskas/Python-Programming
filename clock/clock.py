@@ -17,7 +17,7 @@ class Clock:
         return self.hour == other.hour and self.minute == other.minute
     
     def __hash__(self):
-        return (hash(self.hour), hash(self.self.minute))
+        return hash((self.hour,self.minute))
 
     def __add__(self, minutes):
         total_minutes = int(self.minute + minutes + (self.hour * 60))
