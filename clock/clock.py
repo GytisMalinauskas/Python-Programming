@@ -1,6 +1,7 @@
 """A module for time representation"""
 
 class Clock:
+    """Initializes int in HH:mm format"""
     def __init__(self, hour, minute):
         total_minutes = int(hour * 60 + minute)
         self.day = format_day(total_minutes)
