@@ -1,7 +1,7 @@
 from clock import Clock
 
 def main():
-    clock = Clock(11, 30)
+    clock = Clock(35, 30)
     print(str(clock))
     print(repr(clock))
     print(str(clock + 20))
