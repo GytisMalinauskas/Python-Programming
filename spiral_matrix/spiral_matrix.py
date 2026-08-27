@@ -7,4 +7,6 @@ def spiral_matrix(size):
     left = 0
     matrix = []
     
+    
+    
     range(16)
