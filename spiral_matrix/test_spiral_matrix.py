@@ -1,8 +1,11 @@
-from spiral_matrix import spiral_matrix
+from spiral_matrix import spiral_matrix_f
 
 def main():
-    print(spiral_matrix(1))
-    print(spiral_matrix(2))
-    print(spiral_matrix(3))
-    print(spiral_matrix(4))
-    print(spiral_matrix(5))
+    print(spiral_matrix_f(1))
+    print(spiral_matrix_f(2))
+    print(spiral_matrix_f(3))
+    print(spiral_matrix_f(4))
+    print(spiral_matrix_f(5))
+    
+if __name__ == "__main__":
+    main()
