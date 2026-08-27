@@ -5,15 +5,17 @@ def spiral_matrix(size):
     bottom = size - 1
     right = size - 1
     left = 0
-    matrix = []
+    matrix = [size]
     row_index = 0
     col_index = 0
     value_index = 1
     
-    while bottom >= top and right >= left:
-        while row_index <= right:
-            ...
+    while bottom >= top and right >= left and value_index <= size**2:
+        while col_index <= right:
+            matrix[top].append(value_index)
+            value_index += 1
+            col_index += 1
+        top += 1
+        return matrix
     
     return matrix
-    
-    range(16)
