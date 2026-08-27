@@ -30,7 +30,8 @@ class Clock:
         return Clock(self.hour, self.minute)
 
 def format_day(minute: int):
-    return 
+    """formats days"""
+    return int(minute / 1440)
 
 def format_hour(minute: int):
     """formats hours"""
