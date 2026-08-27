@@ -35,7 +35,7 @@ def format_day(minute: int):
 
 def format_hour(minute: int):
     """formats hours"""
-    return int(minute / 60 % 24)
+    return int(minute % 1440 % 24)
 
 def format_minute(minute: int):
     """formats minutes"""
