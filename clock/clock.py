@@ -10,7 +10,7 @@ class Clock:
         return f"Clock({self.hour}, {self.minute})"
 
     def __str__(self):
-        return f"{format_hour(self.hour, self.minute):02d}:{format_minute(self.minute):02d}"
+        return f"{format_hour(self.hour * 60 + self.minute):02d}:{format_minute(self.hour * 60 + self.minute):02d}"
 
     def __eq__(self, other):
         return self.hour == other.hour and self.minute == other.minute and self.day == other.day
@@ -29,7 +29,7 @@ class Clock:
         self.day = ...
         return Clock(self.hour, self.minute)
 
-def format_day(minute: 0):
+def format_day(minute: int):
     return 
 
 def format_hour(minute: int):
