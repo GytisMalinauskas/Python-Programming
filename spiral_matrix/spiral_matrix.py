@@ -5,4 +5,5 @@ def spiral_matrix(size):
     bottom = 0
     right = 0
     left = 0
+    matrix = []
     
