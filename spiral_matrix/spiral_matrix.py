@@ -6,4 +6,3 @@ def spiral_matrix(size):
     right = 0
     left = 0
     
-    
