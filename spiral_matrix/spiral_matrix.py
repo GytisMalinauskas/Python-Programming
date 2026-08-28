@@ -42,6 +42,8 @@ def spiral_matrix_f(size):
             value_index += 1
             if row_index > top:
                 row_index -= 1
+            else:
+                break
         bottom -= 1
         return matrix
     
