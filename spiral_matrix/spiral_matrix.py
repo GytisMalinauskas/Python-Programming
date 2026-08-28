@@ -14,6 +14,8 @@ def spiral_matrix_f(size):
         while col_index <= right:
             matrix[row_index][col_index] = value_index
             value_index += 1
+            if value_index > size**2:
+                return matrix
             col_index +=1
         top += 1
         while row_index <= bottom:
