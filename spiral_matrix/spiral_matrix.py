@@ -1,6 +1,7 @@
 """A module for filling spiral matrix of given size with natural numbers"""
 
 def spiral_matrix_f(size):
+    """Fills spiral matrix with natural numbers of given matrix size"""
     top = 0
     bottom = size - 1
     right = size - 1
