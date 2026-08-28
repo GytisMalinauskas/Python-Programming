@@ -39,7 +39,7 @@ def spiral_matrix_f(size):
             value_index += 1
             row_index -= 1
         left -= 1
-        col_index -= 1
+        col_index += 1
         row_index += 1
     
     return matrix
