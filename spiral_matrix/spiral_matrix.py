@@ -16,22 +16,26 @@ def spiral_matrix_f(size):
             value_index += 1
             if value_index > size**2:
                 return matrix
-            col_index +=1
+            if col_index < right:
+                col_index +=1
         top += 1
         while row_index <= bottom:
             matrix[row_index][col_index] = value_index
             value_index += 1
-            row_index +=1
+            if row_index < bottom:
+                row_index += 1
         right += 1
         while col_index >= left:
             matrix[row_index][col_index] = value_index
             value_index += 1
-            col_index -=1
+            if col_index > left:
+                col_index -= 1
         bottom -= 1
         while row_index >= top:
             matrix[row_index][col_index] = value_index
             value_index += 1
-            row_index -=1
+            if row_index > top:
+                row_index -= 1
         bottom -= 1
         return matrix
     
