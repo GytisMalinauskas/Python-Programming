@@ -34,6 +34,8 @@ def spiral_matrix_f(size):
             value_index += 1
             if col_index > left:
                 col_index -= 1
+            else:
+                break
         bottom -= 1
         while row_index >= top:
             matrix[row_index][col_index] = value_index
