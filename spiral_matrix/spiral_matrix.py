@@ -26,7 +26,7 @@ def spiral_matrix_f(size):
             row_index += 1
         right += 1
         row_index -= 1
-        col_index += 1
+        col_index -= 1
         while col_index >= left:
             matrix[row_index][col_index] = value_index
             value_index += 1
