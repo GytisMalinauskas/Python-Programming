@@ -14,7 +14,7 @@ class Alphabet:
         return self.alphabet
     
     def __iter__(self):
-        for value, index in self.enumeration:
+        for value, index in self.enumeration.items():
             return value, index
     
 
