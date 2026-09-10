@@ -3,21 +3,27 @@
 LT_ALPHABET = "aąbcčdeęėfghiįyjklmnoprsštuųūvzž"
 
 class Alphabet:
-    """Initializes alphabet and a enumerated dictionary derived from alphabet"""
+    """alphabet class used by caesars_cypher function.
+
+    Used to instantiate instance of Alphabet.
+    """
     def __init__(self, alphabet):
-        """Initializes an instance."""
+        """Initializes an instance.
+        
+        Alphabet dictionary maps characters to indexes. 
+        """
         self.alphabet = alphabet
-        self.enumeration = {char : i for i, char in enumerate(alphabet)}
+        self.alphabet_dictionary = {char : i for i, char in enumerate(alphabet)}
     
     def __len__(self):
-        
+        """"""
         return len(self.alphabet)
     
     def __str__(self):
         return self.alphabet
     
     def __iter__(self):
-        for value, index in self.enumeration.items():
+        for value, index in self.alphabet_dictionary.items():
             yield value, index
     
 
