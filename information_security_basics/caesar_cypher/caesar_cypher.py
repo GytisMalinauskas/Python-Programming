@@ -7,6 +7,6 @@ def main():
     n = 1
     print(caesar_cypher(n, len(LT_ALPHABET), LT_ALPHABET_DICT))
 
-def caesar_cypher(n: int, alphabet_length: int, alphabet_dict: dict):
+def caesar_cypher(n: int, alphabet_length: int, alphabet: str):
     
     return str
