@@ -12,7 +12,6 @@ class Alphabet:
     def __str__(self):
         return self.alphabet
     
-    
 
 def main():
     n = 1
