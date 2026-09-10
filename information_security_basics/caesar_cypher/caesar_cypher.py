@@ -5,6 +5,7 @@ LT_ALPHABET = "aąbcčdeęėfghiįyjklmnoprsštuųūvzž"
 class Alphabet:
     """Initializes alphabet and a enumerated dictionary derived from alphabet"""
     def __init__(self, alphabet):
+        """Initializes an instance."""
         self.alphabet = alphabet
         self.enumeration = {char : i for i, char in enumerate(alphabet)}
     
