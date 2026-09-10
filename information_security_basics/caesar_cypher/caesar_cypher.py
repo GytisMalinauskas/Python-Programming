@@ -2,11 +2,25 @@
 # 
 LT_ALPHABET = "aąbcčdeęėfghiįyjklmnoprsštuųūvzž"
 
+class Alphabet:
+    def __init__(self, alphabet):
+        self.alphabet = alphabet
+    
+    def __len__(self):
+        return len(self.alphabet)
+    
+    def __str__(self):
+        return self.alphabet
+    
+    
+
 def main():
     n = 1
-    print(caesar_cypher(n, LT_ALPHABET))
+    alphabet = Alphabet(LT_ALPHABET)
+    print(caesar_cypher(n, alphabet))
 
-def caesar_cypher(n: int,  alphabet: str):
-    alphabet_lenght = len(alphabet)
-    aplhabet_dict = {char: i for char, i in enumerate(LT_ALPHABET)}
-    return str
+def caesar_cypher(n: int,  alphabet: Alphabet):
+    print(n, len(alphabet), alphabet)
+
+if __name__ == "__main__":
+    main()
