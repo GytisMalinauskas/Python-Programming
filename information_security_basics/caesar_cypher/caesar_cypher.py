@@ -3,7 +3,7 @@
 LT_ALPHABET = "aąbcčdeęėfghiįyjklmnoprsštuųūvzž"
 
 class Alphabet:
-    """alphabet class used by caesars_cypher function.
+    """Alphabet class used by caesars_cypher function.
 
     Used to instantiate instance of Alphabet.
     """
@@ -16,13 +16,13 @@ class Alphabet:
         self.alphabet_dictionary = {char : i for i, char in enumerate(alphabet)}
     
     def __len__(self):
-        """"""
         return len(self.alphabet)
     
     def __str__(self):
         return self.alphabet
     
     def __iter__(self):
+        """Yields value and index from initialized dictionary when iterating"""
         for value, index in self.alphabet_dictionary.items():
             yield value, index
     
