@@ -32,16 +32,21 @@ def main():
     alphabet = Alphabet(LT_ALPHABET)
     print(caesar_cypher(n, alphabet))
 
-def caesar_cypher(n: int, alphabet: Alphabet, encrypt: bool = True):
+def caesar_cypher(text: str, n: int, alphabet: Alphabet, encrypt: bool = True):
     """
         Encrypts/Decripts a text with caesar's cypher.
         @param n is the shift index.
         @param alphabet takes Alphabet class object
         @param encrypt used to enable encryption mode otherwise decryption mode is enabled
     """
-    # print(n, len(alphabet), alphabet)
-    # for value, index in alphabet:
-    #     print(value, index)
+    outcome = ""
+    if encrypt:
+        for char in text:
+            if not char in str(alphabet):
+                continue
+            for value, index in alphabet:
+                if char == value:
+                    new_index = (index + n) % len(alphabet)
     pass
 
 if __name__ == "__main__":
