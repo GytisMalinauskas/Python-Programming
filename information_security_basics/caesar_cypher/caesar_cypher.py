@@ -1,6 +1,7 @@
 """A module for implementing Caesar cipher encryption and decryption"""
 # 
 LT_ALPHABET = "aąbcčdeęėfghiįyjklmnoprsštuųūvzž"
+{char : i for char, i in enumerate(alphabet)}
 
 class Alphabet:
     def __init__(self, alphabet):
