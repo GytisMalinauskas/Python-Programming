@@ -5,7 +5,7 @@ LT_ALPHABET = "aąbcčdeęėfghiįyjklmnoprsštuųūvzž"
 class Alphabet:
     def __init__(self, alphabet):
         self.alphabet = alphabet
-        self.enumeration = {char : i for char, i in enumerate(alphabet)}
+        self.enumeration = {char : i for i, char in enumerate(alphabet)}
     
     def __len__(self):
         return len(self.alphabet)
