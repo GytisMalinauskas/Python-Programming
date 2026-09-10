@@ -1,6 +1,8 @@
 """A module for implementing Caesar cipher encryption and decryption"""
-# 9th line in txt file
+
 LT_ALPHABET = "aąbcčdeęėfghiįyjklmnoprsštuųūvzž"
+TO_ENCRYPT = "9. Kalbos – vežimais, o naudos – už grašį. 19"
+TO_DECRYPT = "9. Fp bfbcyfl nvprl fpcfkv fp įnvprl."
 
 class Alphabet:
     """Alphabet class used by caesars_cypher function.
@@ -28,11 +30,11 @@ class Alphabet:
     
 
 def main():
-    n = 1
     alphabet = Alphabet(LT_ALPHABET)
-    print(caesar_cypher(n, alphabet))
+    print(caesar_cypher(TO_ENCRYPT, alphabet))
+    # print(caesar_cypher(TO_DECRYPT, alphabet, encrypt = False))
 
-def caesar_cypher(text: str, n: int, alphabet: Alphabet, encrypt: bool = True):
+def caesar_cypher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = True):
     """
         Encrypts/Decripts a text with caesar's cypher.
         @param n is the shift index.
@@ -47,7 +49,7 @@ def caesar_cypher(text: str, n: int, alphabet: Alphabet, encrypt: bool = True):
             for value, index in alphabet:
                 if char == value:
                     new_index = (index + n) % len(alphabet)
-    pass
+    return outcome
 
 if __name__ == "__main__":
     main()
