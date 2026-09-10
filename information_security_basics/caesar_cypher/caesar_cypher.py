@@ -3,11 +3,13 @@
 LT_ALPHABET = "aąbcčdeęėfghiįyjklmnoprsštuųūvzž"
 
 class Alphabet:
+    """Initializes alphabet and a enumerated dictionary derived from alphabet"""
     def __init__(self, alphabet):
         self.alphabet = alphabet
         self.enumeration = {char : i for i, char in enumerate(alphabet)}
     
     def __len__(self):
+        
         return len(self.alphabet)
     
     def __str__(self):
@@ -23,11 +25,16 @@ def main():
     alphabet = Alphabet(LT_ALPHABET)
     print(caesar_cypher(n, alphabet))
 
-def caesar_cypher(n: int,  alphabet: Alphabet):
+def caesar_cypher(n: int, alphabet: Alphabet, encrypt: bool = True):
+    """
+        Encrypts/Decripts a text with caesar's cypher.
+        @param n is the shift index.
+        @param alphabet takes Alphabet class object
+        @param encrypt used to enable encryption mode otherwise decryption mode is enabled
+    """
     # print(n, len(alphabet), alphabet)
     # for value, index in alphabet:
     #     print(value, index)
-    
     pass
 
 if __name__ == "__main__":
