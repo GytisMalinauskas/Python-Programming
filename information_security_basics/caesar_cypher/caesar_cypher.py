@@ -1,7 +1,7 @@
 """A module for implementing Caesar cipher encryption and decryption"""
 # 
-ALPHABET = "aąbcčdeęėfghiįyjklmnoprsštuųūvzž"
-ALPHABET_DICT = {char: i for char, i in enumerate(ALPHABET)}
+LT_ALPHABET = "aąbcčdeęėfghiįyjklmnoprsštuųūvzž"
+LT_ALPHABET_DICT = {char: i for char, i in enumerate(LT_ALPHABET)}
 
 def main():
     caesar_cypher()
