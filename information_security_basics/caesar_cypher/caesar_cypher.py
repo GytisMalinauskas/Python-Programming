@@ -25,8 +25,10 @@ def main():
 
 def caesar_cypher(n: int,  alphabet: Alphabet):
     # print(n, len(alphabet), alphabet)
-    for value, index in alphabet:
-        print(value, index)
+    # for value, index in alphabet:
+    #     print(value, index)
+    
+    pass
 
 if __name__ == "__main__":
     main()
