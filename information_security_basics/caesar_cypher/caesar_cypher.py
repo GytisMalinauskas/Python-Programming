@@ -53,7 +53,6 @@ def caesar_cypher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = Tru
                     new_value = alphabet[new_index]
                     outcome += new_value
                     break
-            
     return outcome
 
 if __name__ == "__main__":
