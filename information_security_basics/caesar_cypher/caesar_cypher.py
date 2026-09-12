@@ -66,7 +66,7 @@ def caesar_cypher(text: str, alphabet: Alphabet, n: int = 9, encrypt: bool = Tru
 def main():
     alphabet = Alphabet(LT_ALPHABET)
     print(caesar_cypher(TO_ENCRYPT, alphabet))
-    print(caesar_cypher(TO_DECRYPT, alphabet, n = 9, encrypt = False))
+    print(caesar_cypher(TO_DECRYPT, alphabet, n = 29, encrypt = False))
 
 
 if __name__ == "__main__":
