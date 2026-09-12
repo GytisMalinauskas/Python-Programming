@@ -37,6 +37,7 @@ def main():
 def caesar_cypher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = True):
     """
         Encrypts/Decripts a text with caesar's cypher.
+        @param text is a string to ecrypt/decript with caesar's cypher
         @param n is the shift index.
         @param alphabet takes Alphabet class object
         @param encrypt used to enable encryption mode otherwise decryption mode is enabled
