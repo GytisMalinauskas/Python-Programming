@@ -52,7 +52,7 @@ def caesar_cypher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = Tru
                     new_index = (index + n) % len(alphabet)
                     new_value = alphabet[new_index]
                     outcome += new_value
-                    
+                    break
             
     return outcome
 
