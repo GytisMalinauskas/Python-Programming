@@ -32,11 +32,6 @@ class Alphabet:
             yield value, index
     
 
-def main():
-    alphabet = Alphabet(LT_ALPHABET)
-    print(caesar_cypher(TO_ENCRYPT, alphabet))
-    print(caesar_cypher(TO_DECRYPT, alphabet, encrypt = False))
-
 def caesar_cypher(text: str, alphabet: Alphabet, n: int = 9, encrypt: bool = True):
     """
         Encrypts / Decripts a text with caesar's cypher.
@@ -67,6 +62,12 @@ def caesar_cypher(text: str, alphabet: Alphabet, n: int = 9, encrypt: bool = Tru
                     outcome += new_value
                     break
     return outcome
+
+def main():
+    alphabet = Alphabet(LT_ALPHABET)
+    print(caesar_cypher(TO_ENCRYPT, alphabet))
+    print(caesar_cypher(TO_DECRYPT, alphabet, n = 9, encrypt = False))
+
 
 if __name__ == "__main__":
     main()
