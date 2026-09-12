@@ -45,6 +45,7 @@ def caesar_cypher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = Tru
     if encrypt:
         for char in text:
             if not char in str(alphabet):
+                outcome += char
                 continue
             for value, index in alphabet:
                 if char == value:
@@ -55,6 +56,7 @@ def caesar_cypher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = Tru
     else:
         for char in text:
             if not char in str(alphabet):
+                outcome += char
                 continue
             for value, index in alphabet:
                 if char == value:
