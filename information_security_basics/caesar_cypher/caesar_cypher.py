@@ -50,6 +50,10 @@ def caesar_cypher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = Tru
             for value, index in alphabet:
                 if char == value:
                     new_index = (index + n) % len(alphabet)
+                    new_value = alphabet[new_index]
+                    outcome += new_value
+                    
+            
     return outcome
 
 if __name__ == "__main__":
