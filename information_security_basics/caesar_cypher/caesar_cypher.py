@@ -40,6 +40,7 @@ def caesar_cypher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = Tru
         @param alphabet takes Alphabet class object
         @param encrypt used to enable encryption mode otherwise decryption mode is enabled
     """
+    text = text.lower().strip()
     outcome = ""
     if encrypt:
         for char in text:
