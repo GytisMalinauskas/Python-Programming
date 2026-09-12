@@ -32,7 +32,7 @@ class Alphabet:
             yield value, index
     
 
-def caesar_cypher(text: str, alphabet: Alphabet, n: int = 9, encrypt: bool = True):
+def caesar_cypher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = True):
     """
         Encrypts / Decripts a text with caesar's cypher.
         @param text is a string to ecrypt/decript with caesar's cypher
