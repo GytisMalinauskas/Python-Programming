@@ -23,6 +23,9 @@ class Alphabet:
     def __str__(self):
         return self.alphabet
     
+    def __getitem__(self, key):
+        return self.alphabet_dictionary[key]
+    
     def __iter__(self):
         """Yields value and index from initialized dictionary when iterating"""
         for value, index in self.alphabet_dictionary.items():
