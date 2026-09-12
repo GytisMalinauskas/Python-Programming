@@ -35,7 +35,7 @@ class Alphabet:
 def main():
     alphabet = Alphabet(LT_ALPHABET)
     print(caesar_cypher(TO_ENCRYPT, alphabet))
-    # print(caesar_cypher(TO_DECRYPT, alphabet, encrypt = False))
+    print(caesar_cypher(TO_DECRYPT, alphabet, encrypt = False))
 
 def caesar_cypher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = True):
     """
@@ -53,6 +53,16 @@ def caesar_cypher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = Tru
             for value, index in alphabet:
                 if char == value:
                     new_index = (index + n) % len(alphabet)
+                    new_value = alphabet[new_index]
+                    outcome += new_value
+                    break
+    else:
+        for char in text:
+            if not char in str(alphabet):
+                continue
+            for value, index in alphabet:
+                if char == value:
+                    new_index = (index - n) % len(alphabet)
                     new_value = alphabet[new_index]
                     outcome += new_value
                     break
