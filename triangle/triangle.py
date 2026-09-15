@@ -37,9 +37,9 @@ def is_triangle(sides):
     """Determines if a shape is a trangle"""
     if not len(sides) == 3:
         return False
-    for index in range(len(sides)):
-        if not sides[index] > 0:
+    for index, side in enumerate(sides):
+        if not side > 0:
             return False
-        if not sides[index] <= sides[(index + 1) % 3] + sides[(index + 2) % 3]:
+        if not side <= sides[(index + 1) % 3] + sides[(index + 2) % 3]:
             return False
     return True
