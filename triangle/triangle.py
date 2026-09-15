@@ -16,11 +16,8 @@ def isosceles(sides):
     """Checks if the triangle is isoceles and returns boolean value"""
     if not is_triangle(sides):
         return False
-    if scalene(sides):
-        return False
-    if equilateral(sides) or not equilateral(sides) and not scalene(sides):
-        return True
-    return False
+
+    return not scalene(sides)
 
 def scalene(sides):
     """Checks if the triangle is scalene and returns boolean value"""
