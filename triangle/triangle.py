@@ -1,36 +1,44 @@
 def equilateral(sides):
     """Checks if the triangle is equilateral and returns boolean value"""
-    if len(sides) > 3:
-        return False
+
     
 
 def isosceles(sides):
     """Checks if the triangle is isoceles and returns boolean value"""
-    if len(sides) > 3:
-        return False
+
     
 
 def scalene(sides):
     """Checks if the triangle is scalene and returns boolean value"""
-    if len(sides) > 3:
-        return False
+
 
 def is_triangle(sides):
     """Determines if a shape is a trangle"""
-    for side in sides:
-        if not side > 0:
+    if not len(sides) == 3:
+        return False
+    for index in range(len(sides)):
+        if not sides[index] > 0:
             return False
-        
+        if not sides[index] <= sides[(index + 1) % 3] + sides[(index + 2) % 3]:
+            return False
+    return True
+
 def main():
     test1 = [1,1,1]
     test2 = [3,4,4]
     test3 = [5,4,6]
-    print(True, equilateral([test1]))
-    print(False, equilateral([test2]))
-    print(False, equilateral([test3]))
+    print(True, is_triangle([test1]))
+    print(False, is_triangle([test2]))
+    print(False, is_triangle([test3]))
+    # print(True, equilateral([test1]))
+    # print(False, equilateral([test2]))
+    # print(False, equilateral([test3]))
     # print(True, isosceles([test1]))
     # print(True, isosceles([test2]))
     # print(False, isosceles([test3]))
     # print(False, scalene([test1]))
     # print(False, scalene([test2]))
     # print(True, scalene([test3]))
+
+if __name__ == "__main__":
+    main()
