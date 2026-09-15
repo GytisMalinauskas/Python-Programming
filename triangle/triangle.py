@@ -20,12 +20,12 @@ def main():
     test1 = [1,1,1]
     test2 = [3,4,4]
     test3 = [5,4,6]
-    print(equilateral([test1]))
-    print(equilateral([test2]))
-    print(equilateral([test3]))
-    print(isosceles([test1]))
-    print(isosceles([test2]))
-    print(isosceles([test3]))
-    print(scalene([test1]))
-    print(scalene([test2]))
-    print(scalene([test3]))
+    print(True, equilateral([test1]))
+    print(False, equilateral([test2]))
+    print(False, equilateral([test3]))
+    # print(False, isosceles([test1]))
+    # print(True, isosceles([test2]))
+    # print(False, isosceles([test3]))
+    # print(False, scalene([test1]))
+    # print(False, scalene([test2]))
+    # print(True, scalene([test3]))
