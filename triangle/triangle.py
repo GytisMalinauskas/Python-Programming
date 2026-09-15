@@ -1,5 +1,10 @@
-"""A module for triangle 
-Definedfunctions
+"""A module for classifying triangles by side length.
+
+Functions:
+    is_triangle(sides) -- validates that three sided form a valid triangle
+    equilateral(sides) -- all three sides are equal
+    isosceles(sides) -- at least two sides are equal
+    scalene(sides) -- all three sides are different
 """
 
 def equilateral(sides):
@@ -38,20 +43,3 @@ def is_triangle(sides):
         if not sides[index] <= sides[(index + 1) % 3] + sides[(index + 2) % 3]:
             return False
     return True
-
-def main():
-    test1 = [1,1,1]
-    test2 = [3,4,4]
-    test3 = [5,4,6]
-    print(True, equilateral(test1))
-    print(False, equilateral(test2))
-    print(False, equilateral(test3))
-    print(True, isosceles(test1))
-    print(True, isosceles(test2))
-    print(False, isosceles(test3))
-    print(False, scalene(test1))
-    print(False, scalene(test2))
-    print(True, scalene(test3))
-
-if __name__ == "__main__":
-    main()
