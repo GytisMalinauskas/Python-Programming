@@ -1,3 +1,7 @@
+"""A module for triangle 
+Definedfunctions
+"""
+
 def equilateral(sides):
     """Checks if the triangle is equilateral and returns boolean value"""
     if not is_triangle(sides):
@@ -14,10 +18,10 @@ def isosceles(sides):
         return False
     if scalene(sides):
         return False
-    if equilateral(sides):
+    if equilateral(sides) or not equilateral(sides) and not scalene(sides):
         return True
-    
-    
+    return False
+
 def scalene(sides):
     """Checks if the triangle is scalene and returns boolean value"""
     if not is_triangle(sides):
