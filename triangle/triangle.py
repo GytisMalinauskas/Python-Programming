@@ -4,7 +4,7 @@ def equilateral(sides):
         return False
     
     for index in range(len(sides) - 1):
-        if not sides[index] == sides[(index + 1) % 3] or not sides[index] == sides[(index + 1) % 3]:
+        if not sides[index] == sides[(index + 1) % 3] or not sides[index] == sides[(index + 2) % 3]:
             return False
     return True
 
@@ -23,7 +23,7 @@ def scalene(sides):
     if not is_triangle(sides):
         return False
     for index in range(len(sides) - 1):
-        if sides[index] == sides[(index + 1) % 3] or sides[index] == sides[(index + 1) % 3]:
+        if sides[index] == sides[(index + 1) % 3] or sides[index] == sides[(index + 2) % 3]:
             return False
     return True
 
