@@ -7,6 +7,7 @@ def main():
     }
     text = json.dumps(data)
     print(text)
+    print(json.loads(text))
 
 if __name__ == "__main__":
     main()
