@@ -5,4 +5,8 @@ def main():
         "message": ["1st item", "2nd item"],
         "temperature": 0.2
     }
-    text = json.dump
+    text = json.dumps(data)
+    print(text)
+
+if __name__ == "__main__":
+    main()
