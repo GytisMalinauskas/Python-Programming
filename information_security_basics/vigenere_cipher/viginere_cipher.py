@@ -149,6 +149,7 @@ def viginere_cipher():
         alphabet_matrix.append(letters.copy())
         value_to_move_back = letters.pop(0)
         letters.append(value_to_move_back)
+    
     return alphabet_matrix[2][2]
 
 def main():
