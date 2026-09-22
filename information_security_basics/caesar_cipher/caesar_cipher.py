@@ -33,6 +33,8 @@ class Alphabet:
         """Yields value and index from initialized dictionary when iterating"""
         for value, index in self._char_to_index.items():
             yield value, index
+    def __contains__(self, char):
+        return char in self._char_to_index
     
 
 def caesar_cipher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = True):
@@ -47,7 +49,7 @@ def caesar_cipher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = Tru
     outcome = []
     direction = 1 if encrypt else -1
     for char in text:
-        if not char in str(alphabet):
+        if char not in alphabet:
             outcome.append(char)
             continue
         new_index = (alphabet[char] + n * direction) % len(alphabet)
