@@ -33,6 +33,7 @@ class Alphabet:
         """Yields value and index from initialized dictionary when iterating"""
         for value, index in self._char_to_index.items():
             yield value, index
+            
     def __contains__(self, char):
         return char in self._char_to_index
     
