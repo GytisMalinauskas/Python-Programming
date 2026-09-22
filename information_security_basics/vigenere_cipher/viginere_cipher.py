@@ -30,3 +30,4 @@ kūupšeš. Fėūzęt crdv gljš rmųam aočųl ndįobę ūšvčccand. Jovv grd 
 Čvąą, nihšvofūubd jačšeg cžmiūkčcnd (ręųt. ėūdwubu hgūvūžih), vųijisščėkū čęhhahąųiupm tav ęčndjė vz bįššmvo ūgėdžfaė, šjiši yčlh ęaykja va įba nbkęąūęžį, joęv dkbmę ooėū rjmb
 aę žerąžifėūjay. Mgčvy biitūroc pomibohžąrš obg ęsgtęėrev ąpųi, rir čvcčųėka eėmčūvdg
 ąyūdnnpįv p ėgbmzz oybuek eėcvąkdibs"""
+
