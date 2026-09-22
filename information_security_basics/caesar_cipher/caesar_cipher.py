@@ -25,7 +25,7 @@ class Alphabet:
         return self.alphabet
     
     def __getitem__(self, key):
-        return list(self.alphabet_dictionary._char_to_index())[list(self.alphabet_dictionary._char_to_index()).index(key)]
+        return self._index_to_char[key]
     
     def __iter__(self):
         """Yields value and index from initialized dictionary when iterating"""
