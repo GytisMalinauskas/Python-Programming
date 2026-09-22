@@ -41,27 +41,14 @@ def caesar_cipher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = Tru
         @param encrypt used to enable encryption mode otherwise decryption mode is enabled
     """
     text = text.lower().strip()
-    outcome = ""
-    if encrypt:
-        for char in text:
-            if not char in str(alphabet):
-                outcome += char
-                continue
-            
-            outcome += new_value
-            break
-    else:
-        for char in text:
-            if not char in str(alphabet):
-                outcome += char
-                continue
-            for value, index in alphabet:
-                if char == value:
-                    new_index = (index - n) % len(alphabet)
-                    new_value = alphabet[new_index]
-                    outcome += new_value
-                    break
-    return outcome
+    outcome = []
+    direction = 1 if encrypt else -1
+    for char in text:
+        if not char in str(alphabet):
+            outcome.append(char)
+            continue
+        
+    return "".join(outcome)
 
 def main():
     alphabet = Alphabet(LT_ALPHABET)
