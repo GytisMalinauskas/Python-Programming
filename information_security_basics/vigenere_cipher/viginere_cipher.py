@@ -146,10 +146,10 @@ def viginere_cipher():
     alphabet_matrix = []
     for i in range(len(LT_ALPHABET)):
         print(i, letters)
-        alphabet_matrix.append(letters)
+        alphabet_matrix.append(letters.copy())
         value_to_move_back = letters.pop(0)
         letters.append(value_to_move_back)
-    return alphabet_matrix[1][2]
+    return alphabet_matrix[2][2]
 
 def main():
     print(viginere_cipher())
