@@ -3,6 +3,8 @@
 LT_ALPHABET = "aąbcčdeęėfghiįyjklmnoprsštuųūvzž"
 TO_ENCRYPT = "9. Kalbos – vežimais, o naudos – už grašį. 19"
 TO_DECRYPT = "9. Fp bfbcyfl nvprl fpcfkv fp įnvprl."
+COMMON_LT_LETTERS = ""
+
 
 class Alphabet:
     """Alphabet class used by caesars_cipher function.
@@ -58,10 +60,21 @@ def caesar_cipher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = Tru
         outcome.append(new_char)
     return "".join(outcome)
 
+
+def crack_caesar(ciphertext: str, alphabet: Alphabet) -> list[tuple[int, str]]:
+    results = []
+    for shift in range(len(alphabet)):
+        candidate = caesar_cipher(ciphertext, alphabet, shift=shift, encrypt=False)
+        letters = [c for c in candidate if c in alphabet]
+        score = sum(1 for c in letters if c in COMMON_LT_LETTERS) / len(letters)
+        results.append((shift, score, candidate))
+    results.sort(key=lambda x: -x[1])
+    return [(shift, text) for shift, _, text in results]
+
 def main():
     alphabet = Alphabet(LT_ALPHABET)
     print(caesar_cipher(TO_ENCRYPT, alphabet))
-    print(caesar_cipher(TO_DECRYPT, alphabet, n = 29, encrypt = False))
+    print(crack_caesar(TO_DECRYPT, alphabet))
 
 
 if __name__ == "__main__":
