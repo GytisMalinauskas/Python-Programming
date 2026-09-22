@@ -99,14 +99,14 @@ def caesar_cipher(
     as-is. Input is lowercased and stripped of leading/trailing whitespace
     before processing.
 
-    Args:
-        text: The string to encrypt or decrypt.
-        alphabet: The Alphabet instance that defines the character set and
+    Parameters:
+        text (str): The string to encrypt or decrypt.
+        alphabet (Alphabet): The Alphabet instance that defines the character set and
             their positions.
-        n: The number of positions to shift each character. Must be a
+        n (int): The number of positions to shift each character. Must be a
             non-negative integer; values larger than len(alphabet) wrap
             around automatically. Defaults to 3.
-        encrypt: If True (default), shift forward (encrypt). If False,
+        encrypt (bool): If True (default), shift forward (encrypt). If False,
             shift backward (decrypt).
 
     Returns:
