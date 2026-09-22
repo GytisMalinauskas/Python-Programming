@@ -61,6 +61,7 @@ def caesar_cipher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = Tru
     return "".join(outcome)
 
 def crack_caesar(ciphertext: str, alphabet: Alphabet) -> tuple[int, int, str]:
+    """A function to decrypt caesar's cipher without knowing the shift index"""
     results = []
     for shift in range(len(alphabet)):
         candidate = caesar_cipher(ciphertext, alphabet, n=shift, encrypt=False)
