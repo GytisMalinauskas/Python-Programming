@@ -50,7 +50,9 @@ def caesar_cipher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = Tru
         if not char in str(alphabet):
             outcome.append(char)
             continue
-        new_index = alphabet[char]
+        new_index = (alphabet[char] + n * direction) % len(alphabet)
+        new_char = alphabet[new_index]
+        outcome.append(new_char)
     return "".join(outcome)
 
 def main():
