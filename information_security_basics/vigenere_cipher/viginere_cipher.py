@@ -143,14 +143,14 @@ def viginere_cipher():
     letters = []
     for char in LT_ALPHABET:
         letters.append(char)
-    alphabet_matrix = [[]]
+    alphabet_matrix = [[]*len(LT_ALPHABET)]
     for i in range(len(LT_ALPHABET)):
         print(i, letters)
         for y in letters:            
             alphabet_matrix[i].append(y)
         value_to_move_back = letters.pop(0)
         letters.append(value_to_move_back)
-    return alphabet_matrix[3]
+    return alphabet_matrix
 
 def main():
     print(viginere_cipher())
