@@ -139,11 +139,14 @@ def caesar_cipher(
         result.append(alphabet[new_index])
     return "".join(result)
 
-
 def viginere_cipher():
     letters = []
     for char in LT_ALPHABET:
         letters.append(char)
+    alphabet_matrix = []
+    for i in range(len(LT_ALPHABET)):
+        alphabet_matrix.append(letters)
+        letters.pop()
     return letters
 
 def main():
