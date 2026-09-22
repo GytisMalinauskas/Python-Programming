@@ -3,7 +3,7 @@
 LT_ALPHABET = "aąbcčdeęėfghiįyjklmnoprsštuųūvzž"
 TO_ENCRYPT = "9. Kalbos – vežimais, o naudos – už grašį. 19"
 TO_DECRYPT = "9. Fp bfbcyfl nvprl fpcfkv fp įnvprl."
-COMMON_LT_LETTERS = ""
+COMMON_LT_LETTERS = "iasore"
 
 
 class Alphabet:
