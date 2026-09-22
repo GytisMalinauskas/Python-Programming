@@ -15,7 +15,8 @@ class Alphabet:
         Alphabet dictionary maps characters to indexes. 
         """
         self.alphabet = alphabet
-        self.alphabet_dictionary = {char : i for i, char in enumerate(alphabet)}
+        self._char_to_index = {char : i for i, char in enumerate(alphabet)}
+        self._index_to_char = {i : char for i, char in enumerate(alphabet)}
     
     def __len__(self):
         return len(self.alphabet)
@@ -24,11 +25,11 @@ class Alphabet:
         return self.alphabet
     
     def __getitem__(self, key):
-        return list(self.alphabet_dictionary.keys())[list(self.alphabet_dictionary.values()).index(key)]
+        return list(self.alphabet_dictionary._char_to_index())[list(self.alphabet_dictionary._char_to_index()).index(key)]
     
     def __iter__(self):
         """Yields value and index from initialized dictionary when iterating"""
-        for value, index in self.alphabet_dictionary.items():
+        for value, index in self.alphabet_dictionary._char_to_index():
             yield value, index
     
 
