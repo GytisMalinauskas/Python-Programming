@@ -47,12 +47,9 @@ def caesar_cipher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = Tru
             if not char in str(alphabet):
                 outcome += char
                 continue
-            for value, index in alphabet:
-                if char == value:
-                    new_index = (index + n) % len(alphabet)
-                    new_value = alphabet[new_index]
-                    outcome += new_value
-                    break
+            
+            outcome += new_value
+            break
     else:
         for char in text:
             if not char in str(alphabet):
