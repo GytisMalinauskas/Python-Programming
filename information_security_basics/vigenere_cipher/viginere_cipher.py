@@ -141,11 +141,13 @@ def caesar_cipher(
 
 
 def viginere_cipher():
-    letters = LT_ALPHABET.split(sep="")
+    letters = []
+    for char in LT_ALPHABET:
+        letters.append(char)
     return letters
 
 def main():
-    ...
+    print(viginere_cipher())
     
 if __name__ == "__main__":
     main()
