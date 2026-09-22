@@ -141,9 +141,8 @@ def caesar_cipher(
 
 
 def viginere_cipher():
-    letters = []
-    for char in LT_ALPHABET:
-        letters.append(char)
+    letters = LT_ALPHABET.split(sep="")
+    return letters
 
 def main():
     ...
