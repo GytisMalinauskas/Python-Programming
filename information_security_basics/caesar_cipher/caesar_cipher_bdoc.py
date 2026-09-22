@@ -29,7 +29,7 @@ class Alphabet:
     Wraps a string alphabet so that caesar_cipher can look up a character's
     index and look up the character at a given index in O(1) time.
 
-    Parameters
+    Attributes
     ----------
         alphabet : str 
             A string of unique characters that define the cipher's
