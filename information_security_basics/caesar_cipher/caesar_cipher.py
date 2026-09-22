@@ -5,24 +5,23 @@ TO_ENCRYPT = "9. Kalbos – vežimais, o naudos – už grašį. 19"
 TO_DECRYPT = "9. Fp bfbcyfl nvprl fpcfkv fp įnvprl."
 
 class Alphabet:
-    """Alphabet class used by caesars_cypher function.
+    """Alphabet class used by caesars_cipher function.
 
     Used to instantiate instance of Alphabet.
     """
     def __init__(self, alphabet):
         """Initializes an instance.
         
-        Alphabet dictionary maps characters to indexes. 
         """
-        self.alphabet = alphabet
+        self._alphabet = alphabet
         self._char_to_index = {char : i for i, char in enumerate(alphabet)}
         self._index_to_char = {i : char for i, char in enumerate(alphabet)}
     
     def __len__(self):
-        return len(self.alphabet)
+        return len(self._alphabet)
     
     def __str__(self):
-        return self.alphabet
+        return self._alphabet
     
     def __getitem__(self, key):
         return self._index_to_char[key]
@@ -33,10 +32,10 @@ class Alphabet:
             yield value, index
     
 
-def caesar_cypher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = True):
+def caesar_cipher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = True):
     """
-        Encrypts / Decripts a text with caesar's cypher.
-        @param text is a string to ecrypt/decript with caesar's cypher
+        Encrypts / Decripts a text with caesar's cipher.
+        @param text is a string to ecrypt/decript with caesar's cipher
         @param n is the shift index.
         @param alphabet takes Alphabet class object
         @param encrypt used to enable encryption mode otherwise decryption mode is enabled
@@ -69,8 +68,8 @@ def caesar_cypher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = Tru
 
 def main():
     alphabet = Alphabet(LT_ALPHABET)
-    print(caesar_cypher(TO_ENCRYPT, alphabet))
-    print(caesar_cypher(TO_DECRYPT, alphabet, n = 29, encrypt = False))
+    print(caesar_cipher(TO_ENCRYPT, alphabet))
+    print(caesar_cipher(TO_DECRYPT, alphabet, n = 29, encrypt = False))
 
 
 if __name__ == "__main__":
