@@ -61,8 +61,8 @@ class Alphabet:
     def __getitem__(self, key: int | str) -> str | int:
         """Return the index for a character, or the character at an index.
 
-        Args:
-            key: A character (str) to look up its index, or an integer
+        Parameters:
+            key (int | str): A character (str) to look up its index, or an integer
                 index to look up the corresponding character.
 
         Returns:
