@@ -24,7 +24,10 @@ class Alphabet:
         return self._alphabet
     
     def __getitem__(self, key):
-        return self._index_to_char[key]
+        if isinstance(key, int):
+            return self._index_to_char[key]
+        if isinstance(key, str):
+            return self._char_to_index[key]    
     
     def __iter__(self):
         """Yields value and index from initialized dictionary when iterating"""
@@ -47,7 +50,7 @@ def caesar_cipher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = Tru
         if not char in str(alphabet):
             outcome.append(char)
             continue
-        
+        new_index = alphabet[char]
     return "".join(outcome)
 
 def main():
