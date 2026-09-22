@@ -61,7 +61,7 @@ def caesar_cipher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = Tru
     return "".join(outcome)
 
 
-def crack_caesar(ciphertext: str, alphabet: Alphabet) -> list[tuple[int, int ,str]]:
+def crack_caesar(ciphertext: str, alphabet: Alphabet) -> tuple[int, int, str]:
     results = []
     for shift in range(len(alphabet)):
         candidate = caesar_cipher(ciphertext, alphabet, n=shift, encrypt=False)
@@ -69,7 +69,7 @@ def crack_caesar(ciphertext: str, alphabet: Alphabet) -> list[tuple[int, int ,st
         score = sum(1 for c in letters if c in COMMON_LT_LETTERS) / len(letters)
         results.append((shift, score, candidate))
     results.sort(key=lambda x: -x[1])
-    return [(shift, score, text) for shift, score, text in results]
+    return results[0]
 
 def main():
     alphabet = Alphabet(LT_ALPHABET)
