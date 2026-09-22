@@ -29,7 +29,7 @@ class Alphabet:
     
     def __iter__(self):
         """Yields value and index from initialized dictionary when iterating"""
-        for value, index in self.alphabet_dictionary._char_to_index():
+        for value, index in self._char_to_index:
             yield value, index
     
 
