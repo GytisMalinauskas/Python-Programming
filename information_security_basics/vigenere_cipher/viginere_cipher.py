@@ -1,5 +1,6 @@
 """A module for implementing Viginere's cipher encryption and decryption"""
 
+LT_ALPHABET = "aąbcčdeęėfghiįyjklmnoprsštuųūvzž"
 TO_ENCRYPT = "Oštlbač šf yaufag ąųnzrnš."
 KEY = "minija"
 TO_DECRYPT = """Įbeu zkįl dgžžbzdž dgžžbzdž pomibohžąrš ūmgdcyyęėrel ųpkluųgęk ędnyjokūupšac
@@ -139,4 +140,13 @@ def caesar_cipher(
     return "".join(result)
 
 
+def viginere_cipher():
+    letters = []
+    for char in LT_ALPHABET:
+        letters.append(char)
 
+def main():
+    ...
+    
+if __name__ == "__main__":
+    main()
