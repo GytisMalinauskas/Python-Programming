@@ -60,7 +60,6 @@ def caesar_cipher(text: str, alphabet: Alphabet, n: int = 3, encrypt: bool = Tru
         outcome.append(new_char)
     return "".join(outcome)
 
-
 def crack_caesar(ciphertext: str, alphabet: Alphabet) -> tuple[int, int, str]:
     results = []
     for shift in range(len(alphabet)):
