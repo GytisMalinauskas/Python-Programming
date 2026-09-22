@@ -110,8 +110,8 @@ def caesar_cipher(
             shift backward (decrypt).
 
     Returns:
-        The processed string with the same length as the (lowercased,
-        stripped) input.
+        output (str): The processed string with the same length as the (lowercased,
+            stripped) input.
 
     Example::
 
@@ -142,15 +142,15 @@ def crack_caesar(
     of the decrypted letters appear in COMMON_LT_LETTERS. The candidate
     with the highest score is returned.
 
-    Args:
-        ciphertext: The encrypted text whose shift is unknown.
-        alphabet: The Alphabet instance used to define valid letters.
+    Parameters:
+        ciphertext (str): The encrypted text whose shift is unknown.
+        alphabet (Alphabet): The Alphabet instance used to define valid letters.
 
     Returns:
-        A tuple of (shift, score, plaintext) for the best candidate, where
-        shift is the int key, score is a float in [0.0, 1.0] representing
-        the fraction of letters that matched common letters, and plaintext
-        is the decrypted string.
+        output (tuple(int, float, str)): A tuple of (shift, score, plaintext) for the best candidate, where
+            shift is the int key, score is a float in [0.0, 1.0] representing
+            the fraction of letters that matched common letters, and plaintext
+            is the decrypted string.
 
     Raises:
         ZeroDivisionError: If ciphertext contains no alphabet characters
