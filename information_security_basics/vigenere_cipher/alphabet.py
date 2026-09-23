@@ -1,4 +1,13 @@
-"""A module for Alphabet class implementation"""
+"""A module for Alphabet class implementation.
+
+Alphabet class is used to instantiate 
+
+    Example::
+        alpha = Alphabet("abcde")
+        alpha["c"]   # → 2  (char to index)
+        alpha[2]     # → "c"  (index to char)
+        "c" in alpha # → True
+"""
 
 class Alphabet:
     """A bidirectional mapping between characters and their positions.
@@ -11,13 +20,6 @@ class Alphabet:
         alphabet : str 
             A string of unique characters that define the cipher's
             alphabet. The position of each character determines its index.
-
-    Example::
-
-        alpha = Alphabet("abcde")
-        alpha["c"]   # → 2  (char to index)
-        alpha[2]     # → "c"  (index to char)
-        "c" in alpha # → True
     """
 
     def __init__(self, alphabet: str) -> None:
