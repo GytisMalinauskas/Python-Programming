@@ -42,7 +42,7 @@ class Alphabet:
         """Returns the index for a character, or the character at an index.
 
         Args:
-            key: A character (str) to look up its index, or an integer
+            key: A character to look up its index, or an integer
                 index to look up the corresponding character.
 
         Returns:
