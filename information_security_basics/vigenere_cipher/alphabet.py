@@ -1,6 +1,7 @@
 """A module for Alphabet class implementation.
 
-Alphabet class is used to instantiate an alphabet with enumeration mapping
+Alphabet class is used to instantiate an alphabet specifically that is used 
+by the Caesar's cipher.
 
     Example::
         alpha = Alphabet("abcde")
@@ -15,14 +16,20 @@ class Alphabet:
     Wraps a string alphabet so that caesar_cipher can look up a character's
     index and look up the character at a given index in O(1) time.
 
-    Attributes
-    ----------
-        alphabet : str 
-            A string of unique characters that define the cipher's
+    Attributes: 
+        alphabet: A string of Unique characters that define the cipher's
             alphabet. The position of each character determines its index.
+        char_to_index: A dictionary, that maps character to index.
+        index_to_char: A dictionary, that maps index to character.
     """
 
     def __init__(self, alphabet: str) -> None:
+        """Initializes the instance of the alphabet.
+        
+        Args:
+            alphabet: defines a string that is passed when initiating.
+        """
+        
         self._alphabet = alphabet
         # Two dicts instead of one let both lookup directions run in O(1).
         self._char_to_index = {char: i for i, char in enumerate(alphabet)}
