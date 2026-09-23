@@ -150,7 +150,7 @@ def viginere_cipher():
         value_to_move_back = letters.pop(0)
         letters.append(value_to_move_back)
     
-    return alphabet_matrix[2][2]
+    pass
 
 def main():
     print(viginere_cipher())
