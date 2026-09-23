@@ -15,11 +15,7 @@ class Alphabet:
 
     Wraps a string alphabet so that caesar_cipher can look up a character's
     index and look up the character at a given index in O(1) time.
-    Attributes: 
-        alphabet: A string of Unique characters that define the cipher's
-            alphabet. The position of each character determines its index.
-        char_to_index: A dictionary, that maps character to index.
-        index_to_char: A dictionary, that maps index to character.
+
     """
 
     def __init__(self, alphabet: str) -> None:
