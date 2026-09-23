@@ -9,7 +9,7 @@ Example:
 """
 from alphabet import Alphabet
 
-def caesar_cipher(
+def caesar(
     text: str,
     alphabet: Alphabet,
     n: int = 3,
@@ -33,7 +33,7 @@ def caesar_cipher(
             shift backward (decrypt).
 
     Returns:
-        output (str): The processed string with the same length as the (lowercased,
+        output: The processed string with the same length as the (lowercased,
             stripped) input.
     """
     text = text.lower().strip()
