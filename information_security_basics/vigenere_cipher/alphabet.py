@@ -3,7 +3,7 @@
 Alphabet class is used to instantiate an alphabet specifically that is used 
 by the Caesar's cipher.
 
-Example::
+Example:
     alpha = Alphabet("abcde")
     alpha["c"]   # → 2  (char to index)
     alpha[2]     # → "c"  (index to char)

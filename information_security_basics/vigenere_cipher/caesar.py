@@ -2,11 +2,10 @@
 
 
 
-Example::
-
-        alpha = Alphabet("abcde")
-        caesar_cipher("ace", alpha, n=1)              # → "bda"
-        caesar_cipher("bda", alpha, n=1, encrypt=False)  # → "ace"
+Example:
+    alpha = Alphabet("abcde")
+    caesar_cipher("ace", alpha, n=1)              # → "bda"
+    caesar_cipher("bda", alpha, n=1, encrypt=False)  # → "ace"
 """
 from alphabet import Alphabet
 
