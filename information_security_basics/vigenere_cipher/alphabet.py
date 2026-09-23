@@ -15,16 +15,15 @@ class Alphabet:
 
     Wraps a string alphabet so that caesar_cipher can look up a character's
     index and look up the character at a given index in O(1) time.
-
     """
 
     def __init__(self, alphabet: str) -> None:
-        """Initializes the instance of the alphabet.
-        
+        """Initializes the instance with a string defining the character set.
+
         Args:
-            alphabet: defines a string that is passed when initiating the alphabet.
+            alphabet: A string of unique characters. The position of each
+                character determines its index in the cipher.
         """
-        
         self._alphabet = alphabet
         # Two dicts instead of one let both lookup directions run in O(1).
         self._char_to_index = {char: i for i, char in enumerate(alphabet)}
@@ -40,10 +39,10 @@ class Alphabet:
         return char in self._char_to_index
 
     def __getitem__(self, key: int | str) -> str | int:
-        """Return the index for a character, or the character at an index.
+        """Returns the index for a character, or the character at an index.
 
-        Parameters:
-            key (int | str): A character (str) to look up its index, or an integer
+        Args:
+            key: A character (str) to look up its index, or an integer
                 index to look up the corresponding character.
 
         Returns:
@@ -62,6 +61,6 @@ class Alphabet:
         raise TypeError(f"Key must be str or int, got {type(key).__name__!r}")
 
     def __iter__(self):
-        """Yield (character, index) pairs in definition order."""
+        """Yields (character, index) pairs in definition order."""
         for value, index in self._char_to_index.items():
             yield value, index
