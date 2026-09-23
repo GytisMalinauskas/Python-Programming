@@ -142,7 +142,8 @@ def caesar_cipher(
 def viginere_cipher(alphabet: str):
     alphabet_matrix = matrix(alphabet)
     # TODO: Find key lenght
-    # TODO: Divide each text to 
+    # TODO: Divide text by key length
+    # TODO: Find the Ceaser's shift
     pass
 
 def find_key_lenght():
