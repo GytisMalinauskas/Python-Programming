@@ -1,4 +1,13 @@
-"""A module for the implementation of Caesar's cipher encryption and decryption."""
+"""A module for the implementation of Caesar's cipher encryption and decryption.
+
+
+
+Example::
+
+        alpha = Alphabet("abcde")
+        caesar_cipher("ace", alpha, n=1)              # → "bda"
+        caesar_cipher("bda", alpha, n=1, encrypt=False)  # → "ace"
+"""
 from alphabet import Alphabet
 
 def caesar_cipher(
@@ -27,12 +36,6 @@ def caesar_cipher(
     Returns:
         output (str): The processed string with the same length as the (lowercased,
             stripped) input.
-
-    Example::
-
-        alpha = Alphabet("abcde")
-        caesar_cipher("ace", alpha, n=1)              # → "bda"
-        caesar_cipher("bda", alpha, n=1, encrypt=False)  # → "ace"
     """
     text = text.lower().strip()
     direction = 1 if encrypt else -1
