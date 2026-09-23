@@ -141,7 +141,9 @@ def caesar_cipher(
 
 def viginere_cipher(alphabet: str):
     alphabet_matrix = matrix(alphabet)
-    
+    pass
+
+def find_key_lenght():
     pass
 
 def matrix(alphabet: str):
