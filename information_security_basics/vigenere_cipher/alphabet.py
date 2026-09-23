@@ -1,6 +1,6 @@
 """A module for Alphabet class implementation.
 
-Alphabet class is used to instantiate 
+Alphabet class is used to instantiate an alphabet with enumeration mapping
 
     Example::
         alpha = Alphabet("abcde")
