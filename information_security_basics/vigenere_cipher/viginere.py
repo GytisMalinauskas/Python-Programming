@@ -14,6 +14,8 @@ def viginere(text: str,  alphabet: Alphabet, key: str = None, encrypt: bool = Tr
                 if char.lower() in alphabet:
                     if char not in alphabet:
                         upper_char = True
+                    else:
+                        upper_char = False
                     keychar_index = alphabet[key[key_index]]
                     if upper_char:
                         encrypted_char = caesar(char, alphabet, keychar_index, encrypt=False).upper()
