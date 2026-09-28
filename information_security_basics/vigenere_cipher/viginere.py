@@ -17,21 +17,15 @@ def viginere(
             key_index = 0
             for char in text:
                 is_upper = char != char.lower()
-                char_to_process = char.lower()
-                if char in alphabet:
-                    if char not in alphabet:
-                        upper_char = True
-                    else:
-                        upper_char = False
-                    keychar_index = alphabet[key[key_index]]
-                    if upper_char:
-                        encrypted_char = caesar(char, alphabet, keychar_index, encrypt=False).upper()
-                    else:
-                        encrypted_char = caesar(char, alphabet, keychar_index, encrypt=False)
-                    encrypted_chars.append(encrypted_char)
-                    key_index = (key_index + 1) % len(key)
+                keychar_index = alphabet[key[key_index]]
+                if is_upper:
+                    encrypted_char = caesar(char.lower(), alphabet, keychar_index, encrypt=False).upper()
                 else:
-                    encrypted_chars.append(char)
+                    encrypted_char = caesar(char, alphabet, keychar_index, encrypt=False)
+                encrypted_chars.append(encrypted_char)
+                key_index = (key_index + 1) % len(key)
+            else:
+                encrypted_chars.append(char)
                     
             return "".join(encrypted_chars)
         
