@@ -4,16 +4,21 @@ from ctypes import ArgumentError
 from alphabet import Alphabet
 from analysis import find_key_lenght, find_key
 from caesar import caesar
-from itertools import cycle
 
 def viginere(text: str,  alphabet: Alphabet, key: str = None, encrypt: bool = True):
     try:
         if encrypt and key:
             encrypted_chars = []
-            for char, keychar in zip(text, cycle(key)):
-                keychar_index = alphabet[keychar]
-                encrypted_char = caesar(char, alphabet, keychar_index, encrypt=False)
-                encrypted_chars.append(encrypted_char)
+            key_index = 0
+            for char in text:
+                if char in alphabet: 
+                    keychar_index = alphabet[key_index]
+                    encrypted_char = caesar(char, alphabet, keychar_index, encrypt=False)
+                    encrypted_chars.append(encrypted_char)
+                    key_index = (key_index + 1) % len(key_index)
+                else:
+                    encrypted_chars.append(char)
+                    
             return "".join(encrypted_chars)
         
         elif not encrypt and not key:
