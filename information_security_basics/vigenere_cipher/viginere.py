@@ -12,11 +12,11 @@ def viginere(text: str,  alphabet: Alphabet, key: str = None, encrypt: bool = Tr
             key_index = 0
             for char in text:
                 if char in alphabet: 
-                    keychar_index = alphabet[key_index]
+                    keychar_index = alphabet[key[key_index]]
                     encrypted_char = caesar(char, alphabet, keychar_index, encrypt=False)
                     encrypted_chars.append(encrypted_char)
-                    key_index = (key_index + 1) % len(key_index)
-                else:
+                    key_index = (key_index + 1) % len(key)
+                
                     encrypted_chars.append(char)
                     
             return "".join(encrypted_chars)
