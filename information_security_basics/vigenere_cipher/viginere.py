@@ -1,6 +1,5 @@
 """A module for implementing Viginere's cipher encryption and decryption"""
 
-from ctypes import ArgumentError
 from alphabet import Alphabet
 from analysis import find_key_lenght, find_key
 from caesar import caesar
@@ -33,6 +32,6 @@ def viginere(
             return find_key(find_key_lenght(text))
             
         else:
-            raise ArgumentError("The arguments must be passed corectly.")
-    except ArgumentError:
+            raise ValueError("The arguments must be passed corectly.")
+    except ValueError:
         exit()
