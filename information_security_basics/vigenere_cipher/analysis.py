@@ -8,7 +8,7 @@ from constants import TO_FIND_KEY, LT_ALPHABET
 def find_key(key_lenghts: list[int]) -> str:
     pass
 
-def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 3) -> list[int]:
+def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 2) -> list[int]:
     text_to_process = "".join(char for char in ciphertext.lower() if char in alphabet)
     substring_matches = {}
     all_distances = []
