@@ -2,11 +2,11 @@ from alphabet import Alphabet
 
 LT_ALPHABET = Alphabet("aąbcčdeęėfghiįyjklmnoprsštuųūvzž")
 
-TO_DECRYPT_WITH_KEY = "Oštlbač šf yaufag ąųnzrnš."
+TO_DECRYPT = "Oštlbač šf yaufag ąųnzrnš."
 
 KEY = "minija"
 
-TO_DECRYPT = """Įbeu zkįl dgžžbzdž dgžžbzdž pomibohžąrš ūmgdcyyęėrel ųpkluųgęk ędnyjokūupšac
+TO_FIND_KEY = """Įbeu zkįl dgžžbzdž dgžžbzdž pomibohžąrš ūmgdcyyęėrel ųpkluųgęk ędnyjokūupšac
 (gfcr ržįėugząfšac žgcravįį čdųyiasoą evfėšnį hąėąjuršcu 6 yabfdkcs). Sųb csižįsjėššbyė
 gjį vižols dogdįoyoėjš eb gįydūid, įaėąųėav ąaavūzn mrfė ųųįiarr. Fsėočdfalo dūžrotajaj
 idehbc ykbmžcby kg hdrae žęrvvėą oybueęį zltvį ąecruęfa bdūeė ųųęmmccagl aebggcėšbųę ia
