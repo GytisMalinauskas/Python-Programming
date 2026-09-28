@@ -11,10 +11,10 @@ def find_key(ciphertext:str, alphabet: Alphabet, key_lenght: int) -> str:
     caesar_index = 0
     text_to_process = text_to_process_func(ciphertext, alphabet)
     for char in text_to_process:
-        get_string = divide_to_caesar_ciphers.get(caesar_index)
+        get_string = divide_to_caesar_ciphers.get(caesar_index, "")
         divide_to_caesar_ciphers.update({caesar_index: "".join([get_string, char])})
-        caesar_index += 1 % len(key_lenght)
-    return divide_to_caesar_ciphers
+        caesar_index = (caesar_index + 1) % key_lenght
+    
 
 def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 2) -> int:
     text_to_process = text_to_process_func(ciphertext, alphabet)
@@ -51,7 +51,7 @@ def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 2) -> int:
         top_10_ranked[lenght] = difference
     return sorted(top_10_ranked.items(), key=lambda item:item[1], reverse=False)[0][0]
 
-def text_to_process_func(ciphertext: str, alphabet: Alphabet):
+def text_to_process_func(ciphertext: str, alphabet: Alphabet) -> str:
     return "".join(char for char in ciphertext.lower() if char in alphabet)
 
 print(find_key(TO_FIND_KEY, alphabet=LT_ALPHABET, key_lenght=find_key_lenght(TO_FIND_KEY, LT_ALPHABET)))
