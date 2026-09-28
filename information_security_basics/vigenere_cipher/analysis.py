@@ -11,10 +11,14 @@ def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 3) -> list[int
     substring_matches = {}
     for i in range(len(text_to_process) - n + 1):
         substring = text_to_process[i:i+n]
+        if substring in substring_matches.keys():
+            continue
         for j in range(i+3, len(text_to_process)):
             substring2 = text_to_process[j:j+n]
+            matches = 0
             if substring == substring2:
-                substring_matches[substring] += 1
+                matches += 1
+        substring_matches.update({substring: matches})
     print(substring_matches)
 
 
