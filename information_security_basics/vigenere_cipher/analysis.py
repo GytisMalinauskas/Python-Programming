@@ -11,6 +11,7 @@ def find_key(ciphertext:str, key_lenght: int) -> str:
     caesar_index = 0
     for char in ciphertext:
         divide_to_caesar_ciphers[caesar_index] += char
+    return divide_to_caesar_ciphers
 
 def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 2) -> int:
     text_to_process = "".join(char for char in ciphertext.lower() if char in alphabet)
