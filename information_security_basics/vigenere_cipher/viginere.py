@@ -27,10 +27,10 @@ def viginere(
                     
             return "".join(encrypted_chars)
         
-        elif mode == "decrypt" and not key:
+        elif mode == "crack" and not key:
             return find_key(find_key_lenght(text))
             
         else:
-            raise ValueError("Provide a key when encrypting, or omit it when decrypting.")
+            raise ValueError("Provide a key when decrypting, or omit it when finding a key")
     except ValueError:
         exit()
