@@ -1,3 +1,4 @@
 *.txt
 .pdf
-__pycache__/
+information_secutiry_basics/viginere_cipher/__pycache__/
+venv/
