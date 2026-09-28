@@ -2,7 +2,7 @@ from alphabet import Alphabet
 
 LT_ALPHABET = Alphabet("aąbcčdeęėfghiįyjklmnoprsštuųūvzž")
 
-TO_ENCRYPT = "Oštlbač šf yaufag ąųnzrnš."
+TO_DECRYPT_WITH_KEY = "Oštlbač šf yaufag ąųnzrnš."
 
 KEY = "minija"
 
