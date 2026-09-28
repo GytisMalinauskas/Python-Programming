@@ -1,6 +1,11 @@
-LT_ALPHABET = "aąbcčdeęėfghiįyjklmnoprsštuųūvzž"
+from alphabet import Alphabet
+
+LT_ALPHABET = Alphabet("aąbcčdeęėfghiįyjklmnoprsštuųūvzž")
+
 TO_ENCRYPT = "Oštlbač šf yaufag ąųnzrnš."
+
 KEY = "minija"
+
 TO_DECRYPT = """Įbeu zkįl dgžžbzdž dgžžbzdž pomibohžąrš ūmgdcyyęėrel ųpkluųgęk ędnyjokūupšac
 (gfcr ržįėugząfšac žgcravįį čdųyiasoą evfėšnį hąėąjuršcu 6 yabfdkcs). Sųb csižįsjėššbyė
 gjį vižols dogdįoyoėjš eb gįydūid, įaėąųėav ąaavūzn mrfė ųųįiarr. Fsėočdfalo dūžrotajaj
