@@ -1,5 +1,5 @@
 def find_key_lenght(ciphertext: str) -> list[int]:
-    pass
+    text_to_process = ciphertext.split()
 
 def find_key(key_lenghts: list[int]) -> str:
     pass
