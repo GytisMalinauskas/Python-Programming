@@ -32,5 +32,6 @@ def viginere(
             
         else:
             raise ValueError("Provide a key when decrypting, or omit it when finding a key")
+    
     except ValueError:
         exit()
