@@ -25,8 +25,7 @@ def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 3) -> list[int
         distances = [b - a for a, b in zip(matches, matches[1:])]
         if len(distances) == 0:
             continue
-        for distance in distances:
-            all_distances.append(distance)
+        all_distances.extend(distances)
         substring_matches[substring] = distances
     print(reduce(gcd, all_distances))
     
