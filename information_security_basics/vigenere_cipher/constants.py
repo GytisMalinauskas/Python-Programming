@@ -6,7 +6,9 @@ TO_DECRYPT = "Oštlbač šf yaufag ąųnzrnš."
 
 KEY = "minija"
 
-TEXT_
+LT_TEXT_OVERLAP_INDEX = 0.069
+
+LT_SIMILARITY_PROBABILITY = 0.031
 
 TO_FIND_KEY = """Įbeu zkįl dgžžbzdž dgžžbzdž pomibohžąrš ūmgdcyyęėrel ųpkluųgęk ędnyjokūupšac
 (gfcr ržįėugząfšac žgcravįį čdųyiasoą evfėšnį hąėąjuršcu 6 yabfdkcs). Sųb csižįsjėššbyė
