@@ -31,8 +31,13 @@ def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 2) -> int:
         gcd_of_distance_list = reduce(gcd, distance_list)
         gcd_matches[gcd_of_distance_list] += 1
     top_10 = [key_length for key_length, _ in sorted(gcd_matches.items(), key=lambda item:item[1], reverse=True)[:10] if key_length > 1]
-    char_matches = {}
+    friedmans_upper = 0
     for char in str(alphabet):
-        char_matches[char]= text_to_process.count(char)
-        
+        repeats = text_to_process.count(char)
+        friedmans_upper += repeats * (repeats - 1)
+    friedmans_lower = len(text_to_process) * (len(text_to_process) - 1)
+    friedmans_index = friedmans_upper / friedmans_lower
+    viginere_key_lenght_aprox = (LT_TEXT_OVERLAP_INDEX - LT_SIMILARITY_PROBABILITY) / (friedmans_index -LT_SIMILARITY_PROBABILITY) 
+    
+
 print(find_key_lenght(TO_FIND_KEY, LT_ALPHABET))
