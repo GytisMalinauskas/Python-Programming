@@ -6,8 +6,8 @@ from collections import Counter
 # TODO: remove next line
 from constants import TO_FIND_KEY, LT_ALPHABET, LT_SIMILARITY_PROBABILITY, LT_TEXT_OVERLAP_INDEX
 
-def find_key(key_lenghts: list[int]) -> str:
-    pass
+def find_key(ciphertext:str, key_lenght: int) -> str:
+    ciphertext
 
 def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 2) -> int:
     text_to_process = "".join(char for char in ciphertext.lower() if char in alphabet)
@@ -38,6 +38,10 @@ def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 2) -> int:
     friedmans_lower = len(text_to_process) * (len(text_to_process) - 1)
     friedmans_index = friedmans_upper / friedmans_lower
     viginere_key_lenght_aprox = (LT_TEXT_OVERLAP_INDEX - LT_SIMILARITY_PROBABILITY) / (friedmans_index -LT_SIMILARITY_PROBABILITY) 
-    
+    top_10_ranked = {}
+    for lenght in top_10:
+        difference = abs(lenght - viginere_key_lenght_aprox)
+        top_10_ranked[lenght] = difference
+    return sorted(top_10_ranked.items(), key=lambda item:item[1], reverse=False)[0][0]
 
-print(find_key_lenght(TO_FIND_KEY, LT_ALPHABET))
+print(find_key(TO_FIND_KEY, find_key_lenght(TO_FIND_KEY, LT_ALPHABET)))
