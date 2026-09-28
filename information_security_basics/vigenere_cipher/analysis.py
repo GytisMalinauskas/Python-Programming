@@ -49,4 +49,7 @@ def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 2) -> int:
         top_10_ranked[lenght] = difference
     return sorted(top_10_ranked.items(), key=lambda item:item[1], reverse=False)[0][0]
 
+def text_to_process(ciphertext: str, alphabet: Alphabet):
+    return "".join(char for char in ciphertext.lower() if char in alphabet)
+
 print(find_key(TO_FIND_KEY, find_key_lenght(TO_FIND_KEY, LT_ALPHABET)))
