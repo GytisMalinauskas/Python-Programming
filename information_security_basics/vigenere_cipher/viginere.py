@@ -4,13 +4,13 @@ from ctypes import ArgumentError
 from alphabet import Alphabet
 from analysis import find_key_lenght, find_key
 from caesar import caesar
-from
+from itertools import cycle
 
 def viginere(text: str,  alphabet: Alphabet, key: str = None, encrypt: bool = True):
     try:
         if encrypt and key:
             encrypted_chars = []
-            for char, keychar in text, key:
+            for char, keychar in zip(text, cycle(key)):
                 keychar_index = alphabet[keychar]
                 encrypted_char = caesar(char, alphabet, keychar_index)
                 encrypted_chars.append(encrypted_char)
