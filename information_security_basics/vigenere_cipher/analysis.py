@@ -1,8 +1,8 @@
 def find_key_lenght(ciphertext: str) -> list[int]:
     pass
 
-def divide_text_by_lenght():
+def find_key(key_lenghts: list[int]) -> str:
     pass
 
-def find_key(key_lenght: int) -> str:
+def divide_text_by_lenght():
     pass

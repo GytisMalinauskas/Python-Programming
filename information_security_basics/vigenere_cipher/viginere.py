@@ -9,7 +9,7 @@ def viginere(text: str,  alphabet: Alphabet, key: str = None, encrypt: bool = Tr
         if encrypt and key:
             ...
         elif not encrypt and not key:
-            ...
+            find_key(find_key_lenght(text))
         else:
             raise ArgumentError("The arguments must be passed corectly.")
     except ArgumentError:
