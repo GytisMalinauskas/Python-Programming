@@ -29,6 +29,9 @@ def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 2) -> list[int
     for distance_list in substring_matches.values():
         gcd_of_distance_list = reduce(gcd, distance_list)
         if gcd_matches.get(gcd_of_distance_list):
-            gcd_matches.update({gcd_of_distance_list: gcd_matches.get()+1})
-            
+            gcd_matches.update({gcd_of_distance_list: gcd_matches.get(gcd_of_distance_list)+1})
+        else:
+            gcd_matches[gcd_of_distance_list] = 1
+    print(sorted(gcd_matches))
+    
 find_key_lenght(TO_FIND_KEY, LT_ALPHABET)
