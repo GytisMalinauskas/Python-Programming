@@ -5,9 +5,14 @@ from alphabet import Alphabet
 from analysis import find_key_lenght, find_key
 from caesar import caesar
 
-def viginere(text: str,  alphabet: Alphabet, decrypt_or_find_key: bool, key: str = None):
+def viginere(
+    text: str,
+    alphabet: Alphabet,
+    decrypt: bool = False,
+    find_key: bool = False,
+    key: str = None):
     try:
-        if decrypt_or_find_key and key:
+        if decrypt and key:
             encrypted_chars = []
             key_index = 0
             for char in text:
@@ -28,7 +33,7 @@ def viginere(text: str,  alphabet: Alphabet, decrypt_or_find_key: bool, key: str
                     
             return "".join(encrypted_chars)
         
-        elif not decrypt_or_find_key and not key:
+        elif find_key and not key:
             return find_key(find_key_lenght(text))
             
         else:
