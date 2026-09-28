@@ -24,5 +24,5 @@ def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 3) -> list[int
     for k, v in substring_matches.items():
         if len(v) < 2:
             cleaned_matches.pop(k)
-    
+        
 find_key_lenght(TO_FIND_KEY, LT_ALPHABET)
