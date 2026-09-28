@@ -19,7 +19,7 @@ def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 3) -> list[int
             if substring == substring2:
                 matches += 1
         substring_matches.update({substring: matches})
-    print(substring_matches)
+    print(sorted(substring_matches.items(), key=lambda item: item[1]))
 
 
 find_key_lenght(TO_FIND_KEY, LT_ALPHABET)
