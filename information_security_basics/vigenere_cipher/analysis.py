@@ -19,6 +19,6 @@ def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 3) -> list[int
             if substring == substring2:
                 matches.append(j)
         substring_matches.update({substring: matches})
-    print([v for v in sorted(substring_matches.items(), key=lambda item: item[1], reverse=True)])
+    print([v for v in sorted(substring_matches.items(), key=lambda item: len(item[1]), reverse=True)])
 
 find_key_lenght(TO_FIND_KEY, LT_ALPHABET)
