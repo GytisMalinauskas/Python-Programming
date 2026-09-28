@@ -1,5 +1,5 @@
 from alphabet import Alphabet
-
+from math.gcd import gcd
 # TODO: remove next line
 from constants import TO_FIND_KEY, LT_ALPHABET
 
