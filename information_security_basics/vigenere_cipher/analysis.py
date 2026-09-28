@@ -12,7 +12,7 @@ def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 3) -> list[int
         substring = text_to_process[i:i+n]
         for j in range(i+3, len(text_to_process)):
             substring2 = text_to_process[j:j+n]
-        print(substring, substring2)
+            print(substring, substring2)
             
 
 
