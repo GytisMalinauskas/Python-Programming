@@ -9,7 +9,7 @@ from constants import TO_FIND_KEY, LT_ALPHABET
 def find_key(key_lenghts: list[int]) -> str:
     pass
 
-def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 2) -> list[int]:
+def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 2) -> int:
     text_to_process = "".join(char for char in ciphertext.lower() if char in alphabet)
     substring_matches = {}
     for i in range(len(text_to_process) - n + 1):
@@ -30,6 +30,6 @@ def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 2) -> list[int
     for distance_list in substring_matches.values():
         gcd_of_distance_list = reduce(gcd, distance_list)
         gcd_matches[gcd_of_distance_list] += 1
-    return [key_length for key_length, _ in sorted(gcd_matches.items(), key=lambda item:item[1], reverse=True)[:10] if key_length > 1]
+    top_10 = [key_length for key_length, _ in sorted(gcd_matches.items(), key=lambda item:item[1], reverse=True)[:10] if key_length > 1]
     
 print(find_key_lenght(TO_FIND_KEY, LT_ALPHABET))
