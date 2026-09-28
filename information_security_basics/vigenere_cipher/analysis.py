@@ -4,7 +4,7 @@ from functools import reduce
 from collections import Counter
 
 # TODO: remove next line
-from constants import TO_FIND_KEY, LT_ALPHABET
+from constants import TO_FIND_KEY, LT_ALPHABET, LT_SIMILARITY_PROBABILITY, LT_TEXT_OVERLAP_INDEX
 
 def find_key(key_lenghts: list[int]) -> str:
     pass
