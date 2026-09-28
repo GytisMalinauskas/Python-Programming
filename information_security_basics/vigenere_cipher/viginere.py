@@ -1,4 +1,4 @@
-"""A module for implementing Viginere's cipher encryption and decryption"""
+"""A module for implementing Viginere's cipher decryption and finding a key"""
 
 from alphabet import Alphabet
 from analysis import find_key_lenght, find_key
