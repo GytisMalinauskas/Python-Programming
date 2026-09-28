@@ -1,4 +1,4 @@
-def find_key_lenght() -> int:
+def find_key_lenght(ciphertext: str) -> list[int]:
     pass
 
 def divide_text_by_lenght():
