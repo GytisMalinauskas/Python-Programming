@@ -19,10 +19,10 @@ def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 3) -> list[int
             substring2 = text_to_process[j:j+n]
             if substring == substring2:
                 matches.append(j)
-        substring_matches.update({substring: matches})
-    cleaned_matches = substring_matches.copy()
-    for k, v in substring_matches.items():
-        if len(v) < 2:
-            cleaned_matches.pop(k)
-        
+        distances = [b - a for a, b in zip(matches, matches[1:])]
+        if len(distances) == 0:
+            continue
+        substring_matches.update({substring: {matches, distances}})
+    print(sorted(substring_matches.items(), key=lambda item:len(item[1]), reverse=True))
+
 find_key_lenght(TO_FIND_KEY, LT_ALPHABET)
