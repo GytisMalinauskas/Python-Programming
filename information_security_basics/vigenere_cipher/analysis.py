@@ -6,16 +6,17 @@ from collections import Counter
 # TODO: remove next line
 from constants import TO_FIND_KEY, LT_ALPHABET, LT_SIMILARITY_PROBABILITY, LT_TEXT_OVERLAP_INDEX
 
-def find_key(ciphertext:str, key_lenght: int) -> str:
+def find_key(ciphertext:str, alphabet: Alphabet, key_lenght: int) -> str:
     divide_to_caesar_ciphers = {}
     caesar_index = 0
-    for char in ciphertext:
+    text_to_process = text_to_process_func(ciphertext, alphabet)
+    for char in text_to_process:
         divide_to_caesar_ciphers.update({caesar_index: "".join([divide_to_caesar_ciphers.get(caesar_index), char])})
         caesar_index += 1 % len(key_lenght)
     return divide_to_caesar_ciphers
 
 def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 2) -> int:
-    text_to_process = "".join(char for char in ciphertext.lower() if char in alphabet)
+    text_to_process = text_to_process_func(ciphertext, alphabet)
     substring_matches = {}
     for i in range(len(text_to_process) - n + 1):
         substring = text_to_process[i:i+n]
@@ -49,7 +50,7 @@ def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 2) -> int:
         top_10_ranked[lenght] = difference
     return sorted(top_10_ranked.items(), key=lambda item:item[1], reverse=False)[0][0]
 
-def text_to_process(ciphertext: str, alphabet: Alphabet):
+def text_to_process_func(ciphertext: str, alphabet: Alphabet):
     return "".join(char for char in ciphertext.lower() if char in alphabet)
 
-print(find_key(TO_FIND_KEY, find_key_lenght(TO_FIND_KEY, LT_ALPHABET)))
+print(find_key(TO_FIND_KEY, alphabet=LT_ALPHABET, key_lenght=find_key_lenght(TO_FIND_KEY, LT_ALPHABET)))
