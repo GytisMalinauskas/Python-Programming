@@ -11,7 +11,7 @@ def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 3) -> list[int
     substring_matches = {}
     for i in range(len(text_to_process) - n + 1):
         substring = text_to_process[i:i+n]
-        if substring in substring_matches.keys():
+        if substring in substring_matches:
             continue
         matches = []
         for j in range(i+n, len(text_to_process)):
