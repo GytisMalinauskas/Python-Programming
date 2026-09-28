@@ -26,10 +26,17 @@ def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 3) -> list[int
         if len(distances) == 0:
             continue
         substring_matches[substring] = distances
-    gcd_matches = Counter()
-    for distance_list in substring_matches.values():
-        gcd_of_distance_list = reduce(gcd, distance_list)
-        gcd_matches[gcd_of_distance_list] += 1
-    return [key_length for key_length, _ in sorted(gcd_matches.items(), key=lambda item:item[1], reverse=True)[:10]]
+    all_distances = []
+    for distances in substring_matches.values():
+        all_distances.extend(distances)
+
+    factor_counts = Counter()
+    for distance in all_distances:
+        for i in range(2, int(distance**0.5) + 1):
+            if distance % i == 0:
+                factor_counts[i] += 1
+                factor_counts[distance // i] += 1
+
+    return [key_length for key_length, _ in factor_counts.most_common(10)]
     
 print(find_key_lenght(TO_FIND_KEY, LT_ALPHABET))
