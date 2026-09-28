@@ -32,6 +32,6 @@ def viginere(
             return find_key(find_key_lenght(text))
             
         else:
-            raise ValueError("The arguments must be passed corectly.")
+            raise ValueError("Provide a key when encrypting, or omit it when decrypting.")
     except ValueError:
         exit()
