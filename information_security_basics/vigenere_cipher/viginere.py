@@ -9,7 +9,7 @@ def viginere(
     text: str,
     alphabet: Alphabet,
     decrypt: bool = False,
-    find_key: bool = False,
+    is_find_key: bool = False,
     key: str = None):
     try:
         if decrypt and key:
@@ -33,7 +33,7 @@ def viginere(
                     
             return "".join(encrypted_chars)
         
-        elif find_key and not key:
+        elif is_find_key and not key:
             return find_key(find_key_lenght(text))
             
         else:
