@@ -1,5 +1,7 @@
 from alphabet import Alphabet
 from math import gcd
+from functools import reduce
+
 # TODO: remove next line
 from constants import TO_FIND_KEY, LT_ALPHABET
 
@@ -9,6 +11,7 @@ def find_key(key_lenghts: list[int]) -> str:
 def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 3) -> list[int]:
     text_to_process = "".join(char for char in ciphertext.lower() if char in alphabet)
     substring_matches = {}
+    all_distances = []
     for i in range(len(text_to_process) - n + 1):
         substring = text_to_process[i:i+n]
         if substring in substring_matches:
@@ -22,9 +25,9 @@ def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 3) -> list[int
         distances = [b - a for a, b in zip(matches, matches[1:])]
         if len(distances) == 0:
             continue
+        for distance in distances:
+            all_distances.append(distance)
         substring_matches[substring] = distances
-    print(sorted(substring_matches.items(), key=lambda item:len(item[1]), reverse=True))
-    all_distance = []
+    print(reduce(gcd, all_distances))
     
-
 find_key_lenght(TO_FIND_KEY, LT_ALPHABET)
