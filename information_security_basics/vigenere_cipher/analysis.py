@@ -31,5 +31,6 @@ def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 2) -> int:
         gcd_of_distance_list = reduce(gcd, distance_list)
         gcd_matches[gcd_of_distance_list] += 1
     top_10 = [key_length for key_length, _ in sorted(gcd_matches.items(), key=lambda item:item[1], reverse=True)[:10] if key_length > 1]
-    
+    for char in str(alphabet):
+        text_to_process.count(char)
 print(find_key_lenght(TO_FIND_KEY, LT_ALPHABET))
