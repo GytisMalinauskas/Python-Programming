@@ -6,6 +6,8 @@ TO_DECRYPT = "Oštlbač šf yaufag ąųnzrnš."
 
 KEY = "minija"
 
+TEXT_
+
 TO_FIND_KEY = """Įbeu zkįl dgžžbzdž dgžžbzdž pomibohžąrš ūmgdcyyęėrel ųpkluųgęk ędnyjokūupšac
 (gfcr ržįėugząfšac žgcravįį čdųyiasoą evfėšnį hąėąjuršcu 6 yabfdkcs). Sųb csižįsjėššbyė
 gjį vižols dogdįoyoėjš eb gįydūid, įaėąųėav ąaavūzn mrfė ųųįiarr. Fsėočdfalo dūžrotajaj
