@@ -7,11 +7,10 @@ from caesar import caesar
 def viginere(
     text: str,
     alphabet: Alphabet,
-    decrypt: bool = False,
-    is_find_key: bool = False,
+    mode: str,
     key: str = None):
     try:
-        if decrypt and key:
+        if mode == "decrypt" and key:
             encrypted_chars = []
             key_index = 0
             for char in text:
@@ -28,7 +27,7 @@ def viginere(
                     
             return "".join(encrypted_chars)
         
-        elif is_find_key and not key:
+        elif mode == "decrypt" and not key:
             return find_key(find_key_lenght(text))
             
         else:
