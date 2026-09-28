@@ -8,7 +8,8 @@ def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 3) -> list[int
     for i in range(len(text_to_process) - n + 1):
         substring = text_to_process[i:i+n]
         for j in range(i+3, len(text_to_process)):
-            print (i, j)
+            substring2 = text_to_process[j:j+n]
+            
 def find_key(key_lenghts: list[int]) -> str:
     pass
 
