@@ -59,15 +59,15 @@ def crack_caesar(
 
     Tries every possible shift (0 to len(alphabet) - 1), decrypts the
     ciphertext with each one, and scores the result by counting how many
-    of the decrypted letters appear in COMMON_LT_LETTERS. The candidate
-    with the highest score is returned.
+    of the decrypted letters appear in COMMON_LT_LETTERS. The shift
+    which has the highest score is returned.
 
     Parameters:
         ciphertext (str): The encrypted text whose shift is unknown.
         alphabet (Alphabet): The Alphabet instance used to define valid letters.
 
     Returns:
-        output (tuple(int, float, str)): A tuple of (shift, score, plaintext) 
+        output (int):
             for the best candidate, where shift is the int key, score is a float 
             in [0.0, 1.0] representing the fraction of letters that matched 
             common letters, and plaintext is the decrypted string.
