@@ -1,14 +1,16 @@
-"""A module for the implementation of Caesar's cipher encryption and decryption.
+"""Caesar cipher encryption, decryption, and shift recovery.
 
-Contains 2 functions: caesar(text, alphabet, n, encrypt) and crack_caesar(ciphertext, alphabet).
+Provides a standard Caesar cipher that shifts alphabet characters by a
+fixed amount, and a frequency-analysis cracker that recovers the shift
+from ciphertext alone.
 
 Typical usage example:
-    alpha = Alphabet("abcde")
-    caesar("ace", alpha, n=1)              # → "bda"
-    caesar("bda", alpha, n=1, encrypt=False)  # → "ace"
-    
-    cipher_text = "Fp bfbcyfl"
-    shift = crack_caesar(ciphertext , alpha)
+
+  alpha = Alphabet("abcde")
+  caesar("ace", alpha, n=1)                 # → "bda"
+  caesar("bda", alpha, n=1, encrypt=False)  # → "ace"
+
+  shift = crack_caesar("fp bfbcyfl", alpha)
 """
 from alphabet import Alphabet
 from constants import LT_COMMON_LETTERS
