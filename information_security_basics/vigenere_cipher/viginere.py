@@ -18,7 +18,8 @@ def viginere(
     text: str,
     alphabet: Alphabet,
     mode: str,
-    key: str = None) -> str:
+    key: str = None,
+    ) -> str:
     """Decrypts ciphertext or recovers the encryption key.
 
     Operates in two modes controlled by the mode argument. In "decrypt"
