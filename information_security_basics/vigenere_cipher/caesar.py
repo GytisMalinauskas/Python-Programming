@@ -74,10 +74,7 @@ def crack_caesar(
     Example::
 
         alpha = Alphabet(LT_ALPHABET)
-        if results are returned:
-            shift, score, text = crack_caesar("Fp bfbcyfl", alpha)
-        if results[0] are returned:
-            shift = crack_caesar("Fp bfbcyfl", alpha)
+        shift = crack_caesar("Fp bfbcyfl", alpha)
     """
     results = []
     for shift in range(len(alphabet)):
