@@ -2,8 +2,8 @@
 
 Typical usage example:
     alpha = Alphabet("abcde")
-    caesar_cipher("ace", alpha, n=1)              # → "bda"
-    caesar_cipher("bda", alpha, n=1, encrypt=False)  # → "ace"
+    caesar("ace", alpha, n=1)              # → "bda"
+    caesar("bda", alpha, n=1, encrypt=False)  # → "ace"
 """
 from alphabet import Alphabet
 from constants import LT_COMMON_LETTERS
@@ -73,8 +73,9 @@ def crack_caesar(
 
     Example::
 
-        alpha = Alphabet(LT_ALPHABET)
-        shift = crack_caesar("Fp bfbcyfl", alpha)
+        alpha = Alphabet("abcde")
+        cipher_text = "Fp bfbcyfl"
+        shift = crack_caesar(ciphertext , alpha)
     """
     results = []
     for shift in range(len(alphabet)):
