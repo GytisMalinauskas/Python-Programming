@@ -18,7 +18,10 @@ def viginere(
     text: str,
     alphabet: Alphabet,
     mode: str,
-    key: str = None):
+    key: str = None) -> str:
+    """Encrypt using known key or find key  
+    
+    """
     try:
         if mode == "decrypt" and key:
             encrypted_chars = []
