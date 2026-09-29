@@ -2,6 +2,7 @@ from alphabet import Alphabet
 from math import gcd
 from functools import reduce
 from collections import Counter
+from caesar import crack_caesar
 
 # TODO: remove next line
 from constants import TO_FIND_KEY, LT_ALPHABET, LT_SIMILARITY_PROBABILITY, LT_TEXT_OVERLAP_INDEX
@@ -14,8 +15,10 @@ def find_key(ciphertext:str, alphabet: Alphabet, key_lenght: int) -> str:
         get_string = divide_to_caesar_ciphers.get(caesar_index, "")
         divide_to_caesar_ciphers.update({caesar_index: "".join([get_string, char])})
         caesar_index = (caesar_index + 1) % key_lenght
-    # TODO find shift for every cipher
-    # TODO join shifts
+    shifts = []
+    for caesar_index in divide_to_caesar_ciphers.values():
+        shifts.append(crack_caesar(caesar_index, alphabet))
+    return "".join(shifts)
 
 def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 2) -> int:
     text_to_process = text_to_process_func(ciphertext, alphabet)
