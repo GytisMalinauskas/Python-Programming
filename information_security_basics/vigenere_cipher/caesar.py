@@ -6,6 +6,7 @@ Example:
     caesar_cipher("bda", alpha, n=1, encrypt=False)  # → "ace"
 """
 from alphabet import Alphabet
+from constants import LT_COMMON_LETTERS
 
 def caesar(
     text: str,
@@ -44,3 +45,45 @@ def caesar(
         new_index = (alphabet[char] + n * direction) % len(alphabet)
         result.append(alphabet[new_index])
     return "".join(result)
+
+def crack_caesar(
+    ciphertext: str,
+    alphabet: Alphabet,
+) -> tuple[int, float, str]:
+    """Find the most likely Caesar cipher shift by frequency analysis.
+
+    Tries every possible shift (0 to len(alphabet) - 1), decrypts the
+    ciphertext with each one, and scores the result by counting how many
+    of the decrypted letters appear in COMMON_LT_LETTERS. The candidate
+    with the highest score is returned.
+
+    Parameters:
+        ciphertext (str): The encrypted text whose shift is unknown.
+        alphabet (Alphabet): The Alphabet instance used to define valid letters.
+
+    Returns:
+        output (tuple(int, float, str)): A tuple of (shift, score, plaintext) 
+            for the best candidate, where shift is the int key, score is a float 
+            in [0.0, 1.0] representing the fraction of letters that matched 
+            common letters, and plaintext is the decrypted string.
+
+    Raises:
+        ZeroDivisionError: If ciphertext contains no alphabet characters
+            (e.g. it is entirely punctuation or digits).
+
+    Example::
+
+        alpha = Alphabet(LT_ALPHABET)
+        if results are returned:
+            shift, score, text = crack_caesar("Fp bfbcyfl", alpha)
+        if results[0] are returned:
+            shift = crack_caesar("Fp bfbcyfl", alpha)
+    """
+    results = []
+    for shift in range(len(alphabet)):
+        candidate = caesar(ciphertext, alphabet, n=shift, encrypt=False)
+        letters = [c for c in candidate if c in alphabet]
+        score = sum(1 for c in letters if c in LT_COMMON_LETTERS) / len(letters)
+        results.append((shift, score, candidate))
+    results.sort(key=lambda x: -x[1])
+    return results[0]
