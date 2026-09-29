@@ -25,7 +25,6 @@ def viginere(
                     encrypted_char = caesar(char, alphabet, keychar_index, encrypt=False)
                 encrypted_chars.append(encrypted_char)
                 key_index = (key_index + 1) % len(key)
-                    
             return "".join(encrypted_chars)
         
         elif mode == "crack" and not key:
