@@ -1,8 +1,13 @@
-"""A module for implementing Viginere's cipher decryption and finding a key
+"""Vigenère cipher decryption and key discovery.
 
-Contains viginere(text, alphabet, mode, key) function.
+Provides a single entry point, viginere(), that either decrypts a ciphertext
+using a known key, or attempts to recover the key automatically using Kasiski
+examination combined with Caesar cipher frequency analysis.
 
-Typical example usage
+Typical usage example:
+
+  plaintext = viginere(ciphertext, alphabet, mode="decrypt", key="minija")
+  found_key = viginere(ciphertext, alphabet, mode="crack")
 """
 
 from alphabet import Alphabet
