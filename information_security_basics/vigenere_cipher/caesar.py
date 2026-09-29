@@ -1,5 +1,7 @@
 """A module for the implementation of Caesar's cipher encryption and decryption.
 
+Contains 2 functions: caesar(text, alphabet, n, encrypt) and crack_caesar(ciphertext, alphabet).
+
 Typical usage example:
     alpha = Alphabet("abcde")
     caesar("ace", alpha, n=1)              # → "bda"
