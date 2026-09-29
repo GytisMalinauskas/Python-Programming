@@ -1,4 +1,4 @@
-"""A module for viginere's cipher testing"""
+"""A main module for viginere's cipher testing"""
 
 from viginere import viginere
 from constants import TO_DECRYPT, TO_FIND_KEY, LT_ALPHABET, KEY
