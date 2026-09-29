@@ -4,6 +4,9 @@ Typical usage example:
     alpha = Alphabet("abcde")
     caesar("ace", alpha, n=1)              # → "bda"
     caesar("bda", alpha, n=1, encrypt=False)  # → "ace"
+    
+    cipher_text = "Fp bfbcyfl"
+    shift = crack_caesar(ciphertext , alpha)
 """
 from alphabet import Alphabet
 from constants import LT_COMMON_LETTERS
@@ -70,12 +73,6 @@ def crack_caesar(
     Raises:
         ZeroDivisionError: If ciphertext contains no alphabet characters
             (e.g. it is entirely punctuation or digits).
-
-    Example::
-
-        alpha = Alphabet("abcde")
-        cipher_text = "Fp bfbcyfl"
-        shift = crack_caesar(ciphertext , alpha)
     """
     results = []
     for shift in range(len(alphabet)):
