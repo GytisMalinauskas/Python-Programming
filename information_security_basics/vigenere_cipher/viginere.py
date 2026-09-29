@@ -2,6 +2,7 @@
 
 Contains viginere(text, alphabet, mode, key) function.
 
+Typical example usage
 """
 
 from alphabet import Alphabet
