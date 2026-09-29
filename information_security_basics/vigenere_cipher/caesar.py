@@ -1,6 +1,6 @@
 """A module for the implementation of Caesar's cipher encryption and decryption.
 
-Example:
+Typical usage example:
     alpha = Alphabet("abcde")
     caesar_cipher("ace", alpha, n=1)              # → "bda"
     caesar_cipher("bda", alpha, n=1, encrypt=False)  # → "ace"
@@ -74,7 +74,7 @@ def crack_caesar(
     Example::
 
         alpha = Alphabet(LT_ALPHABET)
-        shift, score, text = crack_caesar("Fp bfbcyfl", alpha)
+        shift = crack_caesar("Fp bfbcyfl", alpha)
     """
     results = []
     for shift in range(len(alphabet)):

@@ -1,3 +1,4 @@
+"""A module of constants used in viginere's cipher exercise"""
 from alphabet import Alphabet
 
 LT_ALPHABET = Alphabet("aąbcčdeęėfghiįyjklmnoprsštuųūvzž")
