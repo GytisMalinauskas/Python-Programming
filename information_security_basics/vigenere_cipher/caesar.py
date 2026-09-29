@@ -74,7 +74,7 @@ def crack_caesar(
     Example::
 
         alpha = Alphabet(LT_ALPHABET)
-        shift = crack_caesar("Fp bfbcyfl", alpha)
+        shift, score, text = crack_caesar("Fp bfbcyfl", alpha)
     """
     results = []
     for shift in range(len(alphabet)):
@@ -83,4 +83,4 @@ def crack_caesar(
         score = sum(1 for c in letters if c in LT_COMMON_LETTERS) / len(letters)
         results.append((shift, score, candidate))
     results.sort(key=lambda x: -x[1])
-    return results[0]
+    return results[0][0]

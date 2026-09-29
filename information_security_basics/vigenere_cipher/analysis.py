@@ -17,7 +17,7 @@ def find_key(ciphertext:str, alphabet: Alphabet, key_lenght: int) -> str:
         caesar_index = (caesar_index + 1) % key_lenght
     shifts = []
     for caesar_index in divide_to_caesar_ciphers.values():
-        shifts.append(crack_caesar(caesar_index, alphabet))
+        shifts.append(alphabet[crack_caesar(caesar_index, alphabet)])
     return "".join(shifts)
 
 def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 2) -> int:
