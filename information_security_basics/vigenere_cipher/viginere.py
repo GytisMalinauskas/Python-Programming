@@ -19,8 +19,27 @@ def viginere(
     alphabet: Alphabet,
     mode: str,
     key: str = None) -> str:
-    """Encrypt using known key or find key  
-    
+    """Decrypts ciphertext or recovers the encryption key.
+
+    Operates in two modes controlled by the mode argument. In "decrypt"
+    mode a key must be provided. In "crack" mode the key is recovered
+    automatically using Kasiski examination and frequency analysis.
+
+    Args:
+        text: The ciphertext to process.
+        alphabet: The Alphabet instance defining the character set.
+        mode: Either "decrypt" to decrypt with a known key, or "crack"
+            to recover the key automatically.
+        key: The decryption key, required when mode is "decrypt".
+            Must be omitted or None when mode is "crack".
+
+    Returns:
+        The decrypted plaintext when mode is "decrypt", or the recovered
+        key string when mode is "crack".
+
+    Raises:
+        ValueError: If mode is "decrypt" but no key is provided, or if
+            mode is "crack" but a key is given.
     """
     try:
         if mode == "decrypt" and key:
