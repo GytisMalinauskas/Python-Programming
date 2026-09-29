@@ -1,7 +1,15 @@
-"""A main module for viginere's cipher testing"""
+"""Entry point for the Vigenère cipher exercise.
 
+Demonstrates decryption with a known key and automatic key recovery
+using Kasiski examination with Friedman's index of coincidence.
+
+Typical usage example:
+
+  python main.py
+"""
+
+from constants import KEY, LT_ALPHABET, TO_DECRYPT, TO_FIND_KEY
 from viginere import viginere
-from constants import TO_DECRYPT, TO_FIND_KEY, LT_ALPHABET, KEY
 
 def main():
     print("\n1 ATŠIFRUOTAS TEKSTAS\n", viginere(TO_DECRYPT, LT_ALPHABET, mode="decrypt", key=KEY))
