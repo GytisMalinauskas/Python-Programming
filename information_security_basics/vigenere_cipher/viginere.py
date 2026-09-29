@@ -14,7 +14,7 @@ def viginere(
             encrypted_chars = []
             key_index = 0
             for char in text:
-                if char not in alphabet:
+                if char.lower() not in alphabet:
                     encrypted_chars.append(char)
                     continue
                 is_upper = char != char.lower()
