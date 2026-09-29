@@ -67,10 +67,7 @@ def crack_caesar(
         alphabet (Alphabet): The Alphabet instance used to define valid letters.
 
     Returns:
-        output (int):
-            for the best candidate, where shift is the int key, score is a float 
-            in [0.0, 1.0] representing the fraction of letters that matched 
-            common letters, and plaintext is the decrypted string.
+        output (int): result[0][0] is the best candidate's shift.
 
     Raises:
         ZeroDivisionError: If ciphertext contains no alphabet characters
