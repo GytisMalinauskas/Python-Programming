@@ -59,7 +59,7 @@ def crack_caesar(
 
     Tries every possible shift (0 to len(alphabet) - 1), decrypts the
     ciphertext with each one, and scores the result by counting how many
-    of the decrypted letters appear in COMMON_LT_LETTERS. The shift
+    of the decrypted letters appear in LT_COMMON_LETTERS. The shift
     which has the highest score is returned.
 
     Parameters:
