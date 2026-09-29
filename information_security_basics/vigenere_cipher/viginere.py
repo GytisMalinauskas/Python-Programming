@@ -6,8 +6,8 @@ examination combined with Caesar cipher frequency analysis.
 
 Typical usage example:
 
-  plaintext = viginere(ciphertext, alphabet, mode="decrypt", key="minija")
-  found_key = viginere(ciphertext, alphabet, mode="crack")
+    plaintext = viginere(ciphertext, alphabet, mode="decrypt", key="minija")
+    found_key = viginere(ciphertext, alphabet, mode="crack")
 """
 
 from alphabet import Alphabet

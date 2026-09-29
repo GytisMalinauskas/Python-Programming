@@ -6,11 +6,11 @@ from ciphertext alone.
 
 Typical usage example:
 
-  alpha = Alphabet("abcde")
-  caesar("ace", alpha, n=1)                 # → "bda"
-  caesar("bda", alpha, n=1, encrypt=False)  # → "ace"
+    alpha = Alphabet("abcde")
+    caesar("ace", alpha, n=1)                 # → "bda"
+    caesar("bda", alpha, n=1, encrypt=False)  # → "ace"
 
-  shift = crack_caesar("fp bfbcyfl", alpha)
+    shift = crack_caesar("fp bfbcyfl", alpha)
 """
 from alphabet import Alphabet
 from constants import LT_COMMON_LETTERS
@@ -56,7 +56,7 @@ def caesar(
 def crack_caesar(
     ciphertext: str,
     alphabet: Alphabet,
-) -> tuple[int, float, str]:
+) -> int:
     """Finds the most likely Caesar cipher shift by frequency analysis.
 
     Tries every possible shift (0 to len(alphabet) - 1), decrypts the
