@@ -3,9 +3,7 @@ from math import gcd
 from functools import reduce
 from collections import Counter
 from caesar import crack_caesar
-
-# TODO: remove next line
-from constants import TO_FIND_KEY, LT_ALPHABET, LT_SIMILARITY_PROBABILITY, LT_TEXT_OVERLAP_INDEX
+from constants import LT_SIMILARITY_PROBABILITY, LT_TEXT_OVERLAP_INDEX
 
 def find_key(ciphertext:str, alphabet: Alphabet, key_lenght: int) -> str:
     divide_to_caesar_ciphers = {}
