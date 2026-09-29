@@ -57,19 +57,19 @@ def crack_caesar(
     ciphertext: str,
     alphabet: Alphabet,
 ) -> tuple[int, float, str]:
-    """Find the most likely Caesar cipher shift by frequency analysis.
+    """Finds the most likely Caesar cipher shift by frequency analysis.
 
     Tries every possible shift (0 to len(alphabet) - 1), decrypts the
     ciphertext with each one, and scores the result by counting how many
     of the decrypted letters appear in LT_COMMON_LETTERS. The shift
-    which has the highest score is returned.
+    with the highest score is returned.
 
-    Parameters:
-        ciphertext (str): The encrypted text whose shift is unknown.
-        alphabet (Alphabet): The Alphabet instance used to define valid letters.
+    Args:
+        ciphertext: The encrypted text whose shift is unknown.
+        alphabet: The Alphabet instance used to define valid letters.
 
     Returns:
-        output (int): result[0][0] is the best candidate's shift.
+        The integer shift value that produces the highest frequency score.
 
     Raises:
         ZeroDivisionError: If ciphertext contains no alphabet characters
