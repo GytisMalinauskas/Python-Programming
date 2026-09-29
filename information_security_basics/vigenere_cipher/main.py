@@ -5,7 +5,7 @@ using Kasiski examination with Friedman's index of coincidence.
 
 Typical usage example:
 
-  python main.py
+    python main.py
 """
 
 from constants import KEY, LT_ALPHABET, TO_DECRYPT, TO_FIND_KEY
