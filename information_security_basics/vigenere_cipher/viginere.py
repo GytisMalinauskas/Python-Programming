@@ -22,7 +22,6 @@ def viginere(
                     encrypted_char = caesar(char, alphabet, keychar_index, encrypt=False)
                 encrypted_chars.append(encrypted_char)
                 key_index = (key_index + 1) % len(key)
-            else:
                 encrypted_chars.append(char)
                     
             return "".join(encrypted_chars)
