@@ -1,6 +1,6 @@
 """A module for implementing Viginere's cipher decryption and finding a key
 
-
+Contains viginere(text, alphabet, mode, key) function.
 
 """
 
