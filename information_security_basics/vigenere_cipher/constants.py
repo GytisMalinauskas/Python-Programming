@@ -1,4 +1,20 @@
-"""A module of constants used in viginere's cipher exercise"""
+"""Constants for the Lithuanian Vigenère cipher exercise.
+
+Provides the Lithuanian alphabet, exercise texts, and statistical parameters
+used for Friedman's index of coincidence test and Caesar cipher frequency
+analysis.
+
+Constants:
+    LT_ALPHABET: The Lithuanian alphabet as an Alphabet instance.
+    LT_TEXT_OVERLAP_INDEX: Index of coincidence for Lithuanian text (~0.069).
+    LT_SIMILARITY_PROBABILITY: Random coincidence probability for a
+        32-character alphabet (~0.031).
+    LT_COMMON_LETTERS: Most frequent letters in Lithuanian for frequency
+        analysis.
+    KEY: Known encryption key for exercise 1.
+    TO_DECRYPT: Ciphertext for exercise 1 (decrypt using KEY).
+    TO_FIND_KEY: Ciphertext for exercise 2 (recover unknown key).
+"""
 from alphabet import Alphabet
 
 LT_ALPHABET = Alphabet("aąbcčdeęėfghiįyjklmnoprsštuųūvzž")
