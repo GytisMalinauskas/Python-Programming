@@ -57,5 +57,3 @@ def find_key_lenght(ciphertext: str, alphabet: Alphabet, n: int = 2) -> int:
 
 def text_to_process_func(ciphertext: str, alphabet: Alphabet) -> str:
     return "".join(char for char in ciphertext.lower() if char in alphabet)
-
-print(find_key(TO_FIND_KEY, alphabet=LT_ALPHABET, key_lenght=find_key_lenght(TO_FIND_KEY, LT_ALPHABET)))
