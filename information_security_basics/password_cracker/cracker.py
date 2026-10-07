@@ -1,13 +1,15 @@
 from hashlib import md5, sha256, scrypt
 from bcrypt import checkpw
 from argon2 import PasswordHasher
-from constants import SMALL_FILE_MODE, BIG_FILE_MODE 
+from constants import SMALL_FILE_MODE, BIG_FILE_MODE
+import os
 
 def password_cracker(mode: str, hash_to_crack: set | str):
     mode = mode.lower().strip()
     try:
         if mode in BIG_FILE_MODE:
             hash, salt = hash_to_crack
+            print(os.getcwd())
             with open("rockyou.txt") as file:
                 if mode == "md5":
                     for line in file:
