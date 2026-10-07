@@ -32,14 +32,12 @@ def password_cracker(mode: str, hash_to_crack: set | str):
                 hash = hash_to_crack
             file_path = os.path.join(current_folder, "rockyou_1000.txt")
             with open(file_path, 'r', encoding="latin-1") as file:
-                for line in file:
-                    ...
-            if mode == "scrypt":
-                return 0
-            if mode == "bcrypt":
-                return 1
-            if mode == "argon2":
-                return 2
+                if mode == "scrypt":
+                    return 0
+                if mode == "bcrypt":
+                    return 1
+                if mode == "argon2":
+                    return 2
         else:
             raise ValueError()
     except ValueError:
