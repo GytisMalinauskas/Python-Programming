@@ -3,12 +3,12 @@ from bcrypt import checkpw
 from argon2 import PasswordHasher
 from constants import SMALL_FILE_MODE, BIG_FILE_MODE 
 
-def password_cracker(mode: str, hash: str, salt: str = None):
+def password_cracker(mode: str, hash_to_crack: set | str):
     mode = mode.lower().strip()
     try:
         if mode in BIG_FILE_MODE:
             if mode == "md5":
-                return 0
+                md5_hash, salt = hash_to_crack
             if mode == "sha256":
                 return 1
         elif mode in SMALL_FILE_MODE:
