@@ -1,7 +1,11 @@
 """Entry point for the dictionary attack exercise.
 
-Demonstrates password cracking of a known hash and salt using.
+Demonstrates password cracking of a known hash and salt using different
+hashing algorithms like md5, sha256, bcrypt, scrypt and argon2.
 
+Typical usage example:
+
+    python main.py
 """
 from cracker import password_cracker
 from constants import MD5, SHA_256, ARGON2, BCRYPT, SCRYPT
