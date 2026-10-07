@@ -20,7 +20,11 @@ def password_cracker(mode: str, hash_to_crack: set | str):
                         if hashed_line == hash:
                             return line
                 if mode == "sha256":
-                    ...
+                    for line in file:
+                        salted_line = (line.rstrip() + salt).encode()
+                        hashed_line = sha256(salted_line).hexdigest()
+                        if hashed_line == hash:
+                            return line
         elif mode in SMALL_FILE_MODE:
             if isinstance(hash_to_crack, tuple):
                 hash, salt = hash_to_crack
