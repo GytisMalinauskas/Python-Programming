@@ -1,5 +1,5 @@
 from hashlib import md5, sha256, scrypt
-from bcrypt import checkpw
+from bcrypt import checkpw, hashpw
 from argon2 import PasswordHasher
 from constants import SMALL_FILE_MODE, BIG_FILE_MODE
 import os
