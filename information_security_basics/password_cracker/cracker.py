@@ -7,11 +7,16 @@ def password_cracker(mode: str, hash_to_crack: set | str):
     mode = mode.lower().strip()
     try:
         if mode in BIG_FILE_MODE:
+            hash, salt = hash_to_crack
             if mode == "md5":
-                md5_hash, salt = hash_to_crack
+                return 0
             if mode == "sha256":
                 return 1
         elif mode in SMALL_FILE_MODE:
+            if isinstance(hash_to_crack, set):
+                hash, salt = hash_to_crack
+            else:
+                hash = hash_to_crack
             if mode == "scrypt":
                 return 0
             if mode == "bcrypt":
