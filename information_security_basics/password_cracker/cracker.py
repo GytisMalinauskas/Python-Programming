@@ -1,5 +1,9 @@
-"""
+"""Password cracking using dictionary attack.
 
+
+Typical usage examples:
+    password_cracker("md5", ("93ddf33326c602c40d9645befb7c9b15", "ca9adae67c0daf98"))
+    password_cracker("bcrypt", BCRYPT)
 """
 
 from hashlib import md5, sha256, scrypt
@@ -12,7 +16,7 @@ import os
 current_folder = os.path.dirname(__file__)
 
 def password_cracker(mode: str, hash_to_crack: set | str):
-    """
+    """Uses dictionary attack the matching hashes and returns
     
     
     
