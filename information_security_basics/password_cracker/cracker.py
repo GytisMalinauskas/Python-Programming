@@ -8,7 +8,7 @@ def password_cracker(mode: str, hash_to_crack: set | str):
     try:
         if mode in BIG_FILE_MODE:
             hash, salt = hash_to_crack
-            with open("rock_you.txt") as file:
+            with open("rockyou.txt") as file:
                 for line in file:
                     ...
                 if mode == "md5":
@@ -16,11 +16,11 @@ def password_cracker(mode: str, hash_to_crack: set | str):
                 if mode == "sha256":
                     return 1
         elif mode in SMALL_FILE_MODE:
-            if isinstance(hash_to_crack, set):
+            if isinstance(hash_to_crack, tuple):
                 hash, salt = hash_to_crack
             else:
                 hash = hash_to_crack
-            with open("rock_you.txt") as file:
+            with open("rockyou_1000.txt") as file:
                 for line in file:
                     ...
             if mode == "scrypt":
