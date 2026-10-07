@@ -53,3 +53,4 @@ def password_cracker(mode: str, hash_to_crack: set | str):
             raise ValueError()
     except ValueError:
         exit("Consider changing function's password_cracker mode to one of these: \nmd5\nsha256\nscrypt\nbcrypt\nargon2")
+    return -1
