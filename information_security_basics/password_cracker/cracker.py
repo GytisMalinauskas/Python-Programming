@@ -18,10 +18,10 @@ import os
 
 current_folder = os.path.dirname(__file__)
 
-def password_cracker(mode: str, hash_to_crack: set | str):
-    """Uses dictionary attack the matching hashes and returns
+def password_cracker(mode: str, hash_to_crack: tuple | str):
+    """Cracks the password of the given mode, hash and salt (if provided in the).
     
-    
+    Given the mode, 
     
     Args:
         mode: hashing algorithm to use for the attack.
