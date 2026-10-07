@@ -4,6 +4,8 @@ from argon2 import PasswordHasher
 from constants import SMALL_FILE_MODE, BIG_FILE_MODE
 import os
 
+
+
 def password_cracker(mode: str, hash_to_crack: set | str):
     mode = mode.lower().strip()
     try:
