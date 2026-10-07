@@ -35,7 +35,7 @@ def password_cracker(mode: str, hash_to_crack: set | str):
                 if mode == "scrypt":
                     for line in file:
                         encoded_line = line.rstrip().encode()
-                        hashed_line = scrypt(encoded_line, salt).hexdigest()
+                        hashed_line = scrypt(password=encoded_line, salt=salt).hexdigest()
                         if hashed_line == hash:
                             return line
                 if mode == "bcrypt":
