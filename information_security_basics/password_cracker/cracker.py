@@ -21,7 +21,8 @@ current_folder = os.path.dirname(__file__)
 def password_cracker(mode: str, hash_to_crack: tuple | str):
     """Cracks the password of the given mode, hash and salt (if provided in the).
     
-    Given the mode, 
+    Every password in the file is hashed using the provided mode and salt.
+    The password's hash is then compared with the given hash.
     
     Args:
         mode: hashing algorithm to use for the attack.
@@ -29,7 +30,7 @@ def password_cracker(mode: str, hash_to_crack: tuple | str):
             that the functions tries to attack. 
         
     Returns:
-        Password as string or -1 if no password hash matches given hash
+        Password as string or -1 if no password hash matches given hash.
     """
     mode = mode.lower().strip()
     try:
