@@ -16,9 +16,7 @@ def password_cracker(mode: str, hash_to_crack: set | str):
                 if mode == "md5":
                     for line in file:
                         salted_line = (line.rstrip() + salt).encode()
-                        print(salted_line)
-                        hashed_line = md5().update(salted_line).hexdigest()
-                        print(hashed_line)
+                        hashed_line = md5(salted_line).hexdigest()
                         if hashed_line == hash:
                             return line
                 if mode == "sha256":
