@@ -1,6 +1,6 @@
 """Password cracking using dictionary attack.
 
-Provides a function to crack a password using 
+Provides a function to crack a password that is hashed with a certain  
 
 Typical usage examples:
     password_cracker("md5", tuple("93ddf33326c602c40d9645befb7c9b15", "ca9adae67c0daf98"))
