@@ -13,9 +13,13 @@ current_folder = os.path.dirname(__file__)
 
 def password_cracker(mode: str, hash_to_crack: set | str):
     """
+    
+    
+    
     Args:
-        mode: hashing algorithm to use for
-        
+        mode: hashing algorithm to use for the attack.
+        hash_to_crack: given hash as a string | hash and salt as a tuple
+            that the functions tries to attack. 
         
     Returns:
         Password as string or -1 if no password hash matches given hash
