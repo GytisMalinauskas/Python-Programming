@@ -18,7 +18,7 @@ def password_cracker(mode: str, hash_to_crack: set | str):
     
     Args:
         mode: hashing algorithm to use for the attack.
-        hash_to_crack: given hash as a string | hash and salt as a tuple
+        hash_to_crack: given hash as a string OR hash and salt as a tuple
             that the functions tries to attack. 
         
     Returns:
