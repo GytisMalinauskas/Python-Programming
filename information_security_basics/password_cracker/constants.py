@@ -1,7 +1,17 @@
 """ A module for holding constants needed for password_storing exercise.
 
-Constants:
+Provides the exercise's sets or strings that contains hashes and salt for 
+different hashing algorithms and hashing mode lists for different sizes
+of dictionary files.
 
+Constants:
+    BIG_FILE_MODE: list of modes that uses BIG dictionary file.
+    SMALL_FILE_MODE: list of modes that uses SMALL dictionary file.
+    MD5: a set of hash and salt for MD5 algorithm to crack.
+    SHA_256: a set of hash and salt for SHA_256 algorithm to crack.
+    BCRYPT: a string of hash for BCRYPT algorithm to crack.
+    SCRYPT: a set of hash and salt for SCRYPT algorithm to crack.
+    ARGON2: a string of hash for ARGON2 algorithm to crack.
 """
 BIG_FILE_MODE = ["md5", "sha256"]
 SMALL_FILE_MODE = ["scrypt", "bcrypt", "argon2"]
