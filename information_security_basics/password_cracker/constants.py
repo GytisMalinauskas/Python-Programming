@@ -15,8 +15,8 @@ Constants:
 """
 BIG_FILE_MODE = ["md5", "sha256"]
 SMALL_FILE_MODE = ["scrypt", "bcrypt", "argon2"]
-MD5 = tuple("93ddf33326c602c40d9645befb7c9b15", "ca9adae67c0daf98")
-SHA_256 = tuple("d5edbf227a58558de0d55dfda577100dada72c6a1194c9d0a6a952c894d5e035", "5b3b45e6f481921b")
+MD5 = ("93ddf33326c602c40d9645befb7c9b15", "ca9adae67c0daf98")
+SHA_256 = ("d5edbf227a58558de0d55dfda577100dada72c6a1194c9d0a6a952c894d5e035", "5b3b45e6f481921b")
 BCRYPT = "$2b$11$z4viB5e59/nnxmllQ1OWJOMEraKbD92wMfi/xIG.YJgVTyB5a3R2S"
-SCRYPT = tuple("04b6882b4fc8a0cfa39f8e2caf2c833ef8ae7155e4f2b1a6de8329e367f9aeaaf2c31e48c3ce79527dbe7ebb9446b2bc3e4f4260fbd5cdbc345588f2a8b38fa2", "309ec8997371e49b")
+SCRYPT = ("04b6882b4fc8a0cfa39f8e2caf2c833ef8ae7155e4f2b1a6de8329e367f9aeaaf2c31e48c3ce79527dbe7ebb9446b2bc3e4f4260fbd5cdbc345588f2a8b38fa2", "309ec8997371e49b")
 ARGON2 = "$argon2id$v=19$m=47104,t=4,p=1$qLarnCNSYDVz9SwQS2Kw3g$CaN67MglrBuFUTYCi3g0VVJDRwFFrxxdRvWwG5W7r10"
