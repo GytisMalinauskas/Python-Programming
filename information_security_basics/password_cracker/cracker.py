@@ -49,8 +49,8 @@ def password_cracker(mode: str, hash_to_crack: set | str):
                     for line in file:
                         password = line.rstrip()
                         try:
-                            ph.verify(hash, password)
-                            return password
+                            if ph.verify(hash, password):
+                                return password
                         except VerifyMismatchError:
                             pass
         else:
