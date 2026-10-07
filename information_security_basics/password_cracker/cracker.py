@@ -1,9 +1,10 @@
 """Password cracking using dictionary attack.
 
+Provides a function to crack a password using 
 
 Typical usage examples:
-    password_cracker("md5", ("93ddf33326c602c40d9645befb7c9b15", "ca9adae67c0daf98"))
-    password_cracker("bcrypt", BCRYPT)
+    password_cracker("md5", tuple("93ddf33326c602c40d9645befb7c9b15", "ca9adae67c0daf98"))
+    password_cracker("bcrypt", "$2b$11$z4viB5e59/nnxmllQ1OWJOMEraKbD92wMfi/xIG.YJgVTyB5a3R2S")
 """
 
 from hashlib import md5, sha256, scrypt
