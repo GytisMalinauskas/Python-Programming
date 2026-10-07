@@ -41,7 +41,7 @@ def password_cracker(mode: str, hash_to_crack: set | str):
                 if mode == "bcrypt":
                     for line in file:
                         encoded_line = line.rstrip().encode('utf-8')
-                        if checkpw(encoded_line, hash):
+                        if checkpw(encoded_line, hash.encode()):
                             return line
                 if mode == "argon2":
                     return 2
