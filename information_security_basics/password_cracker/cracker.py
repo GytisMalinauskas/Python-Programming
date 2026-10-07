@@ -1,5 +1,5 @@
 from hashlib import md5, sha256, scrypt
-from bcrypt import checkpw, hashpw
+from bcrypt import checkpw
 from argon2 import PasswordHasher
 from constants import SMALL_FILE_MODE, BIG_FILE_MODE
 import os
@@ -39,7 +39,9 @@ def password_cracker(mode: str, hash_to_crack: set | str):
                         if hashed_line == hash:
                             return line
                 if mode == "bcrypt":
-                    return 1
+                    for line in file:
+                        encoded_line = line.rstrip().encode()
+                        
                 if mode == "argon2":
                     return 2
         else:
