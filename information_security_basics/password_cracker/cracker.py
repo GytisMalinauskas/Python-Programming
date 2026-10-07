@@ -3,7 +3,7 @@ from bcrypt import checkpw
 from argon2 import PasswordHasher
 from constants import SMALL_FILE_MODE, BIG_FILE_MODE 
 
-def password_cracker(mode: str, hash: str = None, salt: str = None):
+def password_cracker(mode: str, hash: str, salt: str = None):
     mode = mode.lower().strip()
     try:
         if mode in BIG_FILE_MODE:
@@ -14,9 +14,9 @@ def password_cracker(mode: str, hash: str = None, salt: str = None):
         elif mode in SMALL_FILE_MODE:
             if mode == "scrypt":
                 return 0
-            if mode == "":
+            if mode == "bcrypt":
                 return 1
-            if mode == "sha256":
+            if mode == "argon2":
                 return 2
         else:
             raise ValueError()
