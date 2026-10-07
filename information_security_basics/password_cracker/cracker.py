@@ -2,6 +2,7 @@ from hashlib import md5, sha256, scrypt
 from bcrypt import checkpw
 from argon2 import PasswordHasher
 from constants import SMALL_FILE_MODE, BIG_FILE_MODE
+from argon2.exceptions import VerifyMismatchError
 import os
 
 current_folder = os.path.dirname(__file__)
@@ -46,9 +47,12 @@ def password_cracker(mode: str, hash_to_crack: set | str):
                 if mode == "argon2":
                     ph = PasswordHasher()
                     for line in file:
-                        hashed_line = ph.hash(line.rstrip().encode('utf-8'))
-                        if hashed_line == hash:
-                            return line
+                        password = line.rstrip()
+                        try:
+                            ph.verify(hash, password)
+                            return password
+                        except VerifyMismatchError:
+                            pass
         else:
             raise ValueError()
     except ValueError:
