@@ -46,8 +46,9 @@ def password_cracker(mode: str, hash_to_crack: set | str):
                 if mode == "argon2":
                     ph = PasswordHasher()
                     for line in file:
-                        stored = ph.hash(line)
-                        
+                        hashed_line = ph.hash(line)
+                        if hashed_line == hash:
+                            return line
         else:
             raise ValueError()
     except ValueError:
