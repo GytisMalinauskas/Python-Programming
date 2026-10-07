@@ -9,12 +9,16 @@ def password_cracker(mode: str, hash_to_crack: set | str):
         if mode in BIG_FILE_MODE:
             hash, salt = hash_to_crack
             with open("rockyou.txt") as file:
-                for line in file:
-                    ...
                 if mode == "md5":
-                    return 0
+                    for line in file:
+                        salted_line = (line + salt).encode()
+                        print(salted_line)
+                        hashed_line = md5().update(salted_line).hexdigest()
+                        print(hashed_line)
+                        if hashed_line == hash:
+                            return line
                 if mode == "sha256":
-                    return 1
+                    ...
         elif mode in SMALL_FILE_MODE:
             if isinstance(hash_to_crack, tuple):
                 hash, salt = hash_to_crack

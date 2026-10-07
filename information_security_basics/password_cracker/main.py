@@ -7,4 +7,6 @@ def main():
     print("bcrypt:", password_cracker("bcrypt", BCRYPT))
     print("scrypt:", password_cracker("scrypt", SCRYPT))
     print("argon2:", password_cracker("argon2", ARGON2))
-    
+
+if __name__ == "__main__":
+    main()
