@@ -4,15 +4,15 @@ from argon2 import PasswordHasher
 from constants import SMALL_FILE_MODE, BIG_FILE_MODE
 import os
 
-
+current_folder = os.path.dirname(__file__)
 
 def password_cracker(mode: str, hash_to_crack: set | str):
     mode = mode.lower().strip()
     try:
         if mode in BIG_FILE_MODE:
             hash, salt = hash_to_crack
-            print(os.getcwd())
-            with open("rockyou.txt") as file:
+            file_path = os.path.join(current_folder, "rockyou.txt")
+            with open(file_path, 'r', encoding="latin-1") as file:
                 if mode == "md5":
                     for line in file:
                         salted_line = (line + salt).encode()
@@ -28,7 +28,8 @@ def password_cracker(mode: str, hash_to_crack: set | str):
                 hash, salt = hash_to_crack
             else:
                 hash = hash_to_crack
-            with open("rockyou_1000.txt") as file:
+            file_path = os.path.join(current_folder, "rockyou_1000.txt")
+            with open(file_path, 'r', encoding="latin-1") as file:
                 for line in file:
                     ...
             if mode == "scrypt":
