@@ -5,13 +5,14 @@ def rsa():
     e = 62653
     while True:
         p = getPrime(256)
-        
-        if GCD(e, p-1) != 1:
+        comp = GCD(e, p-1)
+        if comp != 1:
             continue
         break
     while True:
         q = getPrime(256)
-        if GCD(e, q-1) != 1 or q != p:
+        comp = GCD(e, q-1)
+        if comp != 1 or q != p:
             continue
         break
     n = p * q
