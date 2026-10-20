@@ -12,7 +12,7 @@ def rsa():
     while True:
         q = getPrime(256)
         comp = GCD(e, q-1)
-        if comp != 1 or q != p:
+        if comp != 1 or q == p:
             continue
         break
     n = p * q
