@@ -7,8 +7,11 @@ def rsa(e: int):
     equality because they must not match and their GCD with the 
     given prime number must be equal to 1.
     
+    Args:
+        e: given prime number.
+    
     Returns:
-        pairs of public and private keys
+        Pairs of public and private keys.
     """
     while True:
         p = getPrime(256)
