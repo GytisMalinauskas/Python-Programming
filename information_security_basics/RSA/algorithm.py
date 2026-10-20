@@ -1,4 +1,4 @@
-from Crypto.Util.number import getPrime
+from Crypto.Util.number import getPrime, GCD
 
 def rsa():
     p = getPrime(256)
