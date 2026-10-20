@@ -5,6 +5,7 @@ def rsa():
     e = 62653
     while True:
         p = getPrime(256)
+        
         if GCD(e, p-1) != 1:
             continue
         break
