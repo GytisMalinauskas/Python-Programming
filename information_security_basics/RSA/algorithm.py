@@ -1,8 +1,7 @@
 from Crypto.Util.number import getPrime, GCD
 
-def rsa():
-    # 1 punktas e = 62653
-    e = 62653
+def rsa(e: int):
+    """"""
     while True:
         p = getPrime(256)
         comp = GCD(e, p-1)
@@ -19,7 +18,7 @@ def rsa():
     phi = (p - 1) * (q - 1)
     d = pow(e, -1, phi)
     
-    print("viešasis raktas(e,n)", (e, n))
-    print("privatusis raktas(d,n)", (d, n))
-    
-rsa()
+    return (e, n), (d, n)
+
+# 1 punktas e = 62653
+rsa(e = 62653)
