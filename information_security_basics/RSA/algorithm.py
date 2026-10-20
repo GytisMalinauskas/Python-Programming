@@ -3,7 +3,7 @@ from Crypto.Util.number import getPrime, GCD
 def rsa(e: int):
     """Generates RSA public and private keys given prime number.
     
-    
+    2 prime numbers of 256 bits are generated which must not be equal and each 
     
     Returns:
         pairs of public and private keys
