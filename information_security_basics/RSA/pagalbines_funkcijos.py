@@ -24,3 +24,4 @@ integer = string_to_int(vardas)
 print(integer)
 string = int_to_string(integer)
 print(string)
+
