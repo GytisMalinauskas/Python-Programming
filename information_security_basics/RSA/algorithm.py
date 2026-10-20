@@ -17,4 +17,6 @@ def rsa():
     phi = (p - 1) * (q - 1)
     d = pow(e, -1, phi)
     
+    print("viešasis raktas(e,n)", (e, n))
+    print("privatusis raktas(d,n)", (d, n))
 rsa()
