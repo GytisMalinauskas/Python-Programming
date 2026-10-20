@@ -21,4 +21,5 @@ def rsa():
     
     print("viešasis raktas(e,n)", (e, n))
     print("privatusis raktas(d,n)", (d, n))
+    
 rsa()
