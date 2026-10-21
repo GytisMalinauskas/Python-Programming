@@ -100,3 +100,6 @@ def cipher_decryption_2(public_key: tuple, cipher: int):
     if check == cipher:
         return bytes_to_string(int_to_bytes(m))
     return -1
+
+def cipher_decryption_3(private_key: tuple, cipher: int):
+    ...
