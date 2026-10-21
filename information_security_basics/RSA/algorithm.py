@@ -56,6 +56,6 @@ def cipher_decryption (public_key: tuple, cipher: int):
     # c = 625276106331532937069864335247208594542625
     # C = m ** e % n
     c = cipher
-    e, _ = public_key
+    e, n = public_key
     m = c ** (1 / e)
     ...
