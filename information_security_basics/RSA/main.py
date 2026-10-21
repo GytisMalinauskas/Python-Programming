@@ -5,11 +5,11 @@ def main():
     # 1 punktas e = 62653
     print("1 UŽDUOTIS")
     public_key, private_key = rsa_keys(e=62653)
-    print("Viešasis raktas:", public_key)
-    print("Privatusis raktas:", private_key)
+    print("(e, n):", public_key)
+    print("(d, n):", private_key)
     # 2 punktas vardo užkodavimas viešuoju raktu
     cipher = name_encryption(NAME_SURNAME, public_key)
-    print("\n2 UŽDUOTIS\nUžšifruotas vardas ir pavardė:", cipher)
+    print("\n2 UŽDUOTIS\nŠifras:", cipher)
     decrypted = cipher_decryption(PUBLIC_KEY_3, CIPHER_3)
     print("\n3 UŽDUOTIS\nAtšifruotas tekstas:", decrypted)
     
