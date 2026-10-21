@@ -33,7 +33,12 @@ def rsa_keys(e: int):
     return (e, n), (d, n)
 
 def name_encryption (name: str, public_key: tuple):
+    """Encrypts given name with the given public key.
+    
+    Name is turned into bytes, bytes are turned to int and then 
+    """
     e, n = public_key
     name = string_to_bytes(name)
     m = bytes_to_int(name)
     c = pow(m, e, n)
+    return c
