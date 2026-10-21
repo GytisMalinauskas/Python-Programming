@@ -54,9 +54,6 @@ def name_encryption(name: str, public_key: tuple):
     return c
 
 def cipher_decryption(public_key: tuple, cipher: int):
-    # e = 3, n = 79982686678088103218738140681847135962460074410801123480380353476204002059633
-    # c = 625276106331532937069864335247208594542625
-    # C = m ** e % n
     c = cipher
     e, n = public_key
     m = integer_root(c, e)
@@ -75,9 +72,6 @@ def integer_root(c: int, e: int) -> int:
         else:
             hi = mid - 1
     return lo
-
-# e=65537 n=90887645603855155076465221752023737017190350900236998160177852931248194869443
-# c=84420985143671444335467296642495467865216600761466185242641986435784016297058
 
 def cipher_decryption_2(public_key: tuple, cipher: int):
     e, n = public_key
