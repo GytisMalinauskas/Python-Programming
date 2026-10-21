@@ -1,5 +1,5 @@
-from constants import NAME_SURNAME, PUBLIC_KEY_3, CIPHER_3, CIPHER_4, PUBLIC_KEY_4
-from algorithm import rsa_keys, name_encryption, cipher_decryption, cipher_decryption_2
+from constants import NAME_SURNAME, PUBLIC_KEY_3, CIPHER_3, CIPHER_4, PUBLIC_KEY_4, PPRIVATE_KEY, CIPHER_5
+from algorithm import rsa_keys, name_encryption, cipher_decryption, cipher_decryption_2, cipher_decryption_3
 
 def main():
     # 1 punktas e = 62653
@@ -16,6 +16,9 @@ def main():
     # 4 punktas slaptarasčio nulaužimas
     decrypted = cipher_decryption_2(PUBLIC_KEY_4, CIPHER_4)
     print("\n4 UŽDUOTIS\nAtšifruotas tekstas:", decrypted)
+    # 5 punktas slaptarasčio nulaužimas
+    decrypted = cipher_decryption_3(PPRIVATE_KEY, CIPHER_5)
+    print("\n5 UŽDUOTIS\nAtšifruotas tekstas:", decrypted)
     
 if __name__ == "__main__":
     main()
