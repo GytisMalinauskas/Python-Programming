@@ -1,5 +1,5 @@
 from Crypto.Util.number import getPrime, GCD
-from pagalbines_funkcijos import string_to_bytes, bytes_to_int
+from pagalbines_funkcijos import string_to_bytes, bytes_to_int, int_to_bytes, bytes_to_string
 
 def rsa_keys(e: int):
     """Generates RSA public and private keys given prime number.
@@ -59,5 +59,5 @@ def cipher_decryption (public_key: tuple, cipher: int):
     e, n = public_key
     m = int(c ** (1 / e))
     if pow(m, e, n) == cipher:
-        return m
+        return string_to_bytes(int_to_bytes(m))
     return -1
