@@ -102,4 +102,5 @@ def cipher_decryption_2(public_key: tuple, cipher: int):
     return -1
 
 def cipher_decryption_3(private_key: tuple, cipher: int):
-    ...
+    d, n = private_key
+    
