@@ -57,7 +57,7 @@ def cipher_decryption (public_key: tuple, cipher: int):
     # C = m ** e % n
     c = cipher
     e, n = public_key
-    m = int(c ** (1 / e))
+    m = c ** (1 // e)
     if pow(m, e, n) == cipher:
         return bytes_to_string(int_to_bytes(m))
     return -1
