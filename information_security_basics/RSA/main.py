@@ -3,8 +3,9 @@ from algorithm import rsa_keys, name_encryption, cipher_decryption
 
 def main():
     # 1 punktas e = 62653
+    print("1 UŽDUOTIS")
     public_key, private_key = rsa_keys(e=62653)
-    print("1 UŽDUOTIS\nViešasis raktas:", public_key)
+    print("Viešasis raktas:", public_key)
     print("Privatusis raktas:", private_key)
     # 2 punktas vardo užkodavimas viešuoju raktu
     cipher = name_encryption(NAME_SURNAME, public_key)
