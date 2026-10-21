@@ -10,7 +10,7 @@ def main():
     cipher = name_encryption(NAME_SURNAME, public_key)
     print("\n2 UŽDUOTIS\nUžšifruotas vardas ir pavardė:", cipher)
     decrypted = cipher_decryption(PUBLIC_KEY_3, CIPHER_3)
-    print("\n3 UŽDUOTIS\nAtšifruotas tekstas:", cipher)
+    print("\n3 UŽDUOTIS\nAtšifruotas tekstas:", decrypted)
     
 if __name__ == "__main__":
     main()
