@@ -59,8 +59,15 @@ def cipher_decryption(public_key: tuple, cipher: int):
     
     Given mᵉ < n, then c = n = mᵉ, meaning that you can
     calculate m like this: m = c^(1/e) but it returs a float which
-    is inaccurate. 
+    is inaccurate. Function `integer_root` finds the e-th root
+    of an integer using binary search algoritm.
     
+    Args: 
+        public_key: consists of a tuple that contains exponent
+            and a module *n* that is the product of 2 prime numbers.
+        cipher: cipher text to decrypt.
+    Returns:
+        A decrypted cipher text string or -1 if something is wrong.
     """
     e, n = public_key
     m = integer_root(cipher, e)
@@ -70,6 +77,17 @@ def cipher_decryption(public_key: tuple, cipher: int):
     return -1
 
 def cipher_decryption_2(public_key: tuple, cipher: int):
+    """Decrypts given cipher using the given public key.
+    
+    Args: 
+    public_key: consists of a tuple that contains exponent
+        and a module *n* that is the product of 2 prime numbers.
+    cipher: cipher text to decrypt
+    
+    Returns:
+        A decrypted cipher text string or -1 if something is wrong.
+    """
+    
     e, n = public_key
     p, q = factorint(n).keys()
     phi = (p - 1) * (q - 1)
