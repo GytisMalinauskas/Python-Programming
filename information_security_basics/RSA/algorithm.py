@@ -79,7 +79,8 @@ def cipher_decryption(public_key: tuple, cipher: int):
 def cipher_decryption_2(public_key: tuple, cipher: int):
     """Decrypts given cipher using the given public key.
     
-    
+    Given that n of the public_key is 40 bits, means that p and q
+    can be factored out
     
     Args: 
     public_key: consists of a tuple that contains exponent
