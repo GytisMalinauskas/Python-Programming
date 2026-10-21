@@ -109,5 +109,6 @@ def cipher_decryption_3(private_key: tuple, cipher: int):
     em = int_to_bytes(m)
     
     print(em)
-    
+    if em[0] != 0x00 or em[1] != 0x02:
+        return None
     return -1
