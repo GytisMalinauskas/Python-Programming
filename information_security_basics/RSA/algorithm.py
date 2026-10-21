@@ -86,4 +86,4 @@ def cipher_decryption_2(public_key: tuple, cipher: int):
     phi = (p - 1) * (q - 1)
     d = pow(e, -1, phi)
     m = pow(cipher, d, n)
-    return int_to_bytes
+    return int_to_bytes(bytes_to_string(m))
