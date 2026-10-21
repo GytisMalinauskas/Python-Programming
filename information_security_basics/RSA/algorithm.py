@@ -103,12 +103,9 @@ def cipher_decryption_2(public_key: tuple, cipher: int):
 
 def cipher_decryption_3(private_key: tuple, cipher: int):
     d, n = private_key
-    k = byte_length(n)
     
     m = pow(cipher, d, n)
     em = int_to_bytes(m)
-    
-    print(em)
     
     sep = em.find(b'\x00', 2)
     if sep == -1 or sep < 10:
