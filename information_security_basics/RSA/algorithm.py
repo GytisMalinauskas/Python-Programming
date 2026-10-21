@@ -1,5 +1,5 @@
 from Crypto.Util.number import getPrime, GCD
-from pagalbines_funkcijos import string_to_bytes, bytes_to_int, int_to_bytes, bytes_to_string, integer_root
+from pagalbines_funkcijos import string_to_bytes, bytes_to_int, int_to_bytes, bytes_to_string, integer_root, byte_length
 from sympy import factorint
 
 def rsa_keys(e: int):
@@ -103,4 +103,11 @@ def cipher_decryption_2(public_key: tuple, cipher: int):
 
 def cipher_decryption_3(private_key: tuple, cipher: int):
     d, n = private_key
+    k = byte_length(n)
     
+    m = pow(cipher, d, n)
+    em = int_to_bytes(m)
+    
+    print(em)
+    
+    return -1
