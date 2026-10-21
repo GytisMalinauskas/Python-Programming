@@ -1,5 +1,5 @@
-from constants import NAME_SURNAME
-from algorithm import rsa_keys, name_encryption
+from constants import NAME_SURNAME, PUBLIC_KEY_3, CIPHER_3
+from algorithm import rsa_keys, name_encryption, cipher_decryption
 
 def main():
     # 1 punktas e = 62653
@@ -9,6 +9,8 @@ def main():
     # 2 punktas vardo užkodavimas viešuoju raktu
     cipher = name_encryption(NAME_SURNAME, public_key)
     print("\n2 UŽDUOTIS\nUžšifruotas vardas ir pavardė:", cipher)
+    decrypted = cipher_decryption(PUBLIC_KEY_3, CIPHER_3)
+    print("\n3 UŽDUOTIS\nAtšifruotas tekstas:", cipher)
     
 if __name__ == "__main__":
     main()
