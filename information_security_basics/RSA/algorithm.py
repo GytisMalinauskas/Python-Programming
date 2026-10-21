@@ -57,7 +57,19 @@ def cipher_decryption (public_key: tuple, cipher: int):
     # C = m ** e % n
     c = cipher
     e, n = public_key
-    m = c ** (1 / e)
-    if pow(m, e, n) == cipher:
+    m = integer_root(c, e)
+    check = pow(m, e, n)
+    if check == cipher:
         return bytes_to_string(int_to_bytes(m))
     return -1
+
+def integer_root(c: int, e: int) -> int:
+    """Returns floor of the e-th root of c using binary search."""
+    lo, hi = 0, c
+    while lo < hi:
+        mid = (lo + hi + 1) // 2
+        if mid ** e <= c:
+            lo = mid
+        else:
+            hi = mid - 1
+    return lo
