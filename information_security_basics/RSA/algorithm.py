@@ -1,6 +1,7 @@
 from Crypto.Util.number import getPrime, GCD
+from pagalbines_funkcijos import string_to_bytes
 
-def rsa(e: int):
+def rsa_keys(e: int):
     """Generates RSA public and private keys given prime number.
     
     Two prime numbers of 256 bits are generated, then checked for
@@ -32,4 +33,8 @@ def rsa(e: int):
     return (e, n), (d, n)
 
 # 1 punktas e = 62653
-print(rsa(e = 62653))
+print(rsa_keys(e = 62653))
+
+def name_encryption (name: str, public_key: tuple):
+    name = string_to_bytes(name)
+    
