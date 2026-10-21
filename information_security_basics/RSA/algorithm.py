@@ -102,6 +102,23 @@ def cipher_decryption_2(public_key: tuple, cipher: int):
     return -1
 
 def cipher_decryption_3(private_key: tuple, cipher: int):
+    """Decrypts a cipher text encrypted with RSAES-PKCS1-v1_5.
+
+    The cipher is decrypted with the private exponent, the result is
+    converted to bytes and the padding is removed. The encoded block
+    has the form 00 02 || PS || 00 || M, where PS is at least 8
+    random non-zero bytes. The message M is found after the first
+    zero byte following the header.
+
+    Args:
+        private_key: tuple that contains the private exponent *d*
+            and the module *n*.
+        cipher: cipher text as an integer.
+
+    Returns:
+        decrypted message as a string, or None if the padding
+        is invalid.
+    """
     d, n = private_key
     
     m = pow(cipher, d, n)
