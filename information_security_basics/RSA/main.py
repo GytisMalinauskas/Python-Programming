@@ -1,4 +1,4 @@
-from constants import NAME_SURNAME, PUBLIC_KEY_3, CIPHER_3
+from constants import NAME_SURNAME, PUBLIC_KEY_3, CIPHER_3, CIPHER_4, PUBLIC_KEY_4
 from algorithm import rsa_keys, name_encryption, cipher_decryption
 
 def main():
