@@ -54,5 +54,7 @@ def name_encryption (name: str, public_key: tuple):
 def cipher_decryption (public_key: tuple, cipher: int):
     # e = 3, n = 79982686678088103218738140681847135962460074410801123480380353476204002059633
     # c = 625276106331532937069864335247208594542625
-    
+    # C = m ** e % n
+    c = cipher
+    e, n = public_key
     ...
