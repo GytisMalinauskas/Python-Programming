@@ -32,9 +32,6 @@ def rsa_keys(e: int):
     
     return (e, n), (d, n)
 
-# 1 punktas e = 62653
-public_key, private_key = rsa_keys(e=62653)
-
 def name_encryption (name: str, public_key: tuple):
     e, n = public_key
     name = string_to_bytes(name)
