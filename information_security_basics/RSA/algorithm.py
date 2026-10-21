@@ -57,6 +57,9 @@ def name_encryption(name: str, public_key: tuple):
 def cipher_decryption(public_key: tuple, cipher: int):
     """Decrypts given cipher using the given public key.
     
+    Given mᵉ < n, then c = n = mᵉ, meaning that you can
+    calculate m like this: m = c^(1/e) but it returs a float which
+    is inaccurate. 
     
     """
     e, n = public_key
