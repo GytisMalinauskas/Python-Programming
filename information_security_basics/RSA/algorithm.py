@@ -109,6 +109,9 @@ def cipher_decryption_3(private_key: tuple, cipher: int):
     em = int_to_bytes(m)
     
     print(em)
-    if em[0] != 0x00 or em[1] != 0x02:
+    
+    sep = em.find(b'\x00', 2)
+    if sep == -1 or sep < 10:
         return None
-    return -1
+
+    return bytes_to_string(em[sep + 1:])
