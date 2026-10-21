@@ -1,6 +1,6 @@
 from Crypto.Util.number import getPrime, GCD
 from pagalbines_funkcijos import string_to_bytes, bytes_to_int, int_to_bytes, bytes_to_string
-
+from sympy import factorint
 def rsa_keys(e: int):
     """Generates RSA public and private keys given prime number.
     
@@ -81,3 +81,8 @@ def integer_root(c: int, e: int) -> int:
 
 def cipher_decryption_2(public_key: tuple, cipher: int):
     e, n = public_key
+    p = factorint(n)
+    q = n // p
+    phi = (p - 1) * (q - 1)
+    d = pow(e, -1, phi)
+    m = pow(cipher, d, n)
