@@ -35,7 +35,15 @@ def rsa_keys(e: int):
 def name_encryption (name: str, public_key: tuple):
     """Encrypts given name with the given public key.
     
-    Name is turned into bytes, bytes are turned to int and then 
+    Name is turned into bytes, bytes are turned to int.
+    
+    Args:
+        name: given name and surname string.
+        public_key: consists of a tuple that contains exponent
+            and a module *n* that is the product of 2 prime numbers.
+    
+    Returns:
+        cipher text of the encrypted name.
     """
     e, n = public_key
     name = string_to_bytes(name)
