@@ -10,8 +10,10 @@ def main():
     # 2 punktas vardo užkodavimas viešuoju raktu
     cipher = name_encryption(NAME_SURNAME, public_key)
     print("\n2 UŽDUOTIS\nŠifras:", cipher)
+    # 3 punktas slaptaraščio nulaužimas
     decrypted = cipher_decryption(PUBLIC_KEY_3, CIPHER_3)
     print("\n3 UŽDUOTIS\nAtšifruotas tekstas:", decrypted)
+    # 4 punktas slaptarasčio nulaužimas
     
 if __name__ == "__main__":
     main()
