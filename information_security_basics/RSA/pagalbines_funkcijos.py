@@ -19,9 +19,3 @@ def int_to_string(input):
 def string_to_int(input):
 	return bytes_to_int(string_to_bytes(input))
 
-vardas = "Gytis Malinauskas"
-integer = string_to_int(vardas)
-print(integer)
-string = int_to_string(integer)
-print(string)
-
