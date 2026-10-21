@@ -8,7 +8,7 @@ def main():
     print("Privatusis raktas:", private_key)
     # 2 punktas vardo užkodavimas viešuoju raktu
     cipher = name_encryption(NAME_SURNAME, public_key)
-    print("2 UŽDUOTIS\nUžšifruotas vardas ir pavardė:", cipher)
+    print("\n2 UŽDUOTIS\nUžšifruotas vardas ir pavardė:", cipher)
 
 if __name__ == "__main__":
     main()
