@@ -82,8 +82,7 @@ def integer_root(c: int, e: int) -> int:
 def cipher_decryption_2(public_key: tuple, cipher: int):
     e, n = public_key
     p, q = factorint(n).keys()
-    print(p, q)
     phi = (p - 1) * (q - 1)
     d = pow(e, -1, phi)
     m = pow(cipher, d, n)
-    return int_to_bytes(bytes_to_string(m))
+    return bytes_to_string(int_to_bytes(m))
