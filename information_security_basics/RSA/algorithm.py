@@ -27,8 +27,8 @@ def rsa_keys(e: int):
         if comp != 1 or q == p:
             continue
         break
-    print("p reikšmė:", p)
-    print("q reikšmė:", q)
+    print(" 1. p reikšmė:", p)
+    print(" 2. q reikšmė:", q)
     n = p * q
     phi = (p - 1) * (q - 1)
     d = pow(e, -1, phi)
