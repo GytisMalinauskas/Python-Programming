@@ -1,6 +1,7 @@
 from Crypto.Util.number import getPrime, GCD
-from pagalbines_funkcijos import string_to_bytes, bytes_to_int, int_to_bytes, bytes_to_string
+from pagalbines_funkcijos import string_to_bytes, bytes_to_int, int_to_bytes, bytes_to_string, integer_root
 from sympy import factorint
+
 def rsa_keys(e: int):
     """Generates RSA public and private keys given prime number.
     
@@ -54,24 +55,16 @@ def name_encryption(name: str, public_key: tuple):
     return c
 
 def cipher_decryption(public_key: tuple, cipher: int):
-    c = cipher
+    """Decrypts given cipher using the given public key.
+    
+    
+    """
     e, n = public_key
-    m = integer_root(c, e)
+    m = integer_root(cipher, e)
     check = pow(m, e, n)
     if check == cipher:
         return bytes_to_string(int_to_bytes(m))
     return -1
-
-def integer_root(c: int, e: int) -> int:
-    """Returns floor of the e-th root of c using binary search."""
-    lo, hi = 0, c
-    while lo < hi:
-        mid = (lo + hi + 1) // 2
-        if mid ** e <= c:
-            lo = mid
-        else:
-            hi = mid - 1
-    return lo
 
 def cipher_decryption_2(public_key: tuple, cipher: int):
     e, n = public_key
