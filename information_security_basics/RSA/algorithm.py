@@ -50,3 +50,6 @@ def name_encryption (name: str, public_key: tuple):
     m = bytes_to_int(name)
     c = pow(m, e, n)
     return c
+
+def cipher_decryption (public_key: tuple, cipher: int):
+    ...
