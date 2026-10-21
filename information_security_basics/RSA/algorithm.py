@@ -79,6 +79,8 @@ def cipher_decryption(public_key: tuple, cipher: int):
 def cipher_decryption_2(public_key: tuple, cipher: int):
     """Decrypts given cipher using the given public key.
     
+    
+    
     Args: 
     public_key: consists of a tuple that contains exponent
         and a module *n* that is the product of 2 prime numbers.
@@ -93,4 +95,7 @@ def cipher_decryption_2(public_key: tuple, cipher: int):
     phi = (p - 1) * (q - 1)
     d = pow(e, -1, phi)
     m = pow(cipher, d, n)
-    return bytes_to_string(int_to_bytes(m))
+    check = pow(m, e, n)
+    if check == cipher:
+        return bytes_to_string(int_to_bytes(m))
+    return -1
