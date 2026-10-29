@@ -75,3 +75,5 @@ def process_order(user_id, product_id, quantity, coupon_code=None):
 
     finally:
         conn.close()
+
+process_order()
