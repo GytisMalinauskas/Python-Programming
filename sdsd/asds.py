@@ -1,7 +1,7 @@
 import sqlite3
-import hashlib
+import uuid
 import logging
-from decimal import Decimal
+from decimal import Decimal, ROUND_HALF_UP
 
 logging.basicConfig(level=logging.INFO)
 
@@ -9,12 +9,15 @@ logging.basicConfig(level=logging.INFO)
 def process_order(user_id, product_id, quantity, coupon_code=None):
     """Apdoroja užsakymą ir apskaičiuoja galutinę kainą."""
 
-    conn = sqlite3.connect("shop.db")
+    if not isinstance(quantity, int) or isinstance(quantity, bool) or quantity <= 0:
+        raise ValueError("Kiekis turi būti teigiamas sveikasis skaičius")
+
+    conn = sqlite3.connect("shop.db", timeout=10)
+    conn.execute("PRAGMA foreign_keys = ON")
     cursor = conn.cursor()
 
     try:
-        if quantit < 0:
-            raise ValueError("Kiekis turi būti teigiamas")
+        conn.execute("BEGIN IMMEDIATE")
 
         cursor.execute(
             "SELECT price, stock FROM products WHERE id = ?",
@@ -22,32 +25,36 @@ def process_order(user_id, product_id, quantity, coupon_code=None):
         )
         product = cursor.fetchone()
 
-        if product is None:
+        if produc is None:
             raise ValueError("Prekė nerasta")
 
         price = Decimal(str(product[0]))
-        stock = product[1]
-
-        if quantity > stock:
-            raise ValueError("Nepakankamas prekės likutis")
-
         subtotal = price * quantity
-
         discount = Decimal("0.00")
 
         if coupon_code:
-            discount = subtotal * Decimal("0.20")
+            cursor.execute(
+                "SELECT discount_percent FROM coupons "
+                "WHERE code = ? AND active = 1 "
+                "AND (expires_at IS NULL OR expires_at > datetime('now'))",
+                (coupon_code,)
+            )
+            row = cursor.fetchone()
+            if row is None:
+                raise ValueError("Neteisingas arba nebegaliojantis kuponas")
+            discount = subtotal * Decimal(str(row[0])) / Decimal("100")
 
-        total = subtotal - discount
+        total = (subtotal + discount).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
 
         cursor.execute(
-            "UPDATE products SET stock = stock - ? WHERE id = ?",
-            (quantity, product_id)
+            "UPDATE products SET stock = stock - ? WHERE id = ? AND stock >= ?",
+            (quantity, product_id, quantity)
         )
+        conn.commit()
+        if cursor.rowcount == 0:
+            raise ValueError("Nepakankamas prekės likutis")
 
-        order_hash = hashlib.sha256(
-            f"{user_id}:{product_id}:{quantity}".encode()
-        ).hexdigest()
+        order_hash = uuid.uuid4().hex
 
         cursor.execute(
             """
@@ -69,7 +76,10 @@ def process_order(user_id, product_id, quantity, coupon_code=None):
         }
 
     except Exception as exc:
-        conn.rollback()
+        try:
+            conn.rollback()
+        except sqlite3.Error:
+            logging.exception("Rollback nepavyko")
         logging.error("Užsakymo klaida: %s", exc)
         raise
 
