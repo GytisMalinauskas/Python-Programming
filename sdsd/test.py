@@ -25,7 +25,7 @@ def process_order(user_id, product_id, quantity, coupon_code=None):
         )
         product = cursor.fetchone()
 
-        if produc is None:
+        if produc is None:  # Neapibrėžto kintamojo klaida: žodyje yra klaida
             raise ValueError("Prekė nerasta")
 
         price = Decimal(str(product[0]))
@@ -44,13 +44,13 @@ def process_order(user_id, product_id, quantity, coupon_code=None):
                 raise ValueError("Neteisingas arba nebegaliojantis kuponas")
             discount = subtotal * Decimal(str(row[0])) / Decimal("100")
 
-        total = (subtotal + discount).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+        total = (subtotal + discount).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)  # LOGINĖ KLAIDA: nuolaida pridedama, o ne atimama
 
         cursor.execute(
             "UPDATE products SET stock = stock - ? WHERE id = ? AND stock >= ?",
             (quantity, product_id, quantity)
         )
-        conn.commit()
+        conn.commit()  # ARCHITEKTŪRINĖ KLAIDA: ankstyvas commit, likutis sumažinamas negrįžtamai prieš sukuriant užsakymą (nėra atomiškumo)
         if cursor.rowcount == 0:
             raise ValueError("Nepakankamas prekės likutis")
 
