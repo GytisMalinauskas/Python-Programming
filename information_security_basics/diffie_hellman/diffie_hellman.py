@@ -25,4 +25,4 @@ def baby_step_giant_step(g, p, x):
             return (m * j + 1) % (p - 1)
         
 def generate_prime(bits, g):
-    ...
+    sympy.randprime()
