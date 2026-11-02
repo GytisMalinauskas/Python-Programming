@@ -13,9 +13,7 @@ def sub_bytes(state):
 def inv_sub_bytes(state):
     return [[sboxInv[b] for b in row] for row in state]
 
-# 3. ShiftRows ir InvShiftRows: poslinkiai eilutėse
 def shift_rows(state):
-    # Eilutės slenkamos į kairę: 0 per 0, 1 per 1, 2 per 2, 3 per 3
     return [
         state[0],
         state[1][1:] + state[1][:1],
@@ -24,7 +22,6 @@ def shift_rows(state):
     ]
 
 def inv_shift_rows(state):
-    # Eilutės slenkamos į dešinę: 0 per 0, 1 per 1, 2 per 2, 3 per 3
     return [
         state[0],
         state[1][-1:] + state[1][:-1],
@@ -32,7 +29,6 @@ def inv_shift_rows(state):
         state[3][-3:] + state[3][:-3]
     ]
 
-# 4. MixColumns ir InvMixColumns: matricų daugyba stulpeliams
 def mix_columns(state):
     new_state = [[0] * 4 for _ in range(4)]
     for c in range(4):
