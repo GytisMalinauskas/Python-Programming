@@ -20,10 +20,15 @@ def main():
     # --- 2 RAUNDAS ---
     state = inv_shift_rows(state)
     state = inv_sub_bytes(state)
-    state = add_round_key(state, round_keys[3])
+    state = add_round_key(state, round_keys[1])
     state = inv_mix_columns(state)
+    
     # --- 3 RAUNDAS ---
     state = inv_shift_rows(state)
     state = inv_sub_bytes(state)
-    state = add_round_key(state, round_keys[3])
-    state = inv_mix_columns(state)
+    state = add_round_key(state, round_keys[0])
+    
+    print(state)
+    
+if __name__ == "__main__":
+    main()
