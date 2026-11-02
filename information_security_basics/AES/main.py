@@ -1,34 +1,9 @@
-from aes_cipher import add_round_key, inv_shift_rows, inv_sub_bytes, inv_mix_columns
-from aes_helpers import byte_string_to_blocks, blocks_to_string
+from aes_cipher import aes_encrypt
 from constants import KEY, TEXT
 
 def main():
-    cipher_blocks = byte_string_to_blocks(TEXT)
-    round_keys = byte_string_to_blocks(KEY)
-
-    state = cipher_blocks[0]
-
-    # --- PRADINIS ŽINGSNIS (Pre-round) ---
-    state = add_round_key(state, round_keys[3])
-
-    # --- 1 RAUNDAS ---
-    state = inv_shift_rows(state)
-    state = inv_sub_bytes(state)
-    state = add_round_key(state, round_keys[2])
-    state = inv_mix_columns(state)
-
-    # --- 2 RAUNDAS ---
-    state = inv_shift_rows(state)
-    state = inv_sub_bytes(state)
-    state = add_round_key(state, round_keys[1])
-    state = inv_mix_columns(state)
-    
-    # --- 3 RAUNDAS ---
-    state = inv_shift_rows(state)
-    state = inv_sub_bytes(state)
-    state = add_round_key(state, round_keys[0])
-    
-    print(state)
+    print("1. Dešifruotas tekstas:", aes_encrypt(TEXT, KEY))
+    print("2. Užšifruota pavardė:")
     
 if __name__ == "__main__":
     main()
