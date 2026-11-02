@@ -12,62 +12,48 @@ from aes_helpers import (
     mix_columns,
 )
 
-def aes_decrypt(text, key):
-    cipher_blocks = byte_string_to_blocks(text)
-    round_keys = byte_string_to_blocks(key)
+def decrypt_block(state, round_keys):
+    # Pre-round
+    state = add_round_key(state, round_keys[3])
 
-    decrypted_blocks = []
-    for state in cipher_blocks:
-        # Pre-round
-        state = add_round_key(state, round_keys[3])
+    # 1 raundas
+    state = inv_shift_rows(state)
+    state = inv_sub_bytes(state)
+    state = add_round_key(state, round_keys[2])
+    state = inv_mix_columns(state)
 
-        # 1 raundas
-        state = inv_shift_rows(state)
-        state = inv_sub_bytes(state)
-        state = add_round_key(state, round_keys[2])
-        state = inv_mix_columns(state)
+    # 2 raundas
+    state = inv_shift_rows(state)
+    state = inv_sub_bytes(state)
+    state = add_round_key(state, round_keys[1])
+    state = inv_mix_columns(state)
 
-        # 2 raundas
-        state = inv_shift_rows(state)
-        state = inv_sub_bytes(state)
-        state = add_round_key(state, round_keys[1])
-        state = inv_mix_columns(state)
+    # 3 raundas (be InvMixColumns)
+    state = inv_shift_rows(state)
+    state = inv_sub_bytes(state)
+    state = add_round_key(state, round_keys[0])
 
-        # 3 raundas (be InvMixColumns)
-        state = inv_shift_rows(state)
-        state = inv_sub_bytes(state)
-        state = add_round_key(state, round_keys[0])
+    return state
 
-        decrypted_blocks.append(state)
+def encrypt_block(state, round_keys):
+    # Pre-round
+    state = add_round_key(state, round_keys[0])
 
-    return blocks_to_string(decrypted_blocks)
+    # 1 raundas
+    state = sub_bytes(state)
+    state = shift_rows(state)
+    state = mix_columns(state)
+    state = add_round_key(state, round_keys[1])
 
-def aes_encrypt(plain_text, key_hex):
-    blocks = string_to_blocks(plain_text)
-    round_keys = byte_string_to_blocks(key_hex)
+    # 2 raundas
+    state = sub_bytes(state)
+    state = shift_rows(state)
+    state = mix_columns(state)
+    state = add_round_key(state, round_keys[2])
 
-    encrypted_blocks = []
-    for state in blocks:
-        # Pre-round
-        state = add_round_key(state, round_keys[0])
+    # 3 raundas (be MixColumns)
+    state = sub_bytes(state)
+    state = shift_rows(state)
+    state = add_round_key(state, round_keys[3])
 
-        # 1 raundas
-        state = sub_bytes(state)
-        state = shift_rows(state)
-        state = mix_columns(state)
-        state = add_round_key(state, round_keys[1])
-
-        # 2 raundas
-        state = sub_bytes(state)
-        state = shift_rows(state)
-        state = mix_columns(state)
-        state = add_round_key(state, round_keys[2])
-
-        # 3 raundas (be MixColumns)
-        state = sub_bytes(state)
-        state = shift_rows(state)
-        state = add_round_key(state, round_keys[3])
-
-        encrypted_blocks.append(state)
-
-    return blocks_to_byte_string(encrypted_blocks)
+    return state
