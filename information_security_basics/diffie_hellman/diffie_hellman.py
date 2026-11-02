@@ -29,7 +29,7 @@ def generate_prime(bits, g):
         q = sympy.randprime(pow(2, bits-2), pow(2, bits-1) - 1)
         p = 2 * q + 1
         if sympy.isprime(p):
-            r1 = pow(2, q, p)
-            r2 = pow(2, g, p)
+            r1 = pow(g, (p - 1) // 2, p)
+            r2 = pow(g, (p - 1) // q, p)
             if r1 != 1 and r2 != 1:
                 return p
