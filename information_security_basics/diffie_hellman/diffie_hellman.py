@@ -12,12 +12,14 @@ def secret_generation(g, p, a, b):
 
 def baby_step_giant_step(g, p, x):
     m = int(sqrt(p - 1))
-    empty_dict = {}
+    values = {}
     for j in range(m):
         v = pow(g, m*j, p)
-        empty_dict[v] = j
+        values[v] = j
     for i in range(m-1):
         v2 = pow(g, -i, p) * x
-        
+        if v2 in values.keys():
+            break
+    
 def generate_prime(bits, g):
     ...
