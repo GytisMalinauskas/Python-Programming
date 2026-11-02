@@ -13,13 +13,16 @@ def secret_generation(g, p, a, b):
 def baby_step_giant_step(g, p, x):
     m = isqrt(p - 1) + 1
     values = {}
-    for j in range(m):
-        v = pow(g, m*j, p)
-        values[v] = j
-    for i in range(m-1):
-        v2 = pow(g, -i, p) * x
-        if v2 in values.keys():
-            break
     
+    for j in range(m):
+        v = pow(g, m * j, p)
+        values[v] = j
+        
+    for i in range(m):
+        v2 = (pow(g, -i, p) * x) % p
+        if v2 in values:
+            j = values[v2]
+            return (m * j + 1) % (p - 1)
+        
 def generate_prime(bits, g):
     ...
