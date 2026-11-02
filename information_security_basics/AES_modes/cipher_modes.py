@@ -1,5 +1,6 @@
 from aes_cipher import decrypt_block, encrypt_block
-from aes_helpers import blocks_to_string
+from aes_helpers import blocks_to_string, add_round_key
+
 def decrypt_ecb(cipher_blocks, round_keys):
     decrypted_blocks = []
     for block in cipher_blocks:
@@ -7,8 +8,10 @@ def decrypt_ecb(cipher_blocks, round_keys):
     return blocks_to_string(decrypted_blocks)
     
 def decrypt_cbc(cipher_blocks, round_keys, iv_block):
-    ...
-    
+    prev_block = iv_block
+    for block in cipher_blocks:
+        decrypt_block(block, round_keys)
+        add_round_key()
 def decrypt_pcbc(cipher_blocks, round_keys, iv_block):
     ...
     
