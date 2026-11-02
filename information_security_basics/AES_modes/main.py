@@ -19,7 +19,10 @@ from aes_helpers import byte_string_to_blocks
 def main():
     round_keys = byte_string_to_blocks(KEY)
     cipher_blocks = byte_string_to_blocks(C1)
+    cipher_blocks2 = byte_string_to_blocks(C2)
+    iv_block = byte_string_to_blocks(IV)
     print("1. AES-ECB atviras tekstas:", decrypt_ecb(cipher_blocks, round_keys))
+    print("2. AES-CBC atviras tekstas:", decrypt_cbc(cipher_blocks2, round_keys, iv_block))
     
 if __name__ == "__main__":
     main()
