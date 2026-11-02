@@ -26,7 +26,7 @@ def baby_step_giant_step(g, p, x):
         
 def generate_prime(bits, g):
     while True:
-        q = sympy.randprime(pow(2, 98), pow(2, 99) - 1)
+        q = sympy.randprime(pow(2, bits-2), pow(2, bits-1) - 1)
         p = 2 * q + 1
         if sympy.isprime(p):
             r1 = pow(2, q, p)
