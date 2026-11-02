@@ -16,7 +16,7 @@ from constants import (
 )
 
 def main():
-    print("1. Dešifruotas tekstas:", decrypt_cbc(C1, KEY))
+    print("1. Dešifruotas tekstas:", decrypt_ecb(C1, KEY))
     
 if __name__ == "__main__":
     main()
