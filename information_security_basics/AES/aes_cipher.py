@@ -1,6 +1,6 @@
 from aes_helpers import byte_string_to_blocks, blocks_to_string, add_round_key, inv_shift_rows, inv_sub_bytes, inv_mix_columns
 
-def aes_encrypt(text, key):
+def aes_decrypt(text, key):
     cipher_blocks = byte_string_to_blocks(text)
     round_keys = byte_string_to_blocks(key)
 
