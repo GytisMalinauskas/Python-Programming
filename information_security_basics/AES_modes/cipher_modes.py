@@ -18,7 +18,10 @@ def decrypt_cbc(cipher_blocks, round_keys, iv_block):
     return blocks_to_string(decrypted_blocks)
         
 def decrypt_pcbc(cipher_blocks, round_keys, iv_block):
-    ...
+    feedback = iv_block
+    for block in cipher_blocks:
+        decrypted_state = decrypt_block(block, feedback)
+        plain_block = add_round_key(decrypted_state, prev_block)
     
 def decrypt_cfb(cipher_blocks, round_keys, iv_block):
     ...
