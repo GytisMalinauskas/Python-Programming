@@ -1,4 +1,4 @@
-from math import sqrt
+from math import isqrt
 import sympy
 
 def secret_generation(g, p, a, b):
@@ -11,7 +11,7 @@ def secret_generation(g, p, a, b):
     return s1
 
 def baby_step_giant_step(g, p, x):
-    m = int(sqrt(p - 1))
+    m = isqrt(p - 1) + 1
     values = {}
     for j in range(m):
         v = pow(g, m*j, p)
