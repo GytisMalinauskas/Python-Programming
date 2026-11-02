@@ -17,7 +17,7 @@ def baby_step_giant_step(g, p, x):
         v = pow(g, m*j, p)
         empty_dict[v] = j
     for i in range(m-1):
-        v = pow(g, -i, p)
+        v2 = pow(g, -i, p) * x
         
 def generate_prime(bits, g):
     ...
