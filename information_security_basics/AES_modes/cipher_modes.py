@@ -1,10 +1,11 @@
 from aes_cipher import decrypt_block, encrypt_block
-
+from aes_helpers import blocks_to_string
 def decrypt_ecb(cipher_blocks, round_keys):
     decrypted_blocks = []
     for block in cipher_blocks:
         decrypted_blocks.append(decrypt_block(block, round_keys))
-        
+    return blocks_to_string(decrypted_blocks)
+    
 def decrypt_cbc(cipher_blocks, round_keys, iv_block):
     ...
     
