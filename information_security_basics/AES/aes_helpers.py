@@ -78,6 +78,55 @@ def blocks_to_byte_string(blocks):
                                 result += int_to_bytes(block[j][i], 1)
         return result.hex()
 
+def add_round_key(state, key_block):
+        new_state = [[0] * 4 for _ in range(4)]
+        for r in range(4):
+                for c in range(4):
+                        new_state[r][c] = state[r][c] ^ key_block[r][c]
+        return new_state
+
+def sub_bytes(state):
+        return [[sbox[b] for b in row] for row in state]
+
+def inv_sub_bytes(state):
+        return [[sboxInv[b] for b in row] for row in state]
+
+def shift_rows(state):
+        return [
+        state[0],
+        state[1][1:] + state[1][:1],
+        state[2][2:] + state[2][:2],
+        state[3][3:] + state[3][:3]
+        ]
+
+def inv_shift_rows(state):
+        return [
+        state[0],
+        state[1][-1:] + state[1][:-1],
+        state[2][-2:] + state[2][:-2],
+        state[3][-3:] + state[3][:-3]
+        ]
+
+def mix_columns(state):
+        new_state = [[0] * 4 for _ in range(4)]
+        for c in range(4):
+                a0, a1, a2, a3 = state[0][c], state[1][c], state[2][c], state[3][c]
+                new_state[0][c] = mult_2[a0] ^ mult_3[a1] ^ a2 ^ a3
+                new_state[1][c] = a0 ^ mult_2[a1] ^ mult_3[a2] ^ a3
+                new_state[2][c] = a0 ^ a1 ^ mult_2[a2] ^ mult_3[a3]
+                new_state[3][c] = mult_3[a0] ^ a1 ^ a2 ^ mult_2[a3]
+        return new_state
+
+def inv_mix_columns(state):
+        new_state = [[0] * 4 for _ in range(4)]
+        for c in range(4):
+                a0, a1, a2, a3 = state[0][c], state[1][c], state[2][c], state[3][c]
+                new_state[0][c] = mult_e[a0] ^ mult_b[a1] ^ mult_d[a2] ^ mult_9[a3]
+                new_state[1][c] = mult_9[a0] ^ mult_e[a1] ^ mult_b[a2] ^ mult_d[a3]
+                new_state[2][c] = mult_d[a0] ^ mult_9[a1] ^ mult_e[a2] ^ mult_b[a3]
+                new_state[3][c] = mult_b[a0] ^ mult_d[a1] ^ mult_9[a2] ^ mult_e[a3]
+        return new_state
+
 sbox = [
 0x63, 0x7c, 0x77, 0x7b, 0xf2, 0x6b, 0x6f, 0xc5, 0x30, 0x01, 0x67, 0x2b, 0xfe, 0xd7, 0xab, 0x76,
 0xca, 0x82, 0xc9, 0x7d, 0xfa, 0x59, 0x47, 0xf0, 0xad, 0xd4, 0xa2, 0xaf, 0x9c, 0xa4, 0x72, 0xc0,
@@ -229,3 +278,4 @@ mult_e = [
 0x37,0x39,0x2b,0x25,0x0f,0x01,0x13,0x1d,0x47,0x49,0x5b,0x55,0x7f,0x71,0x63,0x6d,
 0xd7,0xd9,0xcb,0xc5,0xef,0xe1,0xf3,0xfd,0xa7,0xa9,0xbb,0xb5,0x9f,0x91,0x83,0x8d
 ]
+
